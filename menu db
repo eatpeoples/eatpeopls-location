@@ -1,0 +1,7994 @@
+[
+  {
+    "Menu_Name": "불고기 정식",
+    "Price": "15000",
+    "Category": "한식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "마라탕",
+    "Price": "12500",
+    "Category": "중식",
+    "Calorie_Level": "High",
+    "Spiciness": "4",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "참치김밥",
+    "Price": "4000",
+    "Category": "분식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "돈카츠",
+    "Price": "9000",
+    "Category": "일식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "까르보나라",
+    "Price": "16000",
+    "Category": "양식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "냉면",
+    "Price": "9000",
+    "Category": "한식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "짜장면",
+    "Price": "7000",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "초밥 세트",
+    "Price": "20000",
+    "Category": "일식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "샐러드 파스타",
+    "Price": "13000",
+    "Category": "양식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "떡볶이",
+    "Price": "5000",
+    "Category": "분식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "3",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "비빔밥",
+    "Price": "8500",
+    "Category": "한식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "2",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "볶음밥(새우)",
+    "Price": "8000",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "라멘(돈코츠)",
+    "Price": "11000",
+    "Category": "일식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "리조또(해산물)",
+    "Price": "15000",
+    "Category": "양식",
+    "Calorie_Level": "High",
+    "Spiciness": "2",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "순두부찌개",
+    "Price": "9500",
+    "Category": "한식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "3",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "탕수육(소)",
+    "Price": "18000",
+    "Category": "중식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "우동",
+    "Price": "7500",
+    "Category": "일식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "샌드위치(클럽)",
+    "Price": "6000",
+    "Category": "기타",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "부대찌개",
+    "Price": "10000",
+    "Category": "한식",
+    "Calorie_Level": "High",
+    "Spiciness": "2",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "월남쌈",
+    "Price": "14000",
+    "Category": "기타",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "제육볶음",
+    "Price": "11000",
+    "Category": "한식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "3",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "김치찌개",
+    "Price": "9000",
+    "Category": "한식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "3",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "삼겹살 덮밥",
+    "Price": "10500",
+    "Category": "한식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "갈비탕",
+    "Price": "14000",
+    "Category": "한식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "잔치국수",
+    "Price": "6500",
+    "Category": "한식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "잡채",
+    "Price": "12000",
+    "Category": "한식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "육개장",
+    "Price": "10000",
+    "Category": "한식",
+    "Calorie_Level": "High",
+    "Spiciness": "4",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "보쌈 정식",
+    "Price": "17000",
+    "Category": "한식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "해물 칼국수",
+    "Price": "8500",
+    "Category": "한식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "떡만둣국",
+    "Price": "8000",
+    "Category": "한식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "간장게장 정식",
+    "Price": "25000",
+    "Category": "한식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "닭볶음탕",
+    "Price": "12000",
+    "Category": "한식",
+    "Calorie_Level": "High",
+    "Spiciness": "4",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "된장찌개",
+    "Price": "8000",
+    "Category": "한식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "수제비",
+    "Price": "7500",
+    "Category": "한식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "쭈꾸미 볶음",
+    "Price": "13000",
+    "Category": "한식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "4",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "김치볶음밥",
+    "Price": "7000",
+    "Category": "한식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "2",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "설렁탕",
+    "Price": "11000",
+    "Category": "한식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "아구찜",
+    "Price": "15000",
+    "Category": "한식",
+    "Calorie_Level": "High",
+    "Spiciness": "5",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "콩나물 국밥",
+    "Price": "7000",
+    "Category": "한식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "버섯 전골",
+    "Price": "16000",
+    "Category": "한식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "양장피",
+    "Price": "22000",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "2",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "짬뽕",
+    "Price": "9000",
+    "Category": "중식",
+    "Calorie_Level": "High",
+    "Spiciness": "4",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "볶음짬뽕",
+    "Price": "10000",
+    "Category": "중식",
+    "Calorie_Level": "High",
+    "Spiciness": "4",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "깐풍기",
+    "Price": "20000",
+    "Category": "중식",
+    "Calorie_Level": "High",
+    "Spiciness": "3",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "유산슬",
+    "Price": "21000",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "고추잡채",
+    "Price": "18000",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "3",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "마파두부 덮밥",
+    "Price": "8000",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "2",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "XO 볶음밥",
+    "Price": "9500",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "군만두",
+    "Price": "5000",
+    "Category": "중식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "해물 누룽지탕",
+    "Price": "16000",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "사천 짜장",
+    "Price": "8500",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "3",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "꿔바로우",
+    "Price": "19000",
+    "Category": "중식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "탄탄면",
+    "Price": "10000",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "2",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "라조기",
+    "Price": "21000",
+    "Category": "중식",
+    "Calorie_Level": "High",
+    "Spiciness": "3",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "중국식 냉면",
+    "Price": "11000",
+    "Category": "중식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "게살 볶음밥",
+    "Price": "9000",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "마라샹궈",
+    "Price": "13000",
+    "Category": "중식",
+    "Calorie_Level": "High",
+    "Spiciness": "5",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "물만두",
+    "Price": "4500",
+    "Category": "중식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "궁보계정",
+    "Price": "17000",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "3",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "차돌짬뽕",
+    "Price": "12000",
+    "Category": "중식",
+    "Calorie_Level": "High",
+    "Spiciness": "4",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "규동",
+    "Price": "9000",
+    "Category": "일식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "텐동",
+    "Price": "13000",
+    "Category": "일식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "사케동",
+    "Price": "15000",
+    "Category": "일식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "카레라이스",
+    "Price": "8000",
+    "Category": "일식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "오코노미야키",
+    "Price": "14000",
+    "Category": "일식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "타코야키",
+    "Price": "6000",
+    "Category": "일식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "메밀 소바",
+    "Price": "8500",
+    "Category": "일식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "나가사키 짬뽕",
+    "Price": "11000",
+    "Category": "일식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "2",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "가츠동",
+    "Price": "9500",
+    "Category": "일식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "냉모밀",
+    "Price": "7500",
+    "Category": "일식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "스키야키",
+    "Price": "25000",
+    "Category": "일식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "야끼소바",
+    "Price": "10000",
+    "Category": "일식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "튀김(모듬)",
+    "Price": "12000",
+    "Category": "일식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "연어 덮밥",
+    "Price": "16000",
+    "Category": "일식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "미소라멘",
+    "Price": "10000",
+    "Category": "일식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "회덮밥",
+    "Price": "13000",
+    "Category": "일식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "2",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "오므라이스",
+    "Price": "8500",
+    "Category": "일식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "새우튀김 카레",
+    "Price": "11000",
+    "Category": "일식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "참치 타다키",
+    "Price": "18000",
+    "Category": "일식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "마제 소바",
+    "Price": "12000",
+    "Category": "일식",
+    "Calorie_Level": "High",
+    "Spiciness": "2",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "스테이크(등심)",
+    "Price": "35000",
+    "Category": "양식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "봉골레 파스타",
+    "Price": "15000",
+    "Category": "양식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "알리오 올리오",
+    "Price": "14000",
+    "Category": "양식",
+    "Calorie_Level": "Low",
+    "Spiciness": "2",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "마르게리따 피자",
+    "Price": "20000",
+    "Category": "양식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "고르곤졸라 피자",
+    "Price": "22000",
+    "Category": "양식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "크림 리조또",
+    "Price": "16000",
+    "Category": "양식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "토마토 스파게티",
+    "Price": "13000",
+    "Category": "양식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "라자냐",
+    "Price": "18000",
+    "Category": "양식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "함박 스테이크",
+    "Price": "12000",
+    "Category": "양식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "감바스 알 아히요",
+    "Price": "19000",
+    "Category": "양식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "2",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "뇨끼",
+    "Price": "17000",
+    "Category": "양식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "페퍼로니 피자",
+    "Price": "21000",
+    "Category": "양식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "해산물 파에야",
+    "Price": "23000",
+    "Category": "양식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "치킨 퀘사디아",
+    "Price": "10000",
+    "Category": "양식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "프렌치 어니언 수프",
+    "Price": "9000",
+    "Category": "양식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "미트볼 스파게티",
+    "Price": "15000",
+    "Category": "양식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "시저 샐러드",
+    "Price": "8000",
+    "Category": "양식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "채끝 스테이크",
+    "Price": "40000",
+    "Category": "양식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "로제 파스타",
+    "Price": "17000",
+    "Category": "양식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "오일 파스타(매콤)",
+    "Price": "14500",
+    "Category": "양식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "3",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "라면",
+    "Price": "4000",
+    "Category": "분식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "3",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "쫄면",
+    "Price": "6000",
+    "Category": "분식",
+    "Calorie_Level": "Low",
+    "Spiciness": "4",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "순대",
+    "Price": "7000",
+    "Category": "분식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "만두(고기)",
+    "Price": "5000",
+    "Category": "분식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "어묵",
+    "Price": "3000",
+    "Category": "분식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "튀김(오징어)",
+    "Price": "3500",
+    "Category": "분식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "국물 떡볶이",
+    "Price": "7000",
+    "Category": "분식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "3",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "참치마요 컵밥",
+    "Price": "5000",
+    "Category": "분식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "비빔국수",
+    "Price": "7000",
+    "Category": "분식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "3",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "치즈 떡볶이",
+    "Price": "8000",
+    "Category": "분식",
+    "Calorie_Level": "High",
+    "Spiciness": "2",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "김치말이 국수",
+    "Price": "6500",
+    "Category": "분식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "냉동 만두",
+    "Price": "4000",
+    "Category": "분식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "꼬마김밥",
+    "Price": "5000",
+    "Category": "분식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "순대 볶음",
+    "Price": "9000",
+    "Category": "분식",
+    "Calorie_Level": "High",
+    "Spiciness": "4",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "잔치 국수(김치)",
+    "Price": "7000",
+    "Category": "분식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "2",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "튀김(새우)",
+    "Price": "4000",
+    "Category": "분식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "라볶이",
+    "Price": "6000",
+    "Category": "분식",
+    "Calorie_Level": "High",
+    "Spiciness": "3",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "닭꼬치",
+    "Price": "3500",
+    "Category": "기타",
+    "Calorie_Level": "Low",
+    "Spiciness": "2",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "타코",
+    "Price": "10000",
+    "Category": "기타",
+    "Calorie_Level": "Mid",
+    "Spiciness": "2",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "부리또",
+    "Price": "8000",
+    "Category": "기타",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "팟타이",
+    "Price": "11000",
+    "Category": "기타",
+    "Calorie_Level": "Mid",
+    "Spiciness": "3",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "반미 샌드위치",
+    "Price": "7000",
+    "Category": "기타",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "커리(난 포함)",
+    "Price": "13000",
+    "Category": "기타",
+    "Calorie_Level": "High",
+    "Spiciness": "2",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "양꼬치",
+    "Price": "15000",
+    "Category": "기타",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "쌀국수(베트남)",
+    "Price": "9000",
+    "Category": "기타",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "햄버거(클래식)",
+    "Price": "7000",
+    "Category": "기타",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "치킨 샐러드",
+    "Price": "10000",
+    "Category": "기타",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "포케",
+    "Price": "12000",
+    "Category": "기타",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "케밥",
+    "Price": "8500",
+    "Category": "기타",
+    "Calorie_Level": "Mid",
+    "Spiciness": "2",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "나시고랭",
+    "Price": "10000",
+    "Category": "기타",
+    "Calorie_Level": "Mid",
+    "Spiciness": "3",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "수프(토마토)",
+    "Price": "6000",
+    "Category": "기타",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "파니니",
+    "Price": "9000",
+    "Category": "기타",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "샥슈카",
+    "Price": "14000",
+    "Category": "기타",
+    "Calorie_Level": "Mid",
+    "Spiciness": "2",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "샌드위치(베이글)",
+    "Price": "6500",
+    "Category": "기타",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "닭가슴살 샐러드",
+    "Price": "9000",
+    "Category": "기타",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "감자튀김",
+    "Price": "5000",
+    "Category": "기타",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "해물 파전",
+    "Price": "15000",
+    "Category": "한식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "보리밥",
+    "Price": "8000",
+    "Category": "한식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "콩국수",
+    "Price": "9000",
+    "Category": "한식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "갈치조림",
+    "Price": "18000",
+    "Category": "한식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "2",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "김치찜",
+    "Price": "10000",
+    "Category": "한식",
+    "Calorie_Level": "High",
+    "Spiciness": "3",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "닭갈비 덮밥",
+    "Price": "11000",
+    "Category": "한식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "3",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "떡갈비 정식",
+    "Price": "13000",
+    "Category": "한식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "낙지볶음",
+    "Price": "14000",
+    "Category": "한식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "4",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "삼계탕",
+    "Price": "17000",
+    "Category": "한식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "꼬막 비빔밥",
+    "Price": "12000",
+    "Category": "한식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "2",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "매운탕",
+    "Price": "16000",
+    "Category": "한식",
+    "Calorie_Level": "High",
+    "Spiciness": "4",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "어묵탕",
+    "Price": "8000",
+    "Category": "한식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "육회 비빔밥",
+    "Price": "15000",
+    "Category": "한식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "수육 정식",
+    "Price": "19000",
+    "Category": "한식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "순대국",
+    "Price": "9000",
+    "Category": "한식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "추어탕",
+    "Price": "10000",
+    "Category": "한식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "곱창 전골",
+    "Price": "20000",
+    "Category": "한식",
+    "Calorie_Level": "High",
+    "Spiciness": "4",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "해장국",
+    "Price": "8500",
+    "Category": "한식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "3",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "바지락 칼국수",
+    "Price": "8000",
+    "Category": "한식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "김치 수제비",
+    "Price": "7500",
+    "Category": "한식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "3",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "양꼬치 볶음밥",
+    "Price": "10000",
+    "Category": "중식",
+    "Calorie_Level": "High",
+    "Spiciness": "2",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "궁보우육",
+    "Price": "23000",
+    "Category": "중식",
+    "Calorie_Level": "High",
+    "Spiciness": "3",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "북경 오리",
+    "Price": "40000",
+    "Category": "중식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "토마토 계란 볶음",
+    "Price": "9000",
+    "Category": "중식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "홍콩식 토스트",
+    "Price": "6000",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "마라 두부",
+    "Price": "11000",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "4",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "딤섬(샤오마이)",
+    "Price": "7000",
+    "Category": "중식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "차오미엔",
+    "Price": "9500",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "팔보채",
+    "Price": "25000",
+    "Category": "중식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "유린기",
+    "Price": "20000",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "2",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "홍쇼우육",
+    "Price": "18000",
+    "Category": "중식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "중국식 볶음면",
+    "Price": "10000",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "2",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "수정 새우 딤섬",
+    "Price": "8000",
+    "Category": "중식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "해물 볶음밥",
+    "Price": "9000",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "고추 짬뽕",
+    "Price": "11000",
+    "Category": "중식",
+    "Calorie_Level": "High",
+    "Spiciness": "5",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "깐쇼새우",
+    "Price": "23000",
+    "Category": "중식",
+    "Calorie_Level": "High",
+    "Spiciness": "2",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "자장면(삼선)",
+    "Price": "9000",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "냉채",
+    "Price": "15000",
+    "Category": "중식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "군만두(매콤)",
+    "Price": "5500",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "2",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "에비동",
+    "Price": "10000",
+    "Category": "일식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "야끼니꾸 정식",
+    "Price": "18000",
+    "Category": "일식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "함박 카레",
+    "Price": "12000",
+    "Category": "일식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "모듬 초밥",
+    "Price": "25000",
+    "Category": "일식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "스키야키 덮밥",
+    "Price": "15000",
+    "Category": "일식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "츠케멘",
+    "Price": "11000",
+    "Category": "일식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "히레카츠",
+    "Price": "10000",
+    "Category": "일식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "사시미 정식",
+    "Price": "30000",
+    "Category": "일식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "마구로 덮밥",
+    "Price": "17000",
+    "Category": "일식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "텐자루 소바",
+    "Price": "10000",
+    "Category": "일식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "매운 돈코츠 라멘",
+    "Price": "12000",
+    "Category": "일식",
+    "Calorie_Level": "High",
+    "Spiciness": "3",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "명란 파스타",
+    "Price": "14000",
+    "Category": "일식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "네기토로 덮밥",
+    "Price": "19000",
+    "Category": "일식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "가라아게 덮밥",
+    "Price": "9500",
+    "Category": "일식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "오야코동",
+    "Price": "8500",
+    "Category": "일식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "장어 덮밥(우나기동)",
+    "Price": "28000",
+    "Category": "일식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "새우튀김(단품)",
+    "Price": "4000",
+    "Category": "일식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "하이라이스",
+    "Price": "8000",
+    "Category": "일식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "믹스동",
+    "Price": "11000",
+    "Category": "일식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "봉골레 리조또",
+    "Price": "17000",
+    "Category": "양식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "2",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "해산물 피자",
+    "Price": "23000",
+    "Category": "양식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "버섯 크림 파스타",
+    "Price": "16000",
+    "Category": "양식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "콰트로 포르마지 피자",
+    "Price": "24000",
+    "Category": "양식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "볼로네제 파스타",
+    "Price": "15000",
+    "Category": "양식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "양갈비 스테이크",
+    "Price": "45000",
+    "Category": "양식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "루꼴라 피자",
+    "Price": "21000",
+    "Category": "양식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "클램차우더 수프",
+    "Price": "8000",
+    "Category": "양식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "해산물 샐러드",
+    "Price": "14000",
+    "Category": "양식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "새우 로제 리조또",
+    "Price": "17000",
+    "Category": "양식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "비프 타르타르",
+    "Price": "20000",
+    "Category": "양식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "아마트리치아나 파스타",
+    "Price": "14000",
+    "Category": "양식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "3",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "콥 샐러드",
+    "Price": "11000",
+    "Category": "양식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "수비드 치킨 샌드위치",
+    "Price": "9000",
+    "Category": "양식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "랍스터 비스크 수프",
+    "Price": "12000",
+    "Category": "양식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "마카로니 치즈",
+    "Price": "10000",
+    "Category": "양식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "포테이토 피자",
+    "Price": "19000",
+    "Category": "양식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "부라타 치즈 샐러드",
+    "Price": "16000",
+    "Category": "양식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "아라비아따 파스타",
+    "Price": "13000",
+    "Category": "양식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "4",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "떡꼬치",
+    "Price": "3000",
+    "Category": "분식",
+    "Calorie_Level": "Low",
+    "Spiciness": "2",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "순대 곱창 볶음",
+    "Price": "15000",
+    "Category": "분식",
+    "Calorie_Level": "High",
+    "Spiciness": "4",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "납작 만두",
+    "Price": "5500",
+    "Category": "분식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "군밤",
+    "Price": "4000",
+    "Category": "분식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "닭강정(컵)",
+    "Price": "5000",
+    "Category": "분식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "2",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "잔치 국수(멸치)",
+    "Price": "6000",
+    "Category": "분식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "고구마튀김",
+    "Price": "3000",
+    "Category": "분식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "튀김만두",
+    "Price": "4500",
+    "Category": "분식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "쫄볶이",
+    "Price": "7500",
+    "Category": "분식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "3",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "충무김밥",
+    "Price": "6000",
+    "Category": "분식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "오뎅탕(얼큰)",
+    "Price": "8500",
+    "Category": "분식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "3",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "컵떡볶이",
+    "Price": "3000",
+    "Category": "분식",
+    "Calorie_Level": "Low",
+    "Spiciness": "2",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "닭발",
+    "Price": "15000",
+    "Category": "분식",
+    "Calorie_Level": "High",
+    "Spiciness": "5",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "잡채밥",
+    "Price": "8500",
+    "Category": "분식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "김치우동",
+    "Price": "7000",
+    "Category": "분식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "3",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "소떡소떡",
+    "Price": "3500",
+    "Category": "분식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "부산 어묵",
+    "Price": "2000",
+    "Category": "분식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "닭고기 카레라이스",
+    "Price": "9000",
+    "Category": "기타",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "칠리 콘 카르네",
+    "Price": "12000",
+    "Category": "기타",
+    "Calorie_Level": "High",
+    "Spiciness": "3",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "엔칠라다",
+    "Price": "11000",
+    "Category": "기타",
+    "Calorie_Level": "Mid",
+    "Spiciness": "2",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "파히타",
+    "Price": "25000",
+    "Category": "기타",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "베이컨 에그 토스트",
+    "Price": "5000",
+    "Category": "기타",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "난(버터)",
+    "Price": "3000",
+    "Category": "기타",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "샤와르마",
+    "Price": "9000",
+    "Category": "기타",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "분짜",
+    "Price": "10000",
+    "Category": "기타",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "수제 버거",
+    "Price": "13000",
+    "Category": "기타",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "아보카도 샐러드",
+    "Price": "11000",
+    "Category": "기타",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "후무스",
+    "Price": "7000",
+    "Category": "기타",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "필리 치즈 스테이크",
+    "Price": "14000",
+    "Category": "기타",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "미고랭",
+    "Price": "9500",
+    "Category": "기타",
+    "Calorie_Level": "Mid",
+    "Spiciness": "2",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "코울슬로",
+    "Price": "4000",
+    "Category": "기타",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "BLT 샌드위치",
+    "Price": "7000",
+    "Category": "기타",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "하와이안 쉬림프",
+    "Price": "15000",
+    "Category": "기타",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "클럽 샌드위치",
+    "Price": "8000",
+    "Category": "기타",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "에그마요 샌드위치",
+    "Price": "5500",
+    "Category": "기타",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "고구마튀김(칩)",
+    "Price": "4500",
+    "Category": "기타",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "갈비찜",
+    "Price": "22000",
+    "Category": "한식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "전복죽",
+    "Price": "15000",
+    "Category": "한식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "삼치구이",
+    "Price": "12000",
+    "Category": "한식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "김치전",
+    "Price": "10000",
+    "Category": "한식",
+    "Calorie_Level": "High",
+    "Spiciness": "2",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "육회",
+    "Price": "20000",
+    "Category": "한식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "곱창 볶음밥",
+    "Price": "11000",
+    "Category": "한식",
+    "Calorie_Level": "High",
+    "Spiciness": "3",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "황태 해장국",
+    "Price": "9000",
+    "Category": "한식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "민물 매운탕",
+    "Price": "17000",
+    "Category": "한식",
+    "Calorie_Level": "High",
+    "Spiciness": "4",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "떡볶이(궁중)",
+    "Price": "11000",
+    "Category": "한식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "닭개장",
+    "Price": "10000",
+    "Category": "한식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "4",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "도가니탕",
+    "Price": "16000",
+    "Category": "한식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "열무 국수",
+    "Price": "7000",
+    "Category": "한식",
+    "Calorie_Level": "Low",
+    "Spiciness": "2",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "동태찌개",
+    "Price": "9500",
+    "Category": "한식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "3",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "비빔냉면",
+    "Price": "9500",
+    "Category": "한식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "3",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "해물 순두부",
+    "Price": "10000",
+    "Category": "한식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "2",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "오징어 볶음",
+    "Price": "12000",
+    "Category": "한식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "4",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "닭곰탕",
+    "Price": "9000",
+    "Category": "한식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "고등어조림",
+    "Price": "13000",
+    "Category": "한식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "2",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "묵사발",
+    "Price": "7000",
+    "Category": "한식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "낙지 덮밥",
+    "Price": "13500",
+    "Category": "한식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "4",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "사천 탕면",
+    "Price": "10000",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "3",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "깐풍새우",
+    "Price": "24000",
+    "Category": "중식",
+    "Calorie_Level": "High",
+    "Spiciness": "3",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "해삼탕",
+    "Price": "35000",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "마늘 볶음밥",
+    "Price": "8000",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "멘보샤",
+    "Price": "18000",
+    "Category": "중식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "유니 짜장",
+    "Price": "8000",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "물만두(매콤)",
+    "Price": "5000",
+    "Category": "중식",
+    "Calorie_Level": "Low",
+    "Spiciness": "2",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "삼선 짬뽕",
+    "Price": "11000",
+    "Category": "중식",
+    "Calorie_Level": "High",
+    "Spiciness": "4",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "딤섬(하가우)",
+    "Price": "7500",
+    "Category": "중식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "마라 국수",
+    "Price": "11000",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "4",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "찹쌀 탕수육",
+    "Price": "20000",
+    "Category": "중식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "차슈 덮밥",
+    "Price": "12000",
+    "Category": "중식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "부추 만두",
+    "Price": "6000",
+    "Category": "중식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "새우 볶음면",
+    "Price": "9000",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "궁중 탕수육",
+    "Price": "21000",
+    "Category": "중식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "백짬뽕",
+    "Price": "10000",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "2",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "마라 소고기 볶음",
+    "Price": "14000",
+    "Category": "중식",
+    "Calorie_Level": "High",
+    "Spiciness": "5",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "중국식 냉채",
+    "Price": "16000",
+    "Category": "중식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "딤섬(춘권)",
+    "Price": "6000",
+    "Category": "중식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "연어 초밥",
+    "Price": "18000",
+    "Category": "일식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "장어 초밥",
+    "Price": "22000",
+    "Category": "일식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "소고기 타다키",
+    "Price": "20000",
+    "Category": "일식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "닭꼬치(일식)",
+    "Price": "3000",
+    "Category": "일식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "모듬 꼬치",
+    "Price": "15000",
+    "Category": "일식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "새우 덴뿌라",
+    "Price": "10000",
+    "Category": "일식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "냉우동",
+    "Price": "7000",
+    "Category": "일식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "탄탄멘",
+    "Price": "10500",
+    "Category": "일식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "3",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "믹스 카츠",
+    "Price": "11000",
+    "Category": "일식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "우메보시 오니기리",
+    "Price": "3500",
+    "Category": "일식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "김치 나베",
+    "Price": "12000",
+    "Category": "일식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "2",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "튀김(단호박)",
+    "Price": "3000",
+    "Category": "일식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "참치 주먹밥",
+    "Price": "4500",
+    "Category": "일식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "매운 카레",
+    "Price": "9000",
+    "Category": "일식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "3",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "아나고 덮밥",
+    "Price": "20000",
+    "Category": "일식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "튀김우동",
+    "Price": "8500",
+    "Category": "일식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "에비 후라이",
+    "Price": "13000",
+    "Category": "일식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "와규 스테이크",
+    "Price": "45000",
+    "Category": "일식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "치킨 가라아게",
+    "Price": "8000",
+    "Category": "일식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "미트볼",
+    "Price": "11000",
+    "Category": "양식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "시금치 크림 파스타",
+    "Price": "16500",
+    "Category": "양식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "고르곤졸라 리조또",
+    "Price": "17000",
+    "Category": "양식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "새우 베이컨 피자",
+    "Price": "22000",
+    "Category": "양식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "버섯 라자냐",
+    "Price": "19000",
+    "Category": "양식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "T-본 스테이크",
+    "Price": "50000",
+    "Category": "양식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "머쉬룸 수프",
+    "Price": "7000",
+    "Category": "양식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "오징어 먹물 파스타",
+    "Price": "18000",
+    "Category": "양식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "치즈 샌드위치",
+    "Price": "6000",
+    "Category": "양식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "해산물 뚝배기 파스타",
+    "Price": "16000",
+    "Category": "양식",
+    "Calorie_Level": "High",
+    "Spiciness": "3",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "양파 수프",
+    "Price": "8000",
+    "Category": "양식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "닭가슴살 리조또",
+    "Price": "15000",
+    "Category": "양식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "프로슈토 피자",
+    "Price": "24000",
+    "Category": "양식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "미니 버거",
+    "Price": "9000",
+    "Category": "양식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "참치 타르타르",
+    "Price": "18000",
+    "Category": "양식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "크림 뇨끼",
+    "Price": "18000",
+    "Category": "양식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "페스토 파스타",
+    "Price": "15000",
+    "Category": "양식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "감자 수프",
+    "Price": "6500",
+    "Category": "양식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "스모크 살몬 샐러드",
+    "Price": "12000",
+    "Category": "양식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "떡볶이(짜장)",
+    "Price": "7000",
+    "Category": "분식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "튀김(만두)",
+    "Price": "3000",
+    "Category": "분식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "오징어 튀김",
+    "Price": "4000",
+    "Category": "분식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "꼬치 어묵",
+    "Price": "3000",
+    "Category": "분식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "떡볶이(매운)",
+    "Price": "6000",
+    "Category": "분식",
+    "Calorie_Level": "High",
+    "Spiciness": "4",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "참치 샌드위치",
+    "Price": "5500",
+    "Category": "분식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "라면(치즈)",
+    "Price": "4500",
+    "Category": "분식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "2",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "군고구마",
+    "Price": "5000",
+    "Category": "분식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "김밥(채소)",
+    "Price": "3500",
+    "Category": "분식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "순대(간)",
+    "Price": "7000",
+    "Category": "분식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "어묵 국수",
+    "Price": "6500",
+    "Category": "분식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "핫도그",
+    "Price": "4000",
+    "Category": "분식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "쫄면(비빔)",
+    "Price": "6500",
+    "Category": "분식",
+    "Calorie_Level": "Low",
+    "Spiciness": "4",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "만두(김치)",
+    "Price": "5000",
+    "Category": "분식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "2",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "컵라면",
+    "Price": "2000",
+    "Category": "분식",
+    "Calorie_Level": "Low",
+    "Spiciness": "2",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "계란 샌드위치",
+    "Price": "4500",
+    "Category": "분식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "튀김(고추)",
+    "Price": "3500",
+    "Category": "분식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "3",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "치킨 랩",
+    "Price": "7000",
+    "Category": "기타",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "과카몰리",
+    "Price": "8000",
+    "Category": "기타",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "브리또 볼",
+    "Price": "10000",
+    "Category": "기타",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "포 스프링롤",
+    "Price": "6000",
+    "Category": "기타",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "탄두리 치킨",
+    "Price": "15000",
+    "Category": "기타",
+    "Calorie_Level": "High",
+    "Spiciness": "2",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "양갈비 꼬치",
+    "Price": "18000",
+    "Category": "기타",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "분 쌀국수",
+    "Price": "9500",
+    "Category": "기타",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "더블 패티 버거",
+    "Price": "15000",
+    "Category": "기타",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "닭가슴살 랩",
+    "Price": "8500",
+    "Category": "기타",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "팔라펠",
+    "Price": "7500",
+    "Category": "기타",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "케밥(양고기)",
+    "Price": "10000",
+    "Category": "기타",
+    "Calorie_Level": "Mid",
+    "Spiciness": "2",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "가도 가도",
+    "Price": "9000",
+    "Category": "기타",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "양파 튀김",
+    "Price": "5000",
+    "Category": "기타",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "햄 치즈 샌드위치",
+    "Price": "6000",
+    "Category": "기타",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "타코",
+    "Price": "11000",
+    "Category": "기타",
+    "Calorie_Level": "Mid",
+    "Spiciness": "2",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "닭고기 수프",
+    "Price": "7000",
+    "Category": "기타",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "고구마 스틱",
+    "Price": "4000",
+    "Category": "기타",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "보쌈 김치찌개",
+    "Price": "14000",
+    "Category": "한식",
+    "Calorie_Level": "High",
+    "Spiciness": "3",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "낙지 전골",
+    "Price": "22000",
+    "Category": "한식",
+    "Calorie_Level": "High",
+    "Spiciness": "4",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "김칫국",
+    "Price": "6000",
+    "Category": "한식",
+    "Calorie_Level": "Low",
+    "Spiciness": "2",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "생선구이 정식",
+    "Price": "15000",
+    "Category": "한식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "닭백숙",
+    "Price": "30000",
+    "Category": "한식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "묵은지 닭볶음탕",
+    "Price": "13000",
+    "Category": "한식",
+    "Calorie_Level": "High",
+    "Spiciness": "4",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "순대국밥",
+    "Price": "9500",
+    "Category": "한식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "전주 비빔밥",
+    "Price": "9000",
+    "Category": "한식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "2",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "해물 된장찌개",
+    "Price": "8500",
+    "Category": "한식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "버섯 들깨탕",
+    "Price": "10000",
+    "Category": "한식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "콩비지찌개",
+    "Price": "8000",
+    "Category": "한식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "안동찜닭",
+    "Price": "18000",
+    "Category": "한식",
+    "Calorie_Level": "High",
+    "Spiciness": "2",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "오징어 숙회",
+    "Price": "15000",
+    "Category": "한식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "새싹 비빔밥",
+    "Price": "7500",
+    "Category": "한식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "삼겹살 김치찜",
+    "Price": "11000",
+    "Category": "한식",
+    "Calorie_Level": "High",
+    "Spiciness": "3",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "영양 돌솥밥",
+    "Price": "12000",
+    "Category": "한식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "물회",
+    "Price": "14000",
+    "Category": "한식",
+    "Calorie_Level": "Low",
+    "Spiciness": "2",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "버섯 칼국수",
+    "Price": "8500",
+    "Category": "한식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "소고기 무국",
+    "Price": "7000",
+    "Category": "한식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "해물 짜장",
+    "Price": "9000",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "고추 잡채밥",
+    "Price": "10000",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "3",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "닭고기 볶음밥",
+    "Price": "8500",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "꽃빵 튀김",
+    "Price": "5000",
+    "Category": "중식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "딤섬(새우)",
+    "Price": "7000",
+    "Category": "중식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "동파육",
+    "Price": "28000",
+    "Category": "중식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "매운 짬뽕",
+    "Price": "12000",
+    "Category": "중식",
+    "Calorie_Level": "High",
+    "Spiciness": "5",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "중국식 만두 전골",
+    "Price": "15000",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "2",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "토마토 새우 볶음",
+    "Price": "11000",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "사천식 닭볶음",
+    "Price": "17000",
+    "Category": "중식",
+    "Calorie_Level": "High",
+    "Spiciness": "4",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "마라 국수(볶음)",
+    "Price": "12000",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "4",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "해물 철판 볶음밥",
+    "Price": "10000",
+    "Category": "중식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "냉채 족발",
+    "Price": "20000",
+    "Category": "중식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "탕수육(찹쌀)",
+    "Price": "21000",
+    "Category": "중식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "소고기 짬뽕",
+    "Price": "13000",
+    "Category": "중식",
+    "Calorie_Level": "High",
+    "Spiciness": "4",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "딤섬(부추)",
+    "Price": "6500",
+    "Category": "중식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "간짜장",
+    "Price": "8000",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "새우 볶음밥",
+    "Price": "9000",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "참치 뱃살 초밥",
+    "Price": "25000",
+    "Category": "일식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "우니 덮밥",
+    "Price": "35000",
+    "Category": "일식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "모듬 튀김 덮밥",
+    "Price": "14000",
+    "Category": "일식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "타코와사비",
+    "Price": "8000",
+    "Category": "일식",
+    "Calorie_Level": "Low",
+    "Spiciness": "2",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "야키토리",
+    "Price": "3000",
+    "Category": "일식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "새우튀김 카레",
+    "Price": "11000",
+    "Category": "일식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "소바(온)",
+    "Price": "8000",
+    "Category": "일식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "매운 탄탄멘",
+    "Price": "12000",
+    "Category": "일식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "4",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "치즈 카츠",
+    "Price": "12000",
+    "Category": "일식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "명란 주먹밥",
+    "Price": "4000",
+    "Category": "일식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "해물 나베",
+    "Price": "16000",
+    "Category": "일식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "2",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "고로케",
+    "Price": "3000",
+    "Category": "일식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "삼겹살 덮밥(일식)",
+    "Price": "10000",
+    "Category": "일식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "연어 샐러드",
+    "Price": "14000",
+    "Category": "일식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "마구로 초밥",
+    "Price": "20000",
+    "Category": "일식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "미역 우동",
+    "Price": "7500",
+    "Category": "일식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "에비카츠 샌드",
+    "Price": "9000",
+    "Category": "일식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "참치 샐러드",
+    "Price": "12000",
+    "Category": "일식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "문어 초회",
+    "Price": "15000",
+    "Category": "일식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "닭고기 카레",
+    "Price": "9000",
+    "Category": "일식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "트러플 오일 파스타",
+    "Price": "19000",
+    "Category": "양식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "포르치니 버섯 리조또",
+    "Price": "18000",
+    "Category": "양식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "해산물 토마토 파스타",
+    "Price": "16000",
+    "Category": "양식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "시금치 피자",
+    "Price": "20000",
+    "Category": "양식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "까망베르 치즈 샐러드",
+    "Price": "15000",
+    "Category": "양식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "안심 스테이크",
+    "Price": "48000",
+    "Category": "양식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "양송이 수프",
+    "Price": "6000",
+    "Category": "양식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "쉬림프 알리오 올리오",
+    "Price": "15000",
+    "Category": "양식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "2",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "에그 베네딕트",
+    "Price": "12000",
+    "Category": "양식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "크림 브륄레",
+    "Price": "9000",
+    "Category": "양식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "포모도로 파스타",
+    "Price": "13000",
+    "Category": "양식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "버섯 샐러드",
+    "Price": "10000",
+    "Category": "양식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "고구마 피자",
+    "Price": "21000",
+    "Category": "양식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "치즈 버거",
+    "Price": "8000",
+    "Category": "양식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "마늘 바게트",
+    "Price": "5000",
+    "Category": "양식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "해산물 파스타(매콤)",
+    "Price": "17000",
+    "Category": "양식",
+    "Calorie_Level": "High",
+    "Spiciness": "3",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "닭가슴살 샌드위치",
+    "Price": "7000",
+    "Category": "양식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "토마토 수프",
+    "Price": "7000",
+    "Category": "양식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "고구마 튀김",
+    "Price": "5000",
+    "Category": "양식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "잔치국수(비빔)",
+    "Price": "7500",
+    "Category": "분식",
+    "Calorie_Level": "Low",
+    "Spiciness": "3",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "튀김(김말이)",
+    "Price": "3000",
+    "Category": "분식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "떡볶이(카레)",
+    "Price": "7500",
+    "Category": "분식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "컵밥(불고기)",
+    "Price": "6000",
+    "Category": "분식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "만두국(김치)",
+    "Price": "7500",
+    "Category": "분식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "2",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "냉면(함흥)",
+    "Price": "10000",
+    "Category": "분식",
+    "Calorie_Level": "Low",
+    "Spiciness": "2",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "비빔 만두",
+    "Price": "6500",
+    "Category": "분식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "3",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "오징어 볶음밥",
+    "Price": "8500",
+    "Category": "분식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "3",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "튀김(새우)",
+    "Price": "4000",
+    "Category": "분식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "꼬마김밥(매콤)",
+    "Price": "5500",
+    "Category": "분식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "2",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "라면(해물)",
+    "Price": "5000",
+    "Category": "분식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "3",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "떡볶이(모듬)",
+    "Price": "9000",
+    "Category": "분식",
+    "Calorie_Level": "High",
+    "Spiciness": "3",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "순대(섞어)",
+    "Price": "8000",
+    "Category": "분식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "만두(새우)",
+    "Price": "6000",
+    "Category": "분식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "감자 튀김",
+    "Price": "4500",
+    "Category": "분식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "오뎅(매운)",
+    "Price": "3500",
+    "Category": "분식",
+    "Calorie_Level": "Low",
+    "Spiciness": "2",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "양상추 랩",
+    "Price": "7000",
+    "Category": "기타",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "나초",
+    "Price": "6000",
+    "Category": "기타",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "타코 라이스",
+    "Price": "10000",
+    "Category": "기타",
+    "Calorie_Level": "Mid",
+    "Spiciness": "2",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "똠양꿍",
+    "Price": "12000",
+    "Category": "기타",
+    "Calorie_Level": "Mid",
+    "Spiciness": "4",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "스프링롤",
+    "Price": "5000",
+    "Category": "기타",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "커리(닭고기)",
+    "Price": "14000",
+    "Category": "기타",
+    "Calorie_Level": "High",
+    "Spiciness": "2",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "미트볼 서브",
+    "Price": "9000",
+    "Category": "기타",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "베지 버거",
+    "Price": "8000",
+    "Category": "기타",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "닭고기 시저 샐러드",
+    "Price": "11000",
+    "Category": "기타",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "후렌치 파이",
+    "Price": "4000",
+    "Category": "기타",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "케밥(닭고기)",
+    "Price": "8500",
+    "Category": "기타",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "인도네시아 볶음밥",
+    "Price": "9500",
+    "Category": "기타",
+    "Calorie_Level": "Mid",
+    "Spiciness": "2",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "아보카도 토스트",
+    "Price": "7000",
+    "Category": "기타",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "와플",
+    "Price": "5000",
+    "Category": "기타",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "치즈 퀘사디아",
+    "Price": "9000",
+    "Category": "기타",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "튜나 샌드위치",
+    "Price": "6500",
+    "Category": "기타",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "클럽 샌드위치",
+    "Price": "8000",
+    "Category": "기타",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "해물찜",
+    "Price": "25000",
+    "Category": "한식",
+    "Calorie_Level": "High",
+    "Spiciness": "5",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "녹두 빈대떡",
+    "Price": "12000",
+    "Category": "한식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "김치전골",
+    "Price": "18000",
+    "Category": "한식",
+    "Calorie_Level": "High",
+    "Spiciness": "3",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "장어구이 정식",
+    "Price": "28000",
+    "Category": "한식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "버섯 매운탕",
+    "Price": "15000",
+    "Category": "한식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "3",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "오리 불고기",
+    "Price": "16000",
+    "Category": "한식",
+    "Calorie_Level": "High",
+    "Spiciness": "2",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "육개장 칼국수",
+    "Price": "10500",
+    "Category": "한식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "4",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "들깨 칼국수",
+    "Price": "8500",
+    "Category": "한식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "수제비(들깨)",
+    "Price": "8000",
+    "Category": "한식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "꼬리곰탕",
+    "Price": "20000",
+    "Category": "한식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "닭갈비",
+    "Price": "12000",
+    "Category": "한식",
+    "Calorie_Level": "High",
+    "Spiciness": "3",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "도토리묵",
+    "Price": "9000",
+    "Category": "한식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "낚지 덮밥",
+    "Price": "14000",
+    "Category": "한식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "4",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "콩국수(검은콩)",
+    "Price": "9500",
+    "Category": "한식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "양푼이 비빔밥",
+    "Price": "7000",
+    "Category": "한식",
+    "Calorie_Level": "Low",
+    "Spiciness": "2",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "삼치조림",
+    "Price": "13000",
+    "Category": "한식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "2",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "북어 해장국",
+    "Price": "8500",
+    "Category": "한식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "뼈다귀 해장국",
+    "Price": "10000",
+    "Category": "한식",
+    "Calorie_Level": "High",
+    "Spiciness": "3",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "물냉면",
+    "Price": "9000",
+    "Category": "한식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "육전",
+    "Price": "18000",
+    "Category": "한식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "유린면",
+    "Price": "11000",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "2",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "팔보채 덮밥",
+    "Price": "12000",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "고추 잡채 볶음면",
+    "Price": "11000",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "3",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "새우 딤섬",
+    "Price": "7000",
+    "Category": "중식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "마라 쌀국수",
+    "Price": "10000",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "4",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "탕수육(꿔바로우)",
+    "Price": "22000",
+    "Category": "중식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "소고기 볶음밥",
+    "Price": "9500",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "해물 누룽지탕",
+    "Price": "17000",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "토마토 짬뽕",
+    "Price": "11000",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "2",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "깐풍우육",
+    "Price": "25000",
+    "Category": "중식",
+    "Calorie_Level": "High",
+    "Spiciness": "3",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "짜장밥",
+    "Price": "7500",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "중국식 샐러드",
+    "Price": "12000",
+    "Category": "중식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "부추 계란 볶음",
+    "Price": "8000",
+    "Category": "중식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "우육면",
+    "Price": "10000",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "새우 만두",
+    "Price": "6000",
+    "Category": "중식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "마파 가지 덮밥",
+    "Price": "9000",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "2",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "깐풍두부",
+    "Price": "15000",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "2",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "돼지고기 볶음밥",
+    "Price": "8500",
+    "Category": "중식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "참치 회덮밥",
+    "Price": "16000",
+    "Category": "일식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "2",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "연어 뱃살 초밥",
+    "Price": "22000",
+    "Category": "일식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "믹스 튀김",
+    "Price": "11000",
+    "Category": "일식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "새우 튀김",
+    "Price": "4000",
+    "Category": "일식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "모츠나베",
+    "Price": "15000",
+    "Category": "일식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "츠케멘(매운)",
+    "Price": "12000",
+    "Category": "일식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "3",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "닭고기 카츠",
+    "Price": "9000",
+    "Category": "일식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "참치 마키",
+    "Price": "5000",
+    "Category": "일식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "가츠 카레",
+    "Price": "10000",
+    "Category": "일식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "해물 야끼소바",
+    "Price": "12000",
+    "Category": "일식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "카이센동",
+    "Price": "25000",
+    "Category": "일식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "고로케(크림)",
+    "Price": "3500",
+    "Category": "일식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "명란 마요 덮밥",
+    "Price": "9000",
+    "Category": "일식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "미니 우동",
+    "Price": "5000",
+    "Category": "일식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "매운 참치 덮밥",
+    "Price": "14000",
+    "Category": "일식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "3",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "튀김(새우)",
+    "Price": "4000",
+    "Category": "일식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "소고기 덮밥",
+    "Price": "10000",
+    "Category": "일식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "닭고기 데리야끼",
+    "Price": "11000",
+    "Category": "일식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "연어 초밥(불)",
+    "Price": "19000",
+    "Category": "일식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "크림 새우 파스타",
+    "Price": "17000",
+    "Category": "양식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "버섯 트러플 리조또",
+    "Price": "19000",
+    "Category": "양식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "엔쵸비 파스타",
+    "Price": "14000",
+    "Category": "양식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "페퍼로니 피자(매콤)",
+    "Price": "22000",
+    "Category": "양식",
+    "Calorie_Level": "High",
+    "Spiciness": "2",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "닭가슴살 샐러드",
+    "Price": "10000",
+    "Category": "양식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "채끝살 스테이크",
+    "Price": "40000",
+    "Category": "양식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "양파 수프(프렌치)",
+    "Price": "9000",
+    "Category": "양식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "해산물 로제 파스타",
+    "Price": "17500",
+    "Category": "양식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "치즈 오믈렛",
+    "Price": "10000",
+    "Category": "양식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "파스타(매운)",
+    "Price": "15000",
+    "Category": "양식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "4",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "단호박 수프",
+    "Price": "7000",
+    "Category": "양식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "고구마 크림 피자",
+    "Price": "20000",
+    "Category": "양식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "버섯 버거",
+    "Price": "9000",
+    "Category": "양식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "갈릭 브레드",
+    "Price": "4000",
+    "Category": "양식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "미트소스 라자냐",
+    "Price": "18000",
+    "Category": "양식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "햄 치즈 오믈렛",
+    "Price": "11000",
+    "Category": "양식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "클래식 시저 샐러드",
+    "Price": "9000",
+    "Category": "양식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "가지 라자냐",
+    "Price": "17000",
+    "Category": "양식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "쫄면(매운)",
+    "Price": "7000",
+    "Category": "분식",
+    "Calorie_Level": "High",
+    "Spiciness": "5",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "김치만두",
+    "Price": "5000",
+    "Category": "분식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "2",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "튀김(야채)",
+    "Price": "2500",
+    "Category": "분식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "컵떡볶이(치즈)",
+    "Price": "4000",
+    "Category": "분식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "2",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "순대",
+    "Price": "7000",
+    "Category": "분식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "잔치 국수(멸치)",
+    "Price": "6000",
+    "Category": "분식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "오징어 튀김(매콤)",
+    "Price": "4500",
+    "Category": "분식",
+    "Calorie_Level": "High",
+    "Spiciness": "2",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "만둣국",
+    "Price": "7000",
+    "Category": "분식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "짜파게티",
+    "Price": "4000",
+    "Category": "분식",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "라면(떡)",
+    "Price": "4500",
+    "Category": "분식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "3",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "튀김(고구마)",
+    "Price": "3000",
+    "Category": "분식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "김치말이 국수",
+    "Price": "6500",
+    "Category": "분식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "쫄볶이(치즈)",
+    "Price": "8000",
+    "Category": "분식",
+    "Calorie_Level": "High",
+    "Spiciness": "3",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "순대(찹쌀)",
+    "Price": "7000",
+    "Category": "분식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "떡볶이(어묵)",
+    "Price": "5500",
+    "Category": "분식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "3",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "꼬마김밥(날치알)",
+    "Price": "6000",
+    "Category": "분식",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "물냉면(비빔)",
+    "Price": "9500",
+    "Category": "분식",
+    "Calorie_Level": "Mid",
+    "Spiciness": "3",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "양상추 샐러드",
+    "Price": "6000",
+    "Category": "기타",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "퀘사디아(닭고기)",
+    "Price": "11000",
+    "Category": "기타",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "칠리 치즈 감자튀김",
+    "Price": "7000",
+    "Category": "기타",
+    "Calorie_Level": "High",
+    "Spiciness": "2",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "베트남 볶음밥",
+    "Price": "9000",
+    "Category": "기타",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "짜조",
+    "Price": "6000",
+    "Category": "기타",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "커리(양고기)",
+    "Price": "16000",
+    "Category": "기타",
+    "Calorie_Level": "High",
+    "Spiciness": "2",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "파니니(햄 치즈)",
+    "Price": "8500",
+    "Category": "기타",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "쌀국수(매운)",
+    "Price": "10000",
+    "Category": "기타",
+    "Calorie_Level": "Mid",
+    "Spiciness": "3",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "치킨 텐더",
+    "Price": "7000",
+    "Category": "기타",
+    "Calorie_Level": "High",
+    "Spiciness": "1",
+    "Recommended_Age": "10s"
+  },
+  {
+    "Menu_Name": "콥 샐러드",
+    "Price": "12000",
+    "Category": "기타",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "감자 수프",
+    "Price": "6000",
+    "Category": "기타",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "불고기 타코",
+    "Price": "11000",
+    "Category": "기타",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "인도 커리(비건)",
+    "Price": "13000",
+    "Category": "기타",
+    "Calorie_Level": "Mid",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "샐러드 파스타(닭)",
+    "Price": "14000",
+    "Category": "기타",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "토마토 브루스케타",
+    "Price": "7000",
+    "Category": "기타",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "멕시칸 부리또",
+    "Price": "9000",
+    "Category": "기타",
+    "Calorie_Level": "High",
+    "Spiciness": "2",
+    "Recommended_Age": "20s"
+  },
+  {
+    "Menu_Name": "샌드위치(야채)",
+    "Price": "5000",
+    "Category": "기타",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "30s"
+  },
+  {
+    "Menu_Name": "참치 샌드위치",
+    "Price": "6500",
+    "Category": "기타",
+    "Calorie_Level": "Low",
+    "Spiciness": "1",
+    "Recommended_Age": "40s"
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  },
+  {
+    "Menu_Name": "",
+    "Price": "",
+    "Category": "",
+    "Calorie_Level": "",
+    "Spiciness": "",
+    "Recommended_Age": ""
+  }
+]
