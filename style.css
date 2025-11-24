@@ -1,0 +1,138 @@
+/* 전체 폰트 및 배경 */
+body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+/* 메인 컨테이너 (카드 형태) */
+.container {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px; /* 더 둥글게 */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
+    width: 100%;
+    max-width: 420px;
+    transition: transform 0.3s ease;
+}
+
+/* 제목 스타일 */
+h1 {
+    color: #1a1a1a;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* 입력 라벨 */
+label {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+    font-size: 14px;
+}
+
+/* 드롭다운 박스 꾸미기 */
+select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e1e4e8;
+    border-radius: 12px;
+    font-size: 16px;
+    background-color: #f9fafb;
+    transition: all 0.2s;
+    appearance: none; /* 기본 화살표 제거 (선택사항) */
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+}
+
+select:focus {
+    outline: none;
+    border-color: #007bff;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+/* 버튼 스타일 (그라데이션 & 효과) */
+button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 35px;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* 결과창 스타일 */
+.result {
+    margin-top: 30px;
+    padding: 25px;
+    background-color: #f8f9fa;
+    border-radius: 15px;
+    border: 1px solid #e9ecef;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* 결과 강조 텍스트 */
+.result h2 {
+    color: #333;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.highlight {
+    color: #007bff;
+    font-weight: 800;
+    font-size: 1.2em;
+}
+
+.result p {
+    margin: 8px 0;
+    color: #666;
+    font-size: 15px;
+}
+
+/* 애니메이션 효과 */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 로딩 중일 때 깜빡임 효과 */
+.loading {
+    color: #888;
+    font-style: italic;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
