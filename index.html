@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>밥줘 AI - 메뉴 추천 서비스</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>🍽️ 밥줘 AI 맞춤 메뉴 추천</h1>
+        <form id="recommendationForm">
+            <label for="category">원하는 메뉴 카테고리:</label>
+            <select id="category" name="category" required>
+                <option value="" disabled selected>선택하세요</option>
+                <option value="한식">한식</option>
+                <option value="중식">중식</option>
+                <option value="일식">일식</option>
+                <option value="양식">양식</option>
+                <option value="분식">분식</option>
+                <option value="기타">기타</option>
+            </select>
+
+            <label for="age">당신의 연령대:</label>
+            <select id="age" name="age" required>
+                <option value="" disabled selected>선택하세요</option>
+                <option value="10s">10대</option>
+                <option value="20s">20대</option>
+                <option value="30s">30대</option>
+                <option value="40s">40대 이상</option>
+            </select>
+
+            <label for="budget">예상 예산 범위:</label>
+            <select id="budget" name="budget" required>
+                <option value="" disabled selected>선택하세요</option>
+                <option value="Low">저예산 (1만원 이하)</option>
+                <option value="Mid">중간 예산 (1만원 ~ 2만원)</option>
+                <option value="High">고예산 (2만원 초과)</option>
+            </select>
+
+            <button type="submit">메뉴 추천받기</button>
+        </form>
+
+        <div id="resultContainer" class="result">
+        </div>
+    </div>
+
+    <script>
+        // ============================================================
+        // ⚠️ [중요] GitHub에서 따온 Raw 주소를 아래 따옴표 안에 넣어주세요!
+        // 예시: 'https://raw.githubusercontent.com/아이디/저장소명/main/menu_data.json'
+        // ============================================================
+        const DB_URL = '여기에_GITHUB_RAW_주소를_붙여넣으세요'; 
+
+        const form = document.getElementById('recommendationForm');
+        const resultContainer = document.getElementById('resultContainer');
+
+        // 예산 범위를 숫자로 계산해주는 판독기 함수
+        function checkBudget(price, budgetType) {
+            const p = Number(price); // 가격을 숫자로 확실히 변환
+            if (budgetType === 'Low') return p <= 10000;
+            if (budgetType === 'Mid') return p > 10000 && p <= 20000;
+            if (budgetType === 'High') return p > 20000;
+            return false;
+        }
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            resultContainer.innerHTML = '✨ 전체 메뉴판을 분석 중입니다...';
+
+            // 사용자가 선택한 값 가져오기
+            const selectedCategory = document.getElementById('category').value;
+            const selectedAge = document.getElementById('age').value;
+            const selectedBudget = document.getElementById('budget').value;
+
+            try {
+                // 1. GitHub에서 전체 메뉴판 가져오기 (비용 0원!)
+                const response = await fetch(DB_URL);
+                if (!response.ok) {
+                    throw new Error("DB 파일을 불러올 수 없습니다. URL을 확인해주세요.");
+                }
+                const allMenu = await response.json();
+
+                // 2. 브라우저에서 직접 필터링 (정확도 100%)
+                // 조건: 카테고리 일치 AND 연령대 일치 AND 가격범위 일치
+                const filteredMenu = allMenu.filter(item => {
+                    return item.Category === selectedCategory && 
+                           item.Recommended_Age === selectedAge &&
+                           checkBudget(item.Price, selectedBudget);
+                });
+
+                // 3. 결과 출력
+                if (filteredMenu.length > 0) {
+                    // 조건에 맞는 메뉴 중 랜덤으로 하나 뽑기
+                    const randomPick = filteredMenu[Math.floor(Math.random() * filteredMenu.length)];
+                    
+                    // 가격에 콤마 찍기
+                    const formattedPrice = Number(randomPick.Price).toLocaleString();
+
+                    resultContainer.innerHTML = `
+                        <h2>✅ 추천 메뉴: <span class="highlight">${randomPick.Menu_Name}</span></h2>
+                        <p>카테고리: ${randomPick.Category}</p>
+                        <p>가격: **${formattedPrice}원**</p>
+                        <p>👍 추천 대상: **${randomPick.Recommended_Age}**</p>
+                        <hr>
+                        <p style="font-size:12px; color:gray;">(조건에 맞는 메뉴 ${filteredMenu.length}개 중 랜덤 추천)</p>
+                    `;
+                } else {
+                    // 진짜 데이터가 없을 때
+                    resultContainer.innerHTML = `
+                        <h3>🥲 조건에 맞는 메뉴가 없어요.</h3>
+                        <p>카테고리나 예산을 조금 변경해서 다시 시도해보세요!</p>
+                    `;
+                }
+
+            } catch (error) {
+                console.error('Error:', error);
+                resultContainer.innerHTML = '🚨 데이터 로딩 실패! GitHub 주소를 확인해주세요.';
+            }
+        });
+    </script>
+</body>
+</html>
