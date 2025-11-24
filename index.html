@@ -49,6 +49,7 @@
     <script>
         // ============================================================
         // ⚠️ [중요] GitHub에서 따온 Raw 주소를 아래 따옴표 안에 넣어주세요!
+        // (아까 성공하신 주소 그대로 두시면 됩니다)
         // ============================================================
         const DB_URL = 'https://raw.githubusercontent.com/eatpeoples/eatpeopls-location/main/menu_db.json'; 
 
@@ -93,10 +94,12 @@
                     const randomPick = filteredMenu[Math.floor(Math.random() * filteredMenu.length)];
                     const formattedPrice = Number(randomPick.Price).toLocaleString();
 
-                    // ✅ [추가됨] 네이버/카카오 지도 검색 링크 생성
-                    // '충남대' 부분을 사용자님 학교나 지역명으로 바꾸면 더 정확합니다!
-                    const naverMapUrl = `https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent('충남대 ' + randomPick.Menu_Name)}`;
-                    const kakaoMapUrl = `https://map.kakao.com/link/search/${encodeURIComponent('충남대 ' + randomPick.Menu_Name)}`;
+                    // ✅ [수정됨] 1. 내 위치 기반 검색 (충남대 단어 뺌) -> GPS 사용
+                    const gpsNaverMapUrl = `https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent(randomPick.Menu_Name)}`;
+                    const gpsKakaoMapUrl = `https://map.kakao.com/link/search/${encodeURIComponent(randomPick.Menu_Name)}`;
+
+                    // ✅ [수정됨] 2. 학교 앞 검색 (충남대 단어 포함) -> 고정 위치
+                    const schoolMapUrl = `https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent('충남대 ' + randomPick.Menu_Name)}`;
 
                     resultContainer.innerHTML = `
                         <h2>✅ 추천 메뉴: <span class="highlight">${randomPick.Menu_Name}</span></h2>
@@ -105,16 +108,24 @@
                         <p>👍 추천 대상: **${randomPick.Recommended_Age}**</p>
                         <hr>
                         
-                        <div style="display: flex; gap: 10px; margin-top: 15px;">
-                            <a href="${naverMapUrl}" target="_blank" style="flex:1; text-decoration:none;">
-                                <button style="margin-top:0; background:#03c75a; color:white;">📍 네이버 지도</button>
+                        <p style="font-size:14px; font-weight:bold; margin-bottom:5px; margin-top:15px;">📍 내 주변에서 찾기 (실시간)</p>
+                        <div style="display: flex; gap: 10px;">
+                            <a href="${gpsNaverMapUrl}" target="_blank" style="flex:1; text-decoration:none;">
+                                <button style="margin-top:0; background:#03c75a; color:white;">네이버 지도</button>
                             </a>
-                            <a href="${kakaoMapUrl}" target="_blank" style="flex:1; text-decoration:none;">
-                                <button style="margin-top:0; background:#fee500; color:black;">📍 카카오맵</button>
+                            <a href="${gpsKakaoMapUrl}" target="_blank" style="flex:1; text-decoration:none;">
+                                <button style="margin-top:0; background:#fee500; color:black;">카카오맵</button>
                             </a>
                         </div>
 
-                        <button onclick="shareResult('${randomPick.Menu_Name}')" style="margin-top:10px; background:#555; color:white;">
+                        <p style="font-size:14px; font-weight:bold; margin-bottom:5px; margin-top:15px;">🏫 학교(충남대) 앞에서 찾기</p>
+                         <div style="display: flex; gap: 10px;">
+                             <a href="${schoolMapUrl}" target="_blank" style="flex:1; text-decoration:none;">
+                                <button style="margin-top:0; background:#fff; border:1px solid #ddd; color:#333;">학교 앞 검색</button>
+                            </a>
+                        </div>
+
+                        <button onclick="shareResult('${randomPick.Menu_Name}')" style="margin-top:20px; background:#555; color:white;">
                             📢 친구에게 결과 공유하기
                         </button>
 
@@ -133,7 +144,7 @@
             }
         });
 
-        // ✅ [추가됨] 공유하기 기능 함수
+        // 공유하기 기능 함수
         function shareResult(menuName) {
             const text = `🍽️ 밥줘 AI가 추천한 오늘의 메뉴는 [${menuName}] 입니다! 너도 추천받으러 와!`;
             const url = window.location.href; // 현재 사이트 주소
