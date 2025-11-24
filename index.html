@@ -49,7 +49,6 @@
     <script>
         // ============================================================
         // ⚠️ [중요] GitHub에서 따온 Raw 주소를 아래 따옴표 안에 넣어주세요!
-        // 예시: 'https://raw.githubusercontent.com/eatpeoples/eatpeopls-location/refs/heads/main/menu%20db'
         // ============================================================
         const DB_URL = '여기에_GITHUB_RAW_주소를_붙여넣으세요'; 
 
@@ -58,7 +57,7 @@
 
         // 예산 범위를 숫자로 계산해주는 판독기 함수
         function checkBudget(price, budgetType) {
-            const p = Number(price); // 가격을 숫자로 확실히 변환
+            const p = Number(price); 
             if (budgetType === 'Low') return p <= 10000;
             if (budgetType === 'Mid') return p > 10000 && p <= 20000;
             if (budgetType === 'High') return p > 20000;
@@ -69,21 +68,19 @@
             e.preventDefault();
             resultContainer.innerHTML = '✨ 전체 메뉴판을 분석 중입니다...';
 
-            // 사용자가 선택한 값 가져오기
             const selectedCategory = document.getElementById('category').value;
             const selectedAge = document.getElementById('age').value;
             const selectedBudget = document.getElementById('budget').value;
 
             try {
-                // 1. GitHub에서 전체 메뉴판 가져오기 (비용 0원!)
+                // 1. GitHub에서 전체 메뉴판 가져오기
                 const response = await fetch(DB_URL);
                 if (!response.ok) {
                     throw new Error("DB 파일을 불러올 수 없습니다. URL을 확인해주세요.");
                 }
                 const allMenu = await response.json();
 
-                // 2. 브라우저에서 직접 필터링 (정확도 100%)
-                // 조건: 카테고리 일치 AND 연령대 일치 AND 가격범위 일치
+                // 2. 브라우저에서 직접 필터링
                 const filteredMenu = allMenu.filter(item => {
                     return item.Category === selectedCategory && 
                            item.Recommended_Age === selectedAge &&
@@ -92,11 +89,14 @@
 
                 // 3. 결과 출력
                 if (filteredMenu.length > 0) {
-                    // 조건에 맞는 메뉴 중 랜덤으로 하나 뽑기
+                    // 랜덤 선택
                     const randomPick = filteredMenu[Math.floor(Math.random() * filteredMenu.length)];
-                    
-                    // 가격에 콤마 찍기
                     const formattedPrice = Number(randomPick.Price).toLocaleString();
+
+                    // ✅ [추가됨] 네이버/카카오 지도 검색 링크 생성
+                    // '충남대' 부분을 사용자님 학교나 지역명으로 바꾸면 더 정확합니다!
+                    const naverMapUrl = `https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent('충남대 ' + randomPick.Menu_Name)}`;
+                    const kakaoMapUrl = `https://map.kakao.com/link/search/${encodeURIComponent('충남대 ' + randomPick.Menu_Name)}`;
 
                     resultContainer.innerHTML = `
                         <h2>✅ 추천 메뉴: <span class="highlight">${randomPick.Menu_Name}</span></h2>
@@ -104,10 +104,23 @@
                         <p>가격: **${formattedPrice}원**</p>
                         <p>👍 추천 대상: **${randomPick.Recommended_Age}**</p>
                         <hr>
-                        <p style="font-size:12px; color:gray;">(조건에 맞는 메뉴 ${filteredMenu.length}개 중 랜덤 추천)</p>
+                        
+                        <div style="display: flex; gap: 10px; margin-top: 15px;">
+                            <a href="${naverMapUrl}" target="_blank" style="flex:1; text-decoration:none;">
+                                <button style="margin-top:0; background:#03c75a; color:white;">📍 네이버 지도</button>
+                            </a>
+                            <a href="${kakaoMapUrl}" target="_blank" style="flex:1; text-decoration:none;">
+                                <button style="margin-top:0; background:#fee500; color:black;">📍 카카오맵</button>
+                            </a>
+                        </div>
+
+                        <button onclick="shareResult('${randomPick.Menu_Name}')" style="margin-top:10px; background:#555; color:white;">
+                            📢 친구에게 결과 공유하기
+                        </button>
+
+                        <p style="font-size:12px; color:gray; margin-top:15px;">(조건에 맞는 메뉴 ${filteredMenu.length}개 중 랜덤 추천)</p>
                     `;
                 } else {
-                    // 진짜 데이터가 없을 때
                     resultContainer.innerHTML = `
                         <h3>🥲 조건에 맞는 메뉴가 없어요.</h3>
                         <p>카테고리나 예산을 조금 변경해서 다시 시도해보세요!</p>
@@ -119,6 +132,19 @@
                 resultContainer.innerHTML = '🚨 데이터 로딩 실패! GitHub 주소를 확인해주세요.';
             }
         });
+
+        // ✅ [추가됨] 공유하기 기능 함수
+        function shareResult(menuName) {
+            const text = `🍽️ 밥줘 AI가 추천한 오늘의 메뉴는 [${menuName}] 입니다! 너도 추천받으러 와!`;
+            const url = window.location.href; // 현재 사이트 주소
+
+            // 클립보드에 복사
+            navigator.clipboard.writeText(`${text}\n${url}`).then(() => {
+                alert("복사되었습니다! 카톡이나 메신저에 붙여넣기 하세요! 👍");
+            }).catch(err => {
+                alert("복사 실패 ㅠㅠ 수동으로 캡처해주세요.");
+            });
+        }
     </script>
 </body>
 </html>
