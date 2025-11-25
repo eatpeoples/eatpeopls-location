@@ -42,21 +42,17 @@
             <button type="submit">메뉴 추천받기</button>
         </form>
 
-        <div id="resultContainer" class="result">
-        </div>
+        <div id="resultContainer">
+            </div>
     </div>
 
     <script>
-        // ============================================================
-        // ⚠️ [중요] GitHub에서 따온 Raw 주소를 아래 따옴표 안에 넣어주세요!
-        // (아까 성공하신 주소 그대로 두시면 됩니다)
-        // ============================================================
+        // GitHub 데이터 URL (V12 데이터가 있는 곳인지 확인 필수!)
         const DB_URL = 'https://raw.githubusercontent.com/eatpeoples/eatpeopls-location/main/menu_db.json'; 
 
         const form = document.getElementById('recommendationForm');
         const resultContainer = document.getElementById('resultContainer');
 
-        // 예산 범위를 숫자로 계산해주는 판독기 함수
         function checkBudget(price, budgetType) {
             const p = Number(price); 
             if (budgetType === 'Low') return p <= 10000;
@@ -67,93 +63,112 @@
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
-            resultContainer.innerHTML = '✨ 전체 메뉴판을 분석 중입니다...';
+            
+            resultContainer.innerHTML = `
+                <div class="result">
+                    <div class="loading">🍳 AI가 맛있는 메뉴를 고르고 있어요...</div>
+                </div>`;
 
             const selectedCategory = document.getElementById('category').value;
             const selectedAge = document.getElementById('age').value;
             const selectedBudget = document.getElementById('budget').value;
 
             try {
-                // 1. GitHub에서 전체 메뉴판 가져오기
                 const response = await fetch(DB_URL);
-                if (!response.ok) {
-                    throw new Error("DB 파일을 불러올 수 없습니다. URL을 확인해주세요.");
-                }
+                if (!response.ok) throw new Error("DB 파일을 불러올 수 없습니다.");
                 const allMenu = await response.json();
 
-                // 2. 브라우저에서 직접 필터링
+                // 1. 필터링
                 const filteredMenu = allMenu.filter(item => {
                     return item.Category === selectedCategory && 
                            item.Recommended_Age === selectedAge &&
                            checkBudget(item.Price, selectedBudget);
                 });
 
-                // 3. 결과 출력
+                // 2. 결과 출력
                 if (filteredMenu.length > 0) {
-                    // 랜덤 선택
-                    const randomPick = filteredMenu[Math.floor(Math.random() * filteredMenu.length)];
-                    const formattedPrice = Number(randomPick.Price).toLocaleString();
+                    
+                    // ✅ [V12 핵심] 상위권(Top 10) 랜덤 추천 로직
+                    // 전체 랜덤이 아니라, 파이썬에서 정렬해둔 상위 10개 중에서 뽑음
+                    const topTierCount = Math.min(filteredMenu.length, 10);
+                    const topTierMenu = filteredMenu.slice(0, topTierCount);
+                    const randomPick = topTierMenu[Math.floor(Math.random() * topTierMenu.length)];
 
-                    // ✅ [수정됨] 1. 내 위치 기반 검색 (충남대 단어 뺌) -> GPS 사용
+                    const formattedPrice = Number(randomPick.Price).toLocaleString();
+                    
+                    // 지도 URL 생성
                     const gpsNaverMapUrl = `https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent(randomPick.Menu_Name)}`;
                     const gpsKakaoMapUrl = `https://map.kakao.com/link/search/${encodeURIComponent(randomPick.Menu_Name)}`;
-
-                    // ✅ [수정됨] 2. 학교 앞 검색 (충남대 단어 포함) -> 고정 위치
                     const schoolMapUrl = `https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent('충남대 ' + randomPick.Menu_Name)}`;
 
                     resultContainer.innerHTML = `
-                        <h2>✅ 추천 메뉴: <span class="highlight">${randomPick.Menu_Name}</span></h2>
-                        <p>카테고리: ${randomPick.Category}</p>
-                        <p>가격: **${formattedPrice}원**</p>
-                        <p>👍 추천 대상: **${randomPick.Recommended_Age}**</p>
-                        <hr>
-                        
-                        <p style="font-size:14px; font-weight:bold; margin-bottom:5px; margin-top:15px;">📍 내 주변에서 찾기 (실시간)</p>
-                        <div style="display: flex; gap: 10px;">
-                            <a href="${gpsNaverMapUrl}" target="_blank" style="flex:1; text-decoration:none;">
-                                <button style="margin-top:0; background:#03c75a; color:white;">네이버 지도</button>
-                            </a>
-                            <a href="${gpsKakaoMapUrl}" target="_blank" style="flex:1; text-decoration:none;">
-                                <button style="margin-top:0; background:#fee500; color:black;">카카오맵</button>
-                            </a>
+                        <div class="result">
+                            <div style="font-size: 48px; margin-bottom: 10px;">${randomPick.Emoji}</div>
+                            <h2>오늘의 추천: <span class="highlight">${randomPick.Menu_Name}</span></h2>
+                            
+                            <div class="ai-comment-box">
+                                "${randomPick.AI_Comment}"
+                            </div>
+
+                            <p>🏷️ 카테고리: ${randomPick.Category}</p>
+                            <p>💰 가격: <strong>${formattedPrice}원</strong></p>
+                            
+                            <div style="margin-top: 15px; margin-bottom: 15px;">
+                                <span class="tag-badge">#${randomPick.Recommended_Age}픽</span>
+                                <span class="tag-badge">#${randomPick.Health_Tag}</span>
+                                <span class="tag-badge">#${randomPick.Weather_Tag}</span>
+                            </div>
+
+                            <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
+                            
+                            <p style="font-size:14px; font-weight:bold; margin-bottom:5px;">📍 내 주변 식당 찾기</p>
+                            <div class="map-btn-group">
+                                <a href="${gpsNaverMapUrl}" target="_blank" style="flex:1; text-decoration:none;">
+                                    <button class="map-btn" style="background:#03c75a; color:white;">N 지도</button>
+                                </a>
+                                <a href="${gpsKakaoMapUrl}" target="_blank" style="flex:1; text-decoration:none;">
+                                    <button class="map-btn" style="background:#fee500; color:black;">K 지도</button>
+                                </a>
+                            </div>
+
+                            <div style="margin-top: 10px;">
+                                 <a href="${schoolMapUrl}" target="_blank" style="flex:1; text-decoration:none;">
+                                    <button class="map-btn" style="background:#fff; border:1px solid #ddd; color:#333;">🏫 충남대 앞에서 찾기</button>
+                                </a>
+                            </div>
+
+                            <button onclick="shareResult('${randomPick.Menu_Name}', '${randomPick.AI_Comment}', '${formattedPrice}')" style="margin-top:20px; background:#555; color:white;">
+                                📢 친구에게 결과 공유하기
+                            </button>
                         </div>
-
-                        <p style="font-size:14px; font-weight:bold; margin-bottom:5px; margin-top:15px;">🏫 학교(충남대) 앞에서 찾기</p>
-                         <div style="display: flex; gap: 10px;">
-                             <a href="${schoolMapUrl}" target="_blank" style="flex:1; text-decoration:none;">
-                                <button style="margin-top:0; background:#fff; border:1px solid #ddd; color:#333;">학교 앞 검색</button>
-                            </a>
-                        </div>
-
-                        <button onclick="shareResult('${randomPick.Menu_Name}')" style="margin-top:20px; background:#555; color:white;">
-                            📢 친구에게 결과 공유하기
-                        </button>
-
-                        <p style="font-size:12px; color:gray; margin-top:15px;">(조건에 맞는 메뉴 ${filteredMenu.length}개 중 랜덤 추천)</p>
                     `;
                 } else {
                     resultContainer.innerHTML = `
-                        <h3>🥲 조건에 맞는 메뉴가 없어요.</h3>
-                        <p>카테고리나 예산을 조금 변경해서 다시 시도해보세요!</p>
+                        <div class="result">
+                            <h3>🥲 조건에 맞는 메뉴가 없어요.</h3>
+                            <p>카테고리나 예산을 조금 변경해서 다시 시도해보세요!</p>
+                        </div>
                     `;
                 }
 
             } catch (error) {
                 console.error('Error:', error);
-                resultContainer.innerHTML = '🚨 데이터 로딩 실패! GitHub 주소를 확인해주세요.';
+                resultContainer.innerHTML = `
+                    <div class="result">
+                        <p>🚨 데이터 로딩 실패!</p>
+                        <p style="font-size:12px; color:red;">GitHub 주소를 확인해주세요.</p>
+                    </div>`;
             }
         });
 
-        // 공유하기 기능 함수
-        function shareResult(menuName) {
-            const text = `🍽️ 밥줘 AI가 추천한 오늘의 메뉴는 [${menuName}] 입니다! 너도 추천받으러 와!`;
-            const url = window.location.href; // 현재 사이트 주소
+        function shareResult(menuName, comment, price) {
+            const text = `[밥줘 AI 추천]\n🍽️ 오늘의 메뉴: ${menuName}\n💰 가격: ${price}원\n🗣️ AI 한줄평: "${comment}"\n\n너도 추천받으러 와! 👇`;
+            const url = window.location.href;
 
-            // 클립보드에 복사
             navigator.clipboard.writeText(`${text}\n${url}`).then(() => {
-                alert("복사되었습니다! 카톡이나 메신저에 붙여넣기 하세요! 👍");
+                alert("복사되었습니다! 카톡방에 붙여넣기 하세요! 👍");
             }).catch(err => {
-                alert("복사 실패 ㅠㅠ 수동으로 캡처해주세요.");
+                alert("복사 실패 ㅠㅠ 화면을 캡처해서 공유해주세요.");
             });
         }
     </script>
