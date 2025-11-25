@@ -43,11 +43,13 @@
         </form>
 
         <div id="resultContainer">
-            </div>
+        </div>
     </div>
 
     <script>
-        // GitHub 데이터 URL (V12 데이터가 있는 곳인지 확인 필수!)
+        // ============================================================
+        // GitHub 데이터 URL (V12 데이터 확인 필수!)
+        // ============================================================
         const DB_URL = 'https://raw.githubusercontent.com/eatpeoples/eatpeopls-location/main/menu_db.json'; 
 
         const form = document.getElementById('recommendationForm');
@@ -59,6 +61,12 @@
             if (budgetType === 'Mid') return p > 10000 && p <= 20000;
             if (budgetType === 'High') return p > 20000;
             return false;
+        }
+
+        // ✅ [핵심 기능] 검색어 정제 함수 (괄호 삭제)
+        // 예: "매운 소갈비찜(소)" -> "매운 소갈비찜"
+        function cleanMenuName(name) {
+            return name.replace(/\(.*\)/gi, '').trim();
         }
 
         form.addEventListener('submit', async (e) => {
@@ -88,18 +96,43 @@
                 // 2. 결과 출력
                 if (filteredMenu.length > 0) {
                     
-                    // ✅ [V12 핵심] 상위권(Top 10) 랜덤 추천 로직
-                    // 전체 랜덤이 아니라, 파이썬에서 정렬해둔 상위 10개 중에서 뽑음
+                    // 상위권(Top 10) 랜덤 추천 로직
                     const topTierCount = Math.min(filteredMenu.length, 10);
                     const topTierMenu = filteredMenu.slice(0, topTierCount);
                     const randomPick = topTierMenu[Math.floor(Math.random() * topTierMenu.length)];
 
                     const formattedPrice = Number(randomPick.Price).toLocaleString();
+
+                    // 텍스트 변환기 (Map)
+                    const ageMap = { "10s": "10대", "20s": "20대", "30s": "30대", "40s": "40대+" };
+                    const displayAge = ageMap[randomPick.Recommended_Age] || randomPick.Recommended_Age;
+
+                    const weatherMap = {
+                        "Clear": "☀️ 맑은 날", "Rain": "☔ 비 오는 날", "Hot": "🔥 더운 날", 
+                        "Cold": "❄️ 추운 날", "Cloudy": "☁️ 흐린 날"
+                    };
+                    const displayWeather = weatherMap[randomPick.Weather_Tag] || randomPick.Weather_Tag;
                     
-                    // 지도 URL 생성
-                    const gpsNaverMapUrl = `https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent(randomPick.Menu_Name)}`;
-                    const gpsKakaoMapUrl = `https://map.kakao.com/link/search/${encodeURIComponent(randomPick.Menu_Name)}`;
-                    const schoolMapUrl = `https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent('충남대 ' + randomPick.Menu_Name)}`;
+                    const healthMap = {
+                        "Balanced": "🥗 균형잡힌", "High-Protein": "💪 고단백", 
+                        "Diet": "light 다이어트", "Heavy": "🍖 든든한", "Sweet": "🍭 달달한"
+                    };
+                    const displayHealth = healthMap[randomPick.Health_Tag] || randomPick.Health_Tag;
+
+
+                    // ---------------------------------------------------------
+                    // 3. 지도 URL 생성 로직 (개선된 버전)
+                    // ---------------------------------------------------------
+                    
+                    // (1) 검색어 청소: "매운 갈비찜(소)" -> "매운 갈비찜"
+                    const searchKeyword = cleanMenuName(randomPick.Menu_Name);
+
+                    // (2) 내 위치 기반: "내 주변" 키워드 추가
+                    const gpsNaverMapUrl = `https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent('내 주변 ' + searchKeyword)}`;
+                    const gpsKakaoMapUrl = `https://map.kakao.com/link/search/${encodeURIComponent('내 주변 ' + searchKeyword)}`;
+                    
+                    // (3) 학교 앞 고정: "충남대" 대신 "대전 궁동" 사용 (정확도 UP!)
+                    const schoolMapUrl = `https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent('대전 궁동 ' + searchKeyword)}`;
 
                     resultContainer.innerHTML = `
                         <div class="result">
@@ -114,9 +147,9 @@
                             <p>💰 가격: <strong>${formattedPrice}원</strong></p>
                             
                             <div style="margin-top: 15px; margin-bottom: 15px;">
-                                <span class="tag-badge">#${randomPick.Recommended_Age}픽</span>
-                                <span class="tag-badge">#${randomPick.Health_Tag}</span>
-                                <span class="tag-badge">#${randomPick.Weather_Tag}</span>
+                                <span class="tag-badge">#${displayAge}픽</span>
+                                <span class="tag-badge">#${displayHealth}</span>
+                                <span class="tag-badge">#${displayWeather}</span>
                             </div>
 
                             <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
