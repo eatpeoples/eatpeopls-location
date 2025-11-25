@@ -48,7 +48,7 @@
 
     <script>
         // ============================================================
-        // GitHub 데이터 URL (V12 데이터 확인 필수!)
+        // GitHub 데이터 URL
         // ============================================================
         const DB_URL = 'https://raw.githubusercontent.com/eatpeoples/eatpeopls-location/main/menu_db.json'; 
 
@@ -63,7 +63,7 @@
             return false;
         }
 
-        // ✅ [핵심 기능] 검색어 정제 함수 (괄호 삭제)
+        // ✅ [핵심 기능] 메뉴 이름 청소 (괄호 삭제)
         // 예: "매운 소갈비찜(소)" -> "매운 소갈비찜"
         function cleanMenuName(name) {
             return name.replace(/\(.*\)/gi, '').trim();
@@ -96,14 +96,13 @@
                 // 2. 결과 출력
                 if (filteredMenu.length > 0) {
                     
-                    // 상위권(Top 10) 랜덤 추천 로직
                     const topTierCount = Math.min(filteredMenu.length, 10);
                     const topTierMenu = filteredMenu.slice(0, topTierCount);
                     const randomPick = topTierMenu[Math.floor(Math.random() * topTierMenu.length)];
 
                     const formattedPrice = Number(randomPick.Price).toLocaleString();
 
-                    // 텍스트 변환기 (Map)
+                    // 텍스트 변환기
                     const ageMap = { "10s": "10대", "20s": "20대", "30s": "30대", "40s": "40대+" };
                     const displayAge = ageMap[randomPick.Recommended_Age] || randomPick.Recommended_Age;
 
@@ -119,19 +118,13 @@
                     };
                     const displayHealth = healthMap[randomPick.Health_Tag] || randomPick.Health_Tag;
 
-
                     // ---------------------------------------------------------
-                    // 3. 지도 URL 생성 로직 (개선된 버전)
+                    // 3. 지도 검색 키워드 설정
                     // ---------------------------------------------------------
-                    
-                    // (1) 검색어 청소: "매운 갈비찜(소)" -> "매운 갈비찜"
+                    // (1) 검색용 이름 청소 (괄호 제거)
                     const searchKeyword = cleanMenuName(randomPick.Menu_Name);
 
-                    // (2) 내 위치 기반: "내 주변" 키워드 추가
-                    const gpsNaverMapUrl = `https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent('내 주변 ' + searchKeyword)}`;
-                    const gpsKakaoMapUrl = `https://map.kakao.com/link/search/${encodeURIComponent('내 주변 ' + searchKeyword)}`;
-                    
-                    // (3) 학교 앞 고정: "충남대" 대신 "대전 궁동" 사용 (정확도 UP!)
+                    // (2) 학교 앞 고정: "충남대" -> "대전 궁동"으로 변경 (정확도 향상)
                     const schoolMapUrl = `https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent('대전 궁동 ' + searchKeyword)}`;
 
                     resultContainer.innerHTML = `
@@ -154,19 +147,19 @@
 
                             <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
                             
-                            <p style="font-size:14px; font-weight:bold; margin-bottom:5px;">📍 내 주변 식당 찾기</p>
+                            <p style="font-size:14px; font-weight:bold; margin-bottom:5px;">📍 내 주변 식당 찾기 (GPS)</p>
                             <div class="map-btn-group">
-                                <a href="${gpsNaverMapUrl}" target="_blank" style="flex:1; text-decoration:none;">
-                                    <button class="map-btn" style="background:#03c75a; color:white;">N 지도</button>
-                                </a>
-                                <a href="${gpsKakaoMapUrl}" target="_blank" style="flex:1; text-decoration:none;">
-                                    <button class="map-btn" style="background:#fee500; color:black;">K 지도</button>
-                                </a>
+                                <button onclick="openMapWithGPS('NAVER', '${searchKeyword}')" class="map-btn" style="background:#03c75a; color:white;">
+                                    N 내 위치 검색
+                                </button>
+                                <button onclick="openMapWithGPS('KAKAO', '${searchKeyword}')" class="map-btn" style="background:#fee500; color:black;">
+                                    K 내 위치 검색
+                                </button>
                             </div>
 
                             <div style="margin-top: 10px;">
                                  <a href="${schoolMapUrl}" target="_blank" style="flex:1; text-decoration:none;">
-                                    <button class="map-btn" style="background:#fff; border:1px solid #ddd; color:#333;">🏫 충남대 앞에서 찾기</button>
+                                    <button class="map-btn" style="background:#fff; border:1px solid #ddd; color:#333;">🏫 충남대(궁동) 앞에서 찾기</button>
                                 </a>
                             </div>
 
@@ -183,7 +176,6 @@
                         </div>
                     `;
                 }
-
             } catch (error) {
                 console.error('Error:', error);
                 resultContainer.innerHTML = `
@@ -193,6 +185,54 @@
                     </div>`;
             }
         });
+
+        // ============================================================
+        // ✅ [핵심 기능] GPS 위치 권한을 요청하고 지도를 여는 함수
+        // ============================================================
+        function openMapWithGPS(type, menuName) {
+            
+            // 1. 브라우저가 위치 기능을 지원하는지 확인
+            if (!navigator.geolocation) {
+                alert("이 브라우저에서는 위치 정보를 사용할 수 없습니다.");
+                fallbackMap(type, menuName); // 실패 시 일반 검색으로 이동
+                return;
+            }
+
+            // 2. 위치 권한 요청 (팝업 뜸)
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    // [허용 시] 위도, 경도 가져오기
+                    const lat = position.coords.latitude;
+                    const lng = position.coords.longitude;
+                    
+                    let url = "";
+                    if (type === 'NAVER') {
+                        // 네이버 지도: 쿼리 + 중심좌표(c) + 줌레벨(15) 설정
+                        url = `https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent(menuName)}&c=${lng},${lat},15`;
+                    } else {
+                        // 카카오맵: 검색어 기반 ("내 주변" 키워드 사용)
+                        url = `https://map.kakao.com/link/search/${encodeURIComponent('내 주변 ' + menuName)}`;
+                    }
+                    window.open(url, '_blank');
+                },
+                (error) => {
+                    // [차단/실패 시] 일반 검색으로 이동 (당황하지 않고!)
+                    // alert("위치 권한이 필요합니다. 일반 검색으로 이동합니다.");
+                    fallbackMap(type, menuName);
+                }
+            );
+        }
+
+        // GPS 실패 시 사용하는 일반 검색 함수 ("내 주변" 키워드 사용)
+        function fallbackMap(type, menuName) {
+            let url = "";
+            if (type === 'NAVER') {
+                url = `https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent('내 주변 ' + menuName)}`;
+            } else {
+                url = `https://map.kakao.com/link/search/${encodeURIComponent('내 주변 ' + menuName)}`;
+            }
+            window.open(url, '_blank');
+        }
 
         function shareResult(menuName, comment, price) {
             const text = `[밥줘 AI 추천]\n🍽️ 오늘의 메뉴: ${menuName}\n💰 가격: ${price}원\n🗣️ AI 한줄평: "${comment}"\n\n너도 추천받으러 와! 👇`;
