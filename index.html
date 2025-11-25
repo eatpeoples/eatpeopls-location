@@ -102,7 +102,6 @@
                     const randomPick = topTierMenu[Math.floor(Math.random() * topTierMenu.length)];
                     const formattedPrice = Number(randomPick.Price).toLocaleString();
 
-                    // 텍스트 변환기
                     const ageMap = { "10s": "10대", "20s": "20대", "30s": "30대", "40s": "40대+" };
                     const displayAge = ageMap[randomPick.Recommended_Age] || randomPick.Recommended_Age;
 
@@ -122,7 +121,7 @@
                     // 지도 검색 키워드 설정
                     // ---------------------------------------------------------
                     const cleanName = cleanMenuName(randomPick.Menu_Name);
-                    // 기본 키워드: "탕수육 맛집" (여기엔 '내 주변' 안 붙임!)
+                    // 기본 키워드: "탕수육 맛집" (여기에는 '내 주변' 절대 안 붙임!)
                     const searchKeyword = cleanName + " 맛집"; 
 
                     // 학교 앞 검색용 URL ("대전 궁동" 포함)
@@ -188,14 +187,16 @@
         });
 
         // ============================================================
-        // ✅ [수정됨] GPS 지도 검색 함수 (사용자 피드백 반영!)
+        // ✅ [수정완료] GPS 지도 검색 함수 (진짜 최종)
         // ============================================================
         function openMapWithGPS(type, keyword) {
             
+            // 실패했을 때만 사용하는 백업용 검색어 ("내 주변" 포함)
+            const fallbackQuery = "내 주변 " + keyword;
+
             if (!navigator.geolocation) {
                 alert("이 브라우저에서는 위치 정보를 사용할 수 없습니다.");
-                // 실패했을 때만 "내 주변"을 붙여서 텍스트 검색 시도
-                fallbackMap(type, "내 주변 " + keyword);
+                fallbackMap(type, fallbackQuery);
                 return;
             }
 
@@ -206,18 +207,19 @@
                     
                     let url = "";
                     if (type === 'NAVER') {
-                        // ✅ 수정완료: "내 주변" 글자 삭제! 그냥 "탕수육 맛집"으로 검색하되 좌표(&c)를 줌.
-                        // 이렇게 하면 지도가 "아, 이 좌표 근처의 탕수육 맛집이구나" 하고 찰떡같이 알아듣습니다.
+                        // ✅ 네이버: "내 주변" 글자 삭제! 순수하게 "탕수육 맛집"만 보냅니다.
+                        // 대신 &c=경도,위도 파라미터를 줘서 위치를 고정합니다.
                         url = `https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent(keyword)}&c=${lng},${lat},15`;
                     } else {
-                        // 카카오맵도 동일하게 적용
+                        // ✅ 카카오: 여기도 사용자님 요청대로 "내 주변"을 삭제하고 순수 키워드만 보냅니다.
+                        // (카카오는 앱이나 브라우저가 알아서 현재 위치를 잡는 경우가 많습니다)
                         url = `https://map.kakao.com/link/search/${encodeURIComponent(keyword)}`;
                     }
                     window.open(url, '_blank');
                 },
                 (error) => {
-                    // 위치 권한 거절 시: 어쩔 수 없이 "내 주변" 키워드 붙여서 검색
-                    fallbackMap(type, "내 주변 " + keyword);
+                    // 위치 차단 시: "내 주변" 키워드를 붙여서 텍스트 검색으로 시도
+                    fallbackMap(type, fallbackQuery);
                 }
             );
         }
