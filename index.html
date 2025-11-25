@@ -63,10 +63,21 @@
             return false;
         }
 
-        // ✅ [핵심 기능] 메뉴 이름 청소 (괄호 삭제)
-        // 예: "매운 소갈비찜(소)" -> "매운 소갈비찜"
+        // ✅ [핵심 기능 1] 메뉴 이름 다이어트 (검색 정확도 향상!)
+        // "돼지국밥 정식" -> "돼지국밥", "탕수육(미니)" -> "탕수육"
         function cleanMenuName(name) {
-            return name.replace(/\(.*\)/gi, '').trim();
+            // 1. 괄호와 그 안의 내용 삭제
+            let cleaned = name.replace(/\(.*\)/gi, '');
+            
+            // 2. 검색을 방해하는 불필요한 단어들 삭제 리스트
+            const removeWords = ["세트", "정식", "콤보", "1인", "패밀리", "미니", "반마리", "한마리", "기본", "박스"];
+            
+            removeWords.forEach(word => {
+                cleaned = cleaned.replace(word, '');
+            });
+
+            // 3. 앞뒤 공백 제거 후 반환
+            return cleaned.trim();
         }
 
         form.addEventListener('submit', async (e) => {
@@ -95,11 +106,9 @@
 
                 // 2. 결과 출력
                 if (filteredMenu.length > 0) {
-                    
                     const topTierCount = Math.min(filteredMenu.length, 10);
                     const topTierMenu = filteredMenu.slice(0, topTierCount);
                     const randomPick = topTierMenu[Math.floor(Math.random() * topTierMenu.length)];
-
                     const formattedPrice = Number(randomPick.Price).toLocaleString();
 
                     // 텍스트 변환기
@@ -119,12 +128,17 @@
                     const displayHealth = healthMap[randomPick.Health_Tag] || randomPick.Health_Tag;
 
                     // ---------------------------------------------------------
-                    // 3. 지도 검색 키워드 설정
+                    // 3. 지도 검색 키워드 최적화 (여기가 핵심!)
                     // ---------------------------------------------------------
-                    // (1) 검색용 이름 청소 (괄호 제거)
-                    const searchKeyword = cleanMenuName(randomPick.Menu_Name);
+                    
+                    // (1) 메뉴 이름 청소: "돼지국밥 정식" -> "돼지국밥"
+                    const cleanName = cleanMenuName(randomPick.Menu_Name);
 
-                    // (2) 학교 앞 고정: "충남대" -> "대전 궁동"으로 변경 (정확도 향상)
+                    // (2) 검색어 조합: 메뉴명 뒤에 '맛집'을 붙여서 정확도 상승시킴
+                    // 예: "돼지국밥 맛집"
+                    const searchKeyword = cleanName + " 맛집";
+
+                    // (3) 학교 앞 검색: "대전 궁동" + "돼지국밥 맛집"
                     const schoolMapUrl = `https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent('대전 궁동 ' + searchKeyword)}`;
 
                     resultContainer.innerHTML = `
@@ -159,7 +173,7 @@
 
                             <div style="margin-top: 10px;">
                                  <a href="${schoolMapUrl}" target="_blank" style="flex:1; text-decoration:none;">
-                                    <button class="map-btn" style="background:#fff; border:1px solid #ddd; color:#333;">🏫 충남대(궁동) 앞에서 찾기</button>
+                                    <button class="map-btn" style="background:#fff; border:1px solid #ddd; color:#333;">🏫 충남대(궁동) 맛집 찾기</button>
                                 </a>
                             </div>
 
@@ -187,49 +201,48 @@
         });
 
         // ============================================================
-        // ✅ [핵심 기능] GPS 위치 권한을 요청하고 지도를 여는 함수
+        // ✅ [핵심 기능 2] GPS 지도 검색 함수 (강력해짐)
         // ============================================================
-        function openMapWithGPS(type, menuName) {
+        function openMapWithGPS(type, keyword) {
             
-            // 1. 브라우저가 위치 기능을 지원하는지 확인
+            // "내 주변" + "돼지국밥 맛집" 형태로 검색어 조합
+            // 좌표 인식이 실패해도 텍스트 검색으로 100% 커버합니다.
+            const finalQuery = "내 주변 " + keyword;
+
             if (!navigator.geolocation) {
                 alert("이 브라우저에서는 위치 정보를 사용할 수 없습니다.");
-                fallbackMap(type, menuName); // 실패 시 일반 검색으로 이동
+                fallbackMap(type, finalQuery);
                 return;
             }
 
-            // 2. 위치 권한 요청 (팝업 뜸)
             navigator.geolocation.getCurrentPosition(
                 (position) => {
-                    // [허용 시] 위도, 경도 가져오기
                     const lat = position.coords.latitude;
                     const lng = position.coords.longitude;
                     
                     let url = "";
                     if (type === 'NAVER') {
-                        // 네이버 지도: 쿼리 + 중심좌표(c) + 줌레벨(15) 설정
-                        url = `https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent(menuName)}&c=${lng},${lat},15`;
+                        // 네이버: 쿼리(내주변+메뉴+맛집) + 중심좌표(c) + 줌레벨(14)
+                        url = `https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent(finalQuery)}&c=${lng},${lat},14`;
                     } else {
-                        // 카카오맵: 검색어 기반 ("내 주변" 키워드 사용)
-                        url = `https://map.kakao.com/link/search/${encodeURIComponent('내 주변 ' + menuName)}`;
+                        // 카카오: "내 주변" 키워드 사용
+                        url = `https://map.kakao.com/link/search/${encodeURIComponent(finalQuery)}`;
                     }
                     window.open(url, '_blank');
                 },
                 (error) => {
-                    // [차단/실패 시] 일반 검색으로 이동 (당황하지 않고!)
-                    // alert("위치 권한이 필요합니다. 일반 검색으로 이동합니다.");
-                    fallbackMap(type, menuName);
+                    // 위치 차단 시: 그냥 검색어로 이동
+                    fallbackMap(type, finalQuery);
                 }
             );
         }
 
-        // GPS 실패 시 사용하는 일반 검색 함수 ("내 주변" 키워드 사용)
-        function fallbackMap(type, menuName) {
+        function fallbackMap(type, query) {
             let url = "";
             if (type === 'NAVER') {
-                url = `https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent('내 주변 ' + menuName)}`;
+                url = `https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent(query)}`;
             } else {
-                url = `https://map.kakao.com/link/search/${encodeURIComponent('내 주변 ' + menuName)}`;
+                url = `https://map.kakao.com/link/search/${encodeURIComponent(query)}`;
             }
             window.open(url, '_blank');
         }
@@ -237,7 +250,6 @@
         function shareResult(menuName, comment, price) {
             const text = `[밥줘 AI 추천]\n🍽️ 오늘의 메뉴: ${menuName}\n💰 가격: ${price}원\n🗣️ AI 한줄평: "${comment}"\n\n너도 추천받으러 와! 👇`;
             const url = window.location.href;
-
             navigator.clipboard.writeText(`${text}\n${url}`).then(() => {
                 alert("복사되었습니다! 카톡방에 붙여넣기 하세요! 👍");
             }).catch(err => {
