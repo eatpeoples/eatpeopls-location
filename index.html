@@ -5,11 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>밥줘 AI - 메뉴 추천 서비스</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* 추가된 안내 문구 스타일 */
+        .recommend-text {
+            font-size: 12px;
+            color: #888;
+            margin-top: 8px;
+            background-color: #f8f9fa;
+            padding: 8px;
+            border-radius: 8px;
+            line-height: 1.4;
+        }
+        .recommend-text strong {
+            color: #03c75a; /* 네이버색 강조 */
+        }
+    </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>🍽️ 밥줘 AI 맞춤 메뉴 추천 <span style="font-size:0.5em; color:gray;">(Ver 2.0)</span></h1>
+        <h1>🍽️ 밥줘 AI 맞춤 메뉴 추천</h1>
         <form id="recommendationForm">
             <label for="category">원하는 메뉴 카테고리:</label>
             <select id="category" name="category" required>
@@ -53,13 +68,13 @@
         const form = document.getElementById('recommendationForm');
         const resultContainer = document.getElementById('resultContainer');
 
-        // ✅ [설정] 카카오맵 안전장치 지역명
-        const SAFE_REGION = "대전"; 
-
+        // ✅ 검색어 보정 사전 (지속적 업데이트 대상)
         const searchFixes = {
             "해산물 스튜": "양식 맛집",
             "에그 베네딕트": "브런치 카페",
-            "김밥천국 라면": "분식"
+            "김밥천국 라면": "분식",
+            "감바스 알 아히요": "감바스",
+            "마카롱 10구": "마카롱"
         };
 
         function checkBudget(price, budgetType) {
@@ -76,6 +91,8 @@
             removeWords.forEach(word => {
                 cleaned = cleaned.replace(word, '');
             });
+            // 숫자+단위 제거 (10구, 3p 등)
+            cleaned = cleaned.replace(/\d+[구개p]/gi, ''); 
             return cleaned.trim();
         }
 
@@ -108,6 +125,7 @@
                     const randomPick = topTierMenu[Math.floor(Math.random() * topTierMenu.length)];
                     const formattedPrice = Number(randomPick.Price).toLocaleString();
 
+                    // 텍스트 변환기
                     const ageMap = { "10s": "10대", "20s": "20대", "30s": "30대", "40s": "40대+" };
                     const displayAge = ageMap[randomPick.Recommended_Age] || randomPick.Recommended_Age;
 
@@ -123,16 +141,12 @@
                     };
                     const displayHealth = healthMap[randomPick.Health_Tag] || randomPick.Health_Tag;
 
-                    // ---------------------------------------------------------
                     // 지도 검색 키워드 설정
-                    // ---------------------------------------------------------
                     const cleanName = cleanMenuName(randomPick.Menu_Name);
-                    
                     let baseKeyword = searchFixes[cleanName];
                     if (!baseKeyword) {
                         baseKeyword = cleanName + " 맛집";
                     }
-
                     const searchKeyword = baseKeyword; 
                     const schoolMapUrl = `https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent('대전 궁동 ' + searchKeyword)}`;
 
@@ -165,8 +179,13 @@
                                     K 내 위치 검색
                                 </button>
                             </div>
+                            
+                            <p class="recommend-text">
+                                💡 <strong>Tip:</strong> 카카오맵은 위치가 정확하지 않을 수 있어요.<br>
+                                정확한 검색을 원하시면 <strong>'N 지도'</strong>나 아래 <strong>'학교 앞 찾기'</strong>를 이용해 주세요!
+                            </p>
 
-                            <div style="margin-top: 10px;">
+                            <div style="margin-top: 15px;">
                                  <a href="${schoolMapUrl}" target="_blank" style="flex:1; text-decoration:none;">
                                     <button class="map-btn" style="background:#fff; border:1px solid #ddd; color:#333;">🏫 충남대(궁동) 맛집 찾기</button>
                                 </a>
@@ -195,14 +214,11 @@
             }
         });
 
-        // ============================================================
-        // ✅ [최종] GPS 지도 검색 함수
-        // ============================================================
+        // ✅ GPS 지도 검색 함수 (카카오 "대전" 강제 고정 해제 -> GPS 시도)
         function openMapWithGPS(type, keyword) {
             
             if (!navigator.geolocation) {
                 alert("이 브라우저에서는 위치 정보를 사용할 수 없습니다.");
-                // GPS 실패 -> 카카오는 대전, 네이버는 내주변
                 fallbackMap(type, keyword);
                 return;
             }
@@ -213,33 +229,30 @@
                     const lng = position.coords.longitude;
                     
                     if (type === 'NAVER') {
-                        // 네이버: 좌표 사용 + "내 주변" 제거
+                        // 네이버: 좌표(&c) 사용
                         const url = `https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent(keyword)}&c=${lng},${lat},15`;
                         window.open(url, '_blank');
                     } else {
-                        // ✅ 카카오: 좌표 버리고 "대전" 키워드 강제 사용
-                        // (이러면 "내 주변"이라는 글자가 절대 들어갈 수 없습니다!)
-                        const kakaoQuery = SAFE_REGION + " " + keyword; 
-                        const url = `https://m.map.kakao.com/actions/searchView?q=${encodeURIComponent(kakaoQuery)}`;
+                        // ✅ 카카오 수정: "대전" 뺐습니다! 그냥 키워드로 검색 (GPS에 맡김)
+                        // 대신 위에서 안내 문구로 리스크를 방어했습니다.
+                        const url = `https://m.map.kakao.com/actions/searchView?q=${encodeURIComponent(keyword)}`;
                         window.open(url, '_blank');
                     }
                 },
                 (error) => {
-                    // 위치 차단 시
                     fallbackMap(type, keyword);
                 }
             );
         }
 
         function fallbackMap(type, keyword) {
+            // 실패 시 안전하게 "내 주변" 붙이기
+            const query = "내 주변 " + keyword;
+            
             if (type === 'NAVER') {
-                // 네이버는 실패 시 "내 주변" 사용
-                const query = "내 주변 " + keyword;
                 const url = `https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent(query)}`;
                 window.open(url, '_blank');
             } else {
-                // ✅ 카카오는 실패해도 "대전" 사용 (안전빵)
-                const query = SAFE_REGION + " " + keyword;
                 const url = `https://m.map.kakao.com/actions/searchView?q=${encodeURIComponent(query)}`;
                 window.open(url, '_blank');
             }
