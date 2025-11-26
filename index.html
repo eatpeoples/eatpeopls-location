@@ -6,21 +6,26 @@
     <title>밥줘 AI - 메뉴 추천 서비스</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* 안내 문구 디자인 */
+        /* ✅ [수정됨] 안내 문구 디자인 업그레이드 */
         .recommend-text {
-            font-size: 12px;
-            color: #666;
-            margin-top: 12px;
-            margin-bottom: 5px;
-            background-color: #f1f3f5;
-            padding: 10px;
-            border-radius: 8px;
-            line-height: 1.5;
-            word-break: keep-all;
+            font-size: 13px;
+            color: #555;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 12px;
+            line-height: 1.6;
+            text-align: left; /* 왼쪽 정렬로 변경 */
+            border: 1px solid #e9ecef;
         }
-        .recommend-text strong {
-            color: #03c75a;
+        .tip-row {
+            display: block;
+            margin-bottom: 4px;
+        }
+        .tip-label {
             font-weight: bold;
+            margin-right: 5px;
         }
         
         /* 구글 맵 버튼 색상 */
@@ -77,14 +82,16 @@
         const form = document.getElementById('recommendationForm');
         const resultContainer = document.getElementById('resultContainer');
 
-        // ✅ 검색어 보정 사전
+        // 검색어 보정 사전
         const searchFixes = {
             "해산물 스튜": "양식 맛집",
             "에그 베네딕트": "브런치 카페",
             "김밥천국 라면": "분식",
             "감바스 알 아히요": "감바스",
             "마카롱 10구": "마카롱",
-            "베이컨 포테이토 피자": "피자"
+            "베이컨 포테이토 피자": "피자",
+            "청년다방": "차돌 떡볶이",
+            "엽기떡볶이": "매운 떡볶이"
         };
 
         function checkBudget(price, budgetType) {
@@ -135,6 +142,7 @@
                     const randomPick = topTierMenu[Math.floor(Math.random() * topTierMenu.length)];
                     const formattedPrice = Number(randomPick.Price).toLocaleString();
 
+                    // 텍스트 변환기
                     const ageMap = { "10s": "10대", "20s": "20대", "30s": "30대", "40s": "40대+" };
                     const displayAge = ageMap[randomPick.Recommended_Age] || randomPick.Recommended_Age;
                     const weatherMap = { "Clear": "☀️ 맑은 날", "Rain": "☔ 비 오는 날", "Hot": "🔥 더운 날", "Cold": "❄️ 추운 날", "Cloudy": "☁️ 흐린 날" };
@@ -144,6 +152,7 @@
 
                     // 지도 검색 키워드 설정
                     const cleanName = cleanMenuName(randomPick.Menu_Name);
+                    
                     let baseKeyword = searchFixes[cleanName];
                     if (!baseKeyword) {
                         baseKeyword = cleanName + " 맛집";
@@ -184,10 +193,11 @@
                                 </button>
                             </div>
                             
-                            <p class="recommend-text">
-                                💡 <strong>Tip:</strong> 카카오맵은 '대전' 지역 기준으로 검색됩니다.<br>
-                                내 위치 기준 정확한 검색은 <strong>'N(네이버)'</strong> 또는 <strong>'G(구글)'</strong>를 추천해요!
-                            </p>
+                            <div class="recommend-text">
+                                <span class="tip-row">🟡 <span class="tip-label">Kakao:</span> '대전' 지역 기준으로 넓게 찾아요.</span>
+                                <span class="tip-row">🔵 <span class="tip-label">Google:</span> AI가 <strong>찐맛집 1곳</strong>을 콕 찝어줄 수 있어요! 🎯</span>
+                                <span class="tip-row">💚 <span class="tip-label">Naver:</span> 내 위치 기준으로 가장 정확해요.</span>
+                            </div>
 
                             <div style="margin-top: 10px;">
                                  <a href="${schoolMapUrl}" target="_blank" style="flex:1; text-decoration:none;">
@@ -209,12 +219,10 @@
             }
         });
 
-        // ============================================================
-        // ✅ [최종 수정] 지도별 맞춤형 검색 함수
-        // ============================================================
+        // ✅ GPS 지도 검색 함수
         function openMapWithGPS(type, keyword) {
             
-            // 1. 카카오맵: GPS 아예 안 씀 (대전 지역 강제 고정)
+            // 1. 카카오맵: GPS 미사용 (대전 고정)
             if (type === 'KAKAO') {
                 const kakaoQuery = "대전 " + keyword; 
                 const url = `https://m.map.kakao.com/actions/searchView?q=${encodeURIComponent(kakaoQuery)}`;
@@ -235,33 +243,29 @@
                     const lng = position.coords.longitude;
                     
                     if (type === 'NAVER') {
-                        // ✅ 네이버: 좌표(&c) 사용 + 순수 키워드
+                        // 네이버: 좌표(&c) 사용
                         const url = `https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent(keyword)}&c=${lng},${lat},15`;
                         window.open(url, '_blank');
                     } else if (type === 'GOOGLE') {
-                        // ✅ 구글: 좌표(center) 사용 + 순수 키워드
-                        // 구글 맵 검색 URL 표준 포맷 사용
+                        // 구글: 좌표 사용 (내주변 키워드 삭제하고 좌표 위주로)
                         const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(keyword)}&center=${lat},${lng}`;
                         window.open(url, '_blank');
                     }
                 },
                 (error) => {
-                    // 권한 거부 시 Fallback
                     fallbackMap(type, keyword);
                 }
             );
         }
 
-        // GPS 실패/거절 시 사용하는 백업 함수
         function fallbackMap(type, keyword) {
-            // 실패하면 셋 다 "대전" 붙여서 안전하게 검색
             const safeQuery = "대전 " + keyword;
-            
             let url = "";
+            
             if (type === 'NAVER') {
-                url = `https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent(safeQuery)}`;
+                url = `https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent("내 주변 " + keyword)}`;
             } else if (type === 'GOOGLE') {
-                url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(safeQuery)}`;
+                url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("내 주변 " + keyword)}`;
             } else {
                 url = `https://m.map.kakao.com/actions/searchView?q=${encodeURIComponent(safeQuery)}`;
             }
