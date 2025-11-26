@@ -23,7 +23,7 @@
             font-weight: bold;
         }
         
-        /* 구글 맵 버튼 색상 추가 */
+        /* 구글 맵 버튼 색상 */
         .btn-google {
             background: #4285F4 !important;
             color: white !important;
@@ -83,7 +83,8 @@
             "에그 베네딕트": "브런치 카페",
             "김밥천국 라면": "분식",
             "감바스 알 아히요": "감바스",
-            "마카롱 10구": "마카롱"
+            "마카롱 10구": "마카롱",
+            "베이컨 포테이토 피자": "피자"
         };
 
         function checkBudget(price, budgetType) {
@@ -94,21 +95,14 @@
             return false;
         }
 
-        // ✅ [업그레이드] 메뉴 이름 청소기 (+ 기호 삭제 추가)
         function cleanMenuName(name) {
-            let cleaned = name.replace(/\(.*\)/gi, ''); // 괄호 삭제
-            
+            let cleaned = name.replace(/\(.*\)/gi, '');
             const removeWords = ["세트", "정식", "콤보", "1인", "패밀리", "미니", "반마리", "한마리", "기본", "박스"];
             removeWords.forEach(word => {
                 cleaned = cleaned.replace(word, '');
             });
-
-            // 1. 숫자+단위 제거 (10구, 3p 등)
             cleaned = cleaned.replace(/\d+[구개p]/gi, ''); 
-            
-            // 2. 특수문자 '+' 제거 (피자+파스타 -> 피자 파스타)
             cleaned = cleaned.replace(/\+/g, ' '); 
-
             return cleaned.trim();
         }
 
@@ -141,35 +135,22 @@
                     const randomPick = topTierMenu[Math.floor(Math.random() * topTierMenu.length)];
                     const formattedPrice = Number(randomPick.Price).toLocaleString();
 
-                    // 텍스트 변환기
                     const ageMap = { "10s": "10대", "20s": "20대", "30s": "30대", "40s": "40대+" };
                     const displayAge = ageMap[randomPick.Recommended_Age] || randomPick.Recommended_Age;
-
-                    const weatherMap = {
-                        "Clear": "☀️ 맑은 날", "Rain": "☔ 비 오는 날", "Hot": "🔥 더운 날", 
-                        "Cold": "❄️ 추운 날", "Cloudy": "☁️ 흐린 날"
-                    };
+                    const weatherMap = { "Clear": "☀️ 맑은 날", "Rain": "☔ 비 오는 날", "Hot": "🔥 더운 날", "Cold": "❄️ 추운 날", "Cloudy": "☁️ 흐린 날" };
                     const displayWeather = weatherMap[randomPick.Weather_Tag] || randomPick.Weather_Tag;
-                    
-                    const healthMap = {
-                        "Balanced": "🥗 균형잡힌", "High-Protein": "💪 고단백", 
-                        "Diet": "light 다이어트", "Heavy": "🍖 든든한", "Sweet": "🍭 달달한"
-                    };
+                    const healthMap = { "Balanced": "🥗 균형잡힌", "High-Protein": "💪 고단백", "Diet": "light 다이어트", "Heavy": "🍖 든든한", "Sweet": "🍭 달달한" };
                     const displayHealth = healthMap[randomPick.Health_Tag] || randomPick.Health_Tag;
 
-                    // ---------------------------------------------------------
                     // 지도 검색 키워드 설정
-                    // ---------------------------------------------------------
                     const cleanName = cleanMenuName(randomPick.Menu_Name);
-                    
-                    // 보정 사전 적용
                     let baseKeyword = searchFixes[cleanName];
                     if (!baseKeyword) {
                         baseKeyword = cleanName + " 맛집";
                     }
                     const searchKeyword = baseKeyword; 
 
-                    // ✅ [수정] 학교 앞 검색용 URL ('대전' 제거하고 '궁동'만 사용)
+                    // 학교 앞 검색용 URL
                     const schoolMapUrl = `https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent('궁동 ' + searchKeyword)}`;
 
                     resultContainer.innerHTML = `
@@ -177,9 +158,7 @@
                             <div style="font-size: 48px; margin-bottom: 10px;">${randomPick.Emoji}</div>
                             <h2>오늘의 추천: <span class="highlight">${randomPick.Menu_Name}</span></h2>
                             
-                            <div class="ai-comment-box">
-                                "${randomPick.AI_Comment}"
-                            </div>
+                            <div class="ai-comment-box">"${randomPick.AI_Comment}"</div>
 
                             <p>🏷️ 카테고리: ${randomPick.Category}</p>
                             <p>💰 가격: <strong>${formattedPrice}원</strong></p>
@@ -192,7 +171,7 @@
 
                             <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
                             
-                            <p style="font-size:14px; font-weight:bold; margin-bottom:5px;">📍 내 주변 식당 찾기 (GPS)</p>
+                            <p style="font-size:14px; font-weight:bold; margin-bottom:5px;">📍 내 주변 식당 찾기</p>
                             <div class="map-btn-group">
                                 <button onclick="openMapWithGPS('NAVER', '${searchKeyword}')" class="map-btn" style="background:#03c75a; color:white;">
                                     N
@@ -206,8 +185,8 @@
                             </div>
                             
                             <p class="recommend-text">
-                                💡 <strong>Tip:</strong> 카카오/구글맵은 위치가 불안정할 수 있어요.<br>
-                                정확한 검색을 원하시면 <strong>'N(네이버)'</strong>이나 아래 <strong>'학교 앞 찾기'</strong>를 이용해 주세요!
+                                💡 <strong>Tip:</strong> 카카오맵은 '대전' 지역 기준으로 검색됩니다.<br>
+                                내 위치 기준 정확한 검색은 <strong>'N(네이버)'</strong> 또는 <strong>'G(구글)'</strong>를 추천해요!
                             </p>
 
                             <div style="margin-top: 10px;">
@@ -222,28 +201,28 @@
                         </div>
                     `;
                 } else {
-                    resultContainer.innerHTML = `
-                        <div class="result">
-                            <h3>🥲 조건에 맞는 메뉴가 없어요.</h3>
-                            <p>카테고리나 예산을 조금 변경해서 다시 시도해보세요!</p>
-                        </div>
-                    `;
+                    resultContainer.innerHTML = `<div class="result"><h3>🥲 조건에 맞는 메뉴가 없어요.</h3></div>`;
                 }
             } catch (error) {
                 console.error('Error:', error);
-                resultContainer.innerHTML = `
-                    <div class="result">
-                        <p>🚨 데이터 로딩 실패!</p>
-                        <p style="font-size:12px; color:red;">GitHub 주소를 확인해주세요.</p>
-                    </div>`;
+                resultContainer.innerHTML = `<div class="result"><p>🚨 데이터 로딩 실패!</p></div>`;
             }
         });
 
         // ============================================================
-        // ✅ [최종] GPS 지도 검색 함수 (구글 맵 추가됨)
+        // ✅ [최종 수정] 지도별 맞춤형 검색 함수
         // ============================================================
         function openMapWithGPS(type, keyword) {
             
+            // 1. 카카오맵: GPS 아예 안 씀 (대전 지역 강제 고정)
+            if (type === 'KAKAO') {
+                const kakaoQuery = "대전 " + keyword; 
+                const url = `https://m.map.kakao.com/actions/searchView?q=${encodeURIComponent(kakaoQuery)}`;
+                window.open(url, '_blank');
+                return; 
+            }
+
+            // 2. 네이버 & 구글: GPS 권한 요청
             if (!navigator.geolocation) {
                 alert("이 브라우저에서는 위치 정보를 사용할 수 없습니다.");
                 fallbackMap(type, keyword);
@@ -256,43 +235,37 @@
                     const lng = position.coords.longitude;
                     
                     if (type === 'NAVER') {
-                        // 네이버: 좌표(&c) 사용 (정확도 높음)
+                        // ✅ 네이버: 좌표(&c) 사용 + 순수 키워드
                         const url = `https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent(keyword)}&c=${lng},${lat},15`;
                         window.open(url, '_blank');
-                    } else if (type === 'KAKAO') {
-                        // 카카오: "대전" 키워드로 지역 고정 (GPS 튐 방지)
-                        const kakaoQuery = "대전 " + keyword; 
-                        const url = `https://m.map.kakao.com/actions/searchView?q=${encodeURIComponent(kakaoQuery)}`;
-                        window.open(url, '_blank');
                     } else if (type === 'GOOGLE') {
-                        // ✅ 구글: 좌표보다는 텍스트 검색에 의존 (내 주변 키워드 사용)
-                        const googleQuery = "내 주변 " + keyword;
-                        const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(googleQuery)}`;
+                        // ✅ 구글: 좌표(center) 사용 + 순수 키워드
+                        // 구글 맵 검색 URL 표준 포맷 사용
+                        const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(keyword)}&center=${lat},${lng}`;
                         window.open(url, '_blank');
                     }
                 },
                 (error) => {
-                    // 위치 차단 시
+                    // 권한 거부 시 Fallback
                     fallbackMap(type, keyword);
                 }
             );
         }
 
+        // GPS 실패/거절 시 사용하는 백업 함수
         function fallbackMap(type, keyword) {
+            // 실패하면 셋 다 "대전" 붙여서 안전하게 검색
+            const safeQuery = "대전 " + keyword;
+            
+            let url = "";
             if (type === 'NAVER') {
-                const query = "내 주변 " + keyword;
-                const url = `https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent(query)}`;
-                window.open(url, '_blank');
-            } else if (type === 'KAKAO') {
-                const query = "대전 " + keyword;
-                const url = `https://m.map.kakao.com/actions/searchView?q=${encodeURIComponent(query)}`;
-                window.open(url, '_blank');
+                url = `https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent(safeQuery)}`;
+            } else if (type === 'GOOGLE') {
+                url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(safeQuery)}`;
             } else {
-                // 구글 폴백
-                const query = "대전 " + keyword;
-                const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
-                window.open(url, '_blank');
+                url = `https://m.map.kakao.com/actions/searchView?q=${encodeURIComponent(safeQuery)}`;
             }
+            window.open(url, '_blank');
         }
 
         function shareResult(menuName, comment, price) {
