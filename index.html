@@ -6,7 +6,7 @@
     <title>밥줘 AI - 메뉴 추천 서비스</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* ✅ [추가됨] 안내 문구 디자인 */
+        /* 안내 문구 디자인 */
         .recommend-text {
             font-size: 12px;
             color: #666;
@@ -19,8 +19,14 @@
             word-break: keep-all;
         }
         .recommend-text strong {
-            color: #03c75a; /* 네이버 강조색 */
+            color: #03c75a;
             font-weight: bold;
+        }
+        
+        /* 구글 맵 버튼 색상 추가 */
+        .btn-google {
+            background: #4285F4 !important;
+            color: white !important;
         }
     </style>
 </head>
@@ -71,7 +77,7 @@
         const form = document.getElementById('recommendationForm');
         const resultContainer = document.getElementById('resultContainer');
 
-        // ✅ 검색어 보정 사전 (하드코딩 리스트 반영)
+        // ✅ 검색어 보정 사전
         const searchFixes = {
             "해산물 스튜": "양식 맛집",
             "에그 베네딕트": "브런치 카페",
@@ -88,15 +94,21 @@
             return false;
         }
 
-        // ✅ 메뉴 이름 청소기
+        // ✅ [업그레이드] 메뉴 이름 청소기 (+ 기호 삭제 추가)
         function cleanMenuName(name) {
-            let cleaned = name.replace(/\(.*\)/gi, '');
+            let cleaned = name.replace(/\(.*\)/gi, ''); // 괄호 삭제
+            
             const removeWords = ["세트", "정식", "콤보", "1인", "패밀리", "미니", "반마리", "한마리", "기본", "박스"];
             removeWords.forEach(word => {
                 cleaned = cleaned.replace(word, '');
             });
-            // 숫자+단위 제거 (10구, 3p 등)
+
+            // 1. 숫자+단위 제거 (10구, 3p 등)
             cleaned = cleaned.replace(/\d+[구개p]/gi, ''); 
+            
+            // 2. 특수문자 '+' 제거 (피자+파스타 -> 피자 파스타)
+            cleaned = cleaned.replace(/\+/g, ' '); 
+
             return cleaned.trim();
         }
 
@@ -145,7 +157,9 @@
                     };
                     const displayHealth = healthMap[randomPick.Health_Tag] || randomPick.Health_Tag;
 
+                    // ---------------------------------------------------------
                     // 지도 검색 키워드 설정
+                    // ---------------------------------------------------------
                     const cleanName = cleanMenuName(randomPick.Menu_Name);
                     
                     // 보정 사전 적용
@@ -154,7 +168,9 @@
                         baseKeyword = cleanName + " 맛집";
                     }
                     const searchKeyword = baseKeyword; 
-                    const schoolMapUrl = `https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent('대전 궁동 ' + searchKeyword)}`;
+
+                    // ✅ [수정] 학교 앞 검색용 URL ('대전' 제거하고 '궁동'만 사용)
+                    const schoolMapUrl = `https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent('궁동 ' + searchKeyword)}`;
 
                     resultContainer.innerHTML = `
                         <div class="result">
@@ -179,16 +195,19 @@
                             <p style="font-size:14px; font-weight:bold; margin-bottom:5px;">📍 내 주변 식당 찾기 (GPS)</p>
                             <div class="map-btn-group">
                                 <button onclick="openMapWithGPS('NAVER', '${searchKeyword}')" class="map-btn" style="background:#03c75a; color:white;">
-                                    N 내 위치 검색
+                                    N
                                 </button>
                                 <button onclick="openMapWithGPS('KAKAO', '${searchKeyword}')" class="map-btn" style="background:#fee500; color:black;">
-                                    K 내 위치 검색
+                                    K
+                                </button>
+                                <button onclick="openMapWithGPS('GOOGLE', '${searchKeyword}')" class="map-btn btn-google">
+                                    G
                                 </button>
                             </div>
                             
                             <p class="recommend-text">
-                                💡 <strong>Tip:</strong> 카카오맵은 위치가 불안정할 수 있어요.<br>
-                                정확한 검색을 원하시면 <strong>'N 내 위치 검색'</strong>이나 아래 <strong>'학교 앞 찾기'</strong>를 이용해 주세요!
+                                💡 <strong>Tip:</strong> 카카오/구글맵은 위치가 불안정할 수 있어요.<br>
+                                정확한 검색을 원하시면 <strong>'N(네이버)'</strong>이나 아래 <strong>'학교 앞 찾기'</strong>를 이용해 주세요!
                             </p>
 
                             <div style="margin-top: 10px;">
@@ -220,7 +239,9 @@
             }
         });
 
-        // ✅ GPS 지도 검색 함수 (카카오 '대전' 제거됨 -> 순수 키워드)
+        // ============================================================
+        // ✅ [최종] GPS 지도 검색 함수 (구글 맵 추가됨)
+        // ============================================================
         function openMapWithGPS(type, keyword) {
             
             if (!navigator.geolocation) {
@@ -235,29 +256,41 @@
                     const lng = position.coords.longitude;
                     
                     if (type === 'NAVER') {
-                        // 네이버: 좌표(&c) 사용
+                        // 네이버: 좌표(&c) 사용 (정확도 높음)
                         const url = `https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent(keyword)}&c=${lng},${lat},15`;
                         window.open(url, '_blank');
-                    } else {
-                        // ✅ 카카오 수정: "대전" 뺐습니다! 순수 키워드만 전송
-                        const url = `https://m.map.kakao.com/actions/searchView?q=${encodeURIComponent(keyword)}`;
+                    } else if (type === 'KAKAO') {
+                        // 카카오: "대전" 키워드로 지역 고정 (GPS 튐 방지)
+                        const kakaoQuery = "대전 " + keyword; 
+                        const url = `https://m.map.kakao.com/actions/searchView?q=${encodeURIComponent(kakaoQuery)}`;
+                        window.open(url, '_blank');
+                    } else if (type === 'GOOGLE') {
+                        // ✅ 구글: 좌표보다는 텍스트 검색에 의존 (내 주변 키워드 사용)
+                        const googleQuery = "내 주변 " + keyword;
+                        const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(googleQuery)}`;
                         window.open(url, '_blank');
                     }
                 },
                 (error) => {
+                    // 위치 차단 시
                     fallbackMap(type, keyword);
                 }
             );
         }
 
         function fallbackMap(type, keyword) {
-            const query = "내 주변 " + keyword;
-            
             if (type === 'NAVER') {
+                const query = "내 주변 " + keyword;
                 const url = `https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent(query)}`;
                 window.open(url, '_blank');
-            } else {
+            } else if (type === 'KAKAO') {
+                const query = "대전 " + keyword;
                 const url = `https://m.map.kakao.com/actions/searchView?q=${encodeURIComponent(query)}`;
+                window.open(url, '_blank');
+            } else {
+                // 구글 폴백
+                const query = "대전 " + keyword;
+                const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
                 window.open(url, '_blank');
             }
         }
