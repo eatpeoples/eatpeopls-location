@@ -3,36 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>밥줘 AI - 메뉴 추천 서비스</title>
+    <title>밥줘 AI - 충남대 맛집</title>
     <link rel="stylesheet" href="style.css">
+    
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#007bff">
+    
     <style>
-        /* 안내 문구 디자인 */
-        .recommend-text {
-            font-size: 12px;
-            color: #666;
-            margin-top: 12px;
-            margin-bottom: 5px;
-            background-color: #f1f3f5;
-            padding: 10px;
-            border-radius: 8px;
-            line-height: 1.6;
-            word-break: keep-all;
-            text-align: left;
-        }
-        .tip-row {
-            display: block;
-            margin-bottom: 4px;
-        }
-        .tip-label {
-            font-weight: bold;
-            margin-right: 5px;
-        }
-        
-        /* 구글 맵 버튼 색상 */
-        .btn-google {
-            background: #4285F4 !important;
-            color: white !important;
-        }
+        /* 안내 문구 등 추가 스타일은 style.css로 옮겨도 되지만, 일단 유지 */
+        .recommend-text { font-size: 12px; color: #666; margin-top: 12px; margin-bottom: 5px; background-color: #f1f3f5; padding: 10px; border-radius: 8px; line-height: 1.6; word-break: keep-all; text-align: left; }
+        .tip-row { display: block; margin-bottom: 4px; }
+        .tip-label { font-weight: bold; margin-right: 5px; }
+        .btn-google { background: #4285F4 !important; color: white !important; }
     </style>
 </head>
 <body>
@@ -71,214 +53,18 @@
             <button type="submit">메뉴 추천받기</button>
         </form>
 
-        <div id="resultContainer">
-        </div>
+        <div id="resultContainer"></div>
     </div>
 
     <script>
-        // GitHub 데이터 URL
-        const DB_URL = 'https://raw.githubusercontent.com/eatpeoples/eatpeopls-location/main/menu_db.json'; 
-
-        const form = document.getElementById('recommendationForm');
-        const resultContainer = document.getElementById('resultContainer');
-
-        // 검색어 보정 사전
-        const searchFixes = {
-            "해산물 스튜": "양식 맛집",
-            "에그 베네딕트": "브런치 카페",
-            "김밥천국 라면": "분식",
-            "감바스 알 아히요": "감바스",
-            "마카롱 10구": "마카롱",
-            "베이컨 포테이토 피자": "피자",
-            "청년다방": "차돌 떡볶이",
-            "엽기떡볶이": "매운 떡볶이",
-            "신전떡볶이": "떡볶이",
-            "역전우동": "우동",
-            "칸스테이크하우스": "스테이크" 
-        };
-
-        function checkBudget(price, budgetType) {
-            const p = Number(price); 
-            if (budgetType === 'Low') return p <= 10000;
-            if (budgetType === 'Mid') return p > 10000 && p <= 20000;
-            if (budgetType === 'High') return p > 20000;
-            return false;
-        }
-
-        function cleanMenuName(name) {
-            let cleaned = name.replace(/\(.*\)/gi, '');
-            const removeWords = ["세트", "정식", "콤보", "1인", "패밀리", "미니", "반마리", "한마리", "기본", "박스"];
-            removeWords.forEach(word => {
-                cleaned = cleaned.replace(word, '');
-            });
-            cleaned = cleaned.replace(/\d+[구개p]/gi, ''); 
-            cleaned = cleaned.replace(/\+/g, ' '); 
-            return cleaned.trim();
-        }
-
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            resultContainer.innerHTML = `
-                <div class="result">
-                    <div class="loading">🍳 AI가 맛있는 메뉴를 고르고 있어요...</div>
-                </div>`;
-
-            const selectedCategory = document.getElementById('category').value;
-            const selectedAge = document.getElementById('age').value;
-            const selectedBudget = document.getElementById('budget').value;
-
-            try {
-                const response = await fetch(DB_URL);
-                if (!response.ok) throw new Error("DB 파일을 불러올 수 없습니다.");
-                const allMenu = await response.json();
-
-                const filteredMenu = allMenu.filter(item => {
-                    return item.Category === selectedCategory && 
-                           item.Recommended_Age === selectedAge &&
-                           checkBudget(item.Price, selectedBudget);
-                });
-
-                if (filteredMenu.length > 0) {
-                    const topTierCount = Math.min(filteredMenu.length, 10);
-                    const topTierMenu = filteredMenu.slice(0, topTierCount);
-                    const randomPick = topTierMenu[Math.floor(Math.random() * topTierMenu.length)];
-                    const formattedPrice = Number(randomPick.Price).toLocaleString();
-
-                    const ageMap = { "10s": "10대", "20s": "20대", "30s": "30대", "40s": "40대+" };
-                    const displayAge = ageMap[randomPick.Recommended_Age] || randomPick.Recommended_Age;
-                    const weatherMap = { "Clear": "☀️ 맑은 날", "Rain": "☔ 비 오는 날", "Hot": "🔥 더운 날", "Cold": "❄️ 추운 날", "Cloudy": "☁️ 흐린 날" };
-                    const displayWeather = weatherMap[randomPick.Weather_Tag] || randomPick.Weather_Tag;
-                    const healthMap = { "Balanced": "🥗 균형잡힌", "High-Protein": "💪 고단백", "Diet": "light 다이어트", "Heavy": "🍖 든든한", "Sweet": "🍭 달달한" };
-                    const displayHealth = healthMap[randomPick.Health_Tag] || randomPick.Health_Tag;
-
-                    const cleanName = cleanMenuName(randomPick.Menu_Name);
-                    let baseKeyword = searchFixes[cleanName];
-                    if (!baseKeyword) {
-                        baseKeyword = cleanName + " 맛집";
-                    }
-                    const searchKeyword = baseKeyword; 
-
-                    const schoolMapUrl = `https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent('궁동 ' + searchKeyword)}`;
-
-                    resultContainer.innerHTML = `
-                        <div class="result">
-                            <div style="font-size: 48px; margin-bottom: 10px;">${randomPick.Emoji}</div>
-                            <h2>오늘의 추천: <span class="highlight">${randomPick.Menu_Name}</span></h2>
-                            
-                            <div class="ai-comment-box">"${randomPick.AI_Comment}"</div>
-
-                            <p>🏷️ 카테고리: ${randomPick.Category}</p>
-                            <p>💰 가격: <strong>${formattedPrice}원</strong></p>
-                            
-                            <div style="margin-top: 15px; margin-bottom: 15px;">
-                                <span class="tag-badge">#${displayAge}픽</span>
-                                <span class="tag-badge">#${displayHealth}</span>
-                                <span class="tag-badge">#${displayWeather}</span>
-                            </div>
-
-                            <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
-                            
-                            <p style="font-size:14px; font-weight:bold; margin-bottom:5px;">📍 내 주변 식당 찾기</p>
-                            <div class="map-btn-group">
-                                <button onclick="openMapWithGPS('NAVER', '${searchKeyword}')" class="map-btn" style="background:#03c75a; color:white;">
-                                    N
-                                </button>
-                                <button onclick="openMapWithGPS('KAKAO', '${searchKeyword}')" class="map-btn" style="background:#fee500; color:black;">
-                                    K
-                                </button>
-                                <button onclick="openMapWithGPS('GOOGLE', '${searchKeyword}')" class="map-btn btn-google">
-                                    G
-                                </button>
-                            </div>
-                            
-                            <div class="recommend-text">
-                                <span class="tip-row">🟡 <span class="tip-label">Kakao:</span> '대전' 지역 기준으로 넓게 찾아요.</span>
-                                <span class="tip-row">🔵 <span class="tip-label">Google:</span> 메뉴에 따라 <strong>찐맛집 1곳</strong> 🎯 또는 <strong>리스트</strong> 📋를 보여줘요!</span>
-                                <span class="tip-row">💚 <span class="tip-label">Naver:</span> 내 위치 기준으로 가장 정확해요.</span>
-                            </div>
-
-                            <div style="margin-top: 10px;">
-                                 <a href="${schoolMapUrl}" target="_blank" style="flex:1; text-decoration:none;">
-                                    <button class="map-btn" style="background:#fff; border:1px solid #ddd; color:#333;">🏫 충남대(궁동) 맛집 찾기</button>
-                                </a>
-                            </div>
-
-                            <button onclick="shareResult('${randomPick.Menu_Name}', '${randomPick.AI_Comment}', '${formattedPrice}')" style="margin-top:20px; background:#555; color:white;">
-                                📢 친구에게 결과 공유하기
-                            </button>
-                        </div>
-                    `;
-                } else {
-                    resultContainer.innerHTML = `<div class="result"><h3>🥲 조건에 맞는 메뉴가 없어요.</h3></div>`;
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                resultContainer.innerHTML = `<div class="result"><p>🚨 데이터 로딩 실패!</p></div>`;
-            }
-        });
-
-        // ✅ GPS 지도 검색 함수
-        function openMapWithGPS(type, keyword) {
-            
-            // 1. 카카오맵: GPS 미사용 (대전 지역 고정)
-            if (type === 'KAKAO') {
-                const kakaoQuery = "대전 " + keyword; 
-                const url = `https://m.map.kakao.com/actions/searchView?q=${encodeURIComponent(kakaoQuery)}`;
-                window.open(url, '_blank');
-                return; 
-            }
-
-            // 2. 네이버 & 구글: GPS 권한 요청
-            if (!navigator.geolocation) {
-                alert("이 브라우저에서는 위치 정보를 사용할 수 없습니다.");
-                fallbackMap(type, keyword);
-                return;
-            }
-
-            navigator.geolocation.getCurrentPosition(
-                (position) => {
-                    const lat = position.coords.latitude;
-                    const lng = position.coords.longitude;
-                    
-                    if (type === 'NAVER') {
-                        const url = `https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent(keyword)}&c=${lng},${lat},15`;
-                        window.open(url, '_blank');
-                    } else if (type === 'GOOGLE') {
-                        // 구글맵 표준 웹 URL
-                        const url = `https://www.google.com/maps/search/${encodeURIComponent(keyword)}/@${lat},${lng},15z`;
-                        window.open(url, '_blank');
-                    }
-                },
-                (error) => {
-                    fallbackMap(type, keyword);
-                }
-            );
-        }
-
-        function fallbackMap(type, keyword) {
-            const safeQuery = "대전 " + keyword;
-            let url = "";
-            
-            if (type === 'NAVER') {
-                url = `https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent("내 주변 " + keyword)}`;
-            } else if (type === 'GOOGLE') {
-                url = `https://www.google.com/maps/search/${encodeURIComponent("내 주변 " + keyword)}`;
-            } else {
-                url = `https://m.map.kakao.com/actions/searchView?q=${encodeURIComponent(safeQuery)}`;
-            }
-            window.open(url, '_blank');
-        }
-
-        function shareResult(menuName, comment, price) {
-            const text = `[밥줘 AI 추천]\n🍽️ 오늘의 메뉴: ${menuName}\n💰 가격: ${price}원\n🗣️ AI 한줄평: "${comment}"\n\n너도 추천받으러 와! 👇`;
-            const url = window.location.href;
-            navigator.clipboard.writeText(`${text}\n${url}`).then(() => {
-                alert("복사되었습니다! 카톡방에 붙여넣기 하세요! 👍");
-            }).catch(err => {
-                alert("복사 실패 ㅠㅠ 화면을 캡처해서 공유해주세요.");
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(reg => console.log('Service Worker Registered!', reg))
+                    .catch(err => console.log('Service Worker Failed', err));
             });
         }
     </script>
+    <script src="script.js"></script>
 </body>
 </html>
