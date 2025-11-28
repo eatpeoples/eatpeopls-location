@@ -1,4 +1,4 @@
-/* script.js (최종 수정본) */
+/* script.js (카톡 우회 & 구글맵 수정 버전) */
 const API_KEY = "2400a3d0d18960973fb137ff6d8eb9be"; 
 const DB_URL = 'https://raw.githubusercontent.com/eatpeoples/eatpeopls-location/main/menu_db.json'; 
 
@@ -69,7 +69,11 @@ form.addEventListener('submit', async (e) => {
         let weatherCondition = 'Clear';
         let weatherText = "";
         
-        if (navigator.geolocation) {
+        // 카카오톡 브라우저인지 확인
+        const isKakao = /KAKAOTALK/i.test(navigator.userAgent);
+
+        // 카톡이 아닐 때만 GPS 시도
+        if (navigator.geolocation && !isKakao) {
             try {
                 const position = await new Promise((resolve, reject) => {
                     navigator.geolocation.getCurrentPosition(resolve, reject, { timeout: 3000 });
@@ -77,7 +81,7 @@ form.addEventListener('submit', async (e) => {
                 weatherCondition = await getCurrentWeather(position.coords.latitude, position.coords.longitude);
                 const wLabel = { "Clear": "☀️ 맑음", "Rain": "☔ 비", "Hot": "🔥 무더위", "Cold": "❄️ 추위", "Cloudy": "☁️ 흐림" };
                 weatherText = wLabel[weatherCondition] ? `(현재 날씨: ${wLabel[weatherCondition]})` : "";
-            } catch (err) { console.log("GPS Timeout or Error"); }
+            } catch (err) { console.log("GPS Skip"); }
         }
 
         const response = await fetch(DB_URL);
@@ -146,18 +150,24 @@ form.addEventListener('submit', async (e) => {
     }
 });
 
-// ✅ [핵심] 알림창 뜨는 지도 함수
+// ✅ [최종 수정] 지도 함수
 function openMapWithGPS(type, keyword) {
-    if (type === 'KAKAO') {
-        window.open(`https://m.map.kakao.com/actions/searchView?q=${encodeURIComponent("대전 " + keyword)}`, '_blank');
+    // 1. 카카오톡 브라우저 감지
+    const isKakao = /KAKAOTALK/i.test(navigator.userAgent);
+
+    // 2. 카카오맵 or 카톡 브라우저라면 -> 무조건 키워드 검색 (GPS X)
+    if (type === 'KAKAO' || isKakao) {
+        if(isKakao && type !== 'KAKAO') alert("카카오톡에서는 위치 기능이 제한되어\n검색어로 식당을 찾습니다.");
+        fallbackMap(type, keyword);
         return; 
     }
+
     if (!navigator.geolocation) {
         alert("이 브라우저는 위치 정보를 지원하지 않습니다.");
         fallbackMap(type, keyword);
         return;
     }
-    // 🔥 여기가 핵심! 알림창 띄우기
+
     alert("📡 내 위치를 찾는 중입니다...\n(잠시만 기다려주세요)");
 
     navigator.geolocation.getCurrentPosition(
@@ -168,8 +178,11 @@ function openMapWithGPS(type, keyword) {
             if (type === 'NAVER') {
                 window.open(`https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent(keyword)}&c=${lng},${lat},15`, '_blank');
             } else if (type === 'GOOGLE') {
-                // HTTPS로 수정됨!
-                window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(keyword)}&center=${lat},${lng}`, '_blank');
+                // ✅ 구글맵 표준 URL로 변경 (서울 고정 해결)
+                // 현재 위치(lat,lng)를 쿼리에 넣어서 '내 주변' 검색 효과를 냄
+                const googleQuery = keyword;
+                const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(googleQuery)}&center=${lat},${lng}`;
+                window.open(url, '_blank');
             }
         },
         (error) => {
@@ -182,6 +195,7 @@ function openMapWithGPS(type, keyword) {
 
 function fallbackMap(type, keyword) {
     if (type === 'NAVER') window.open(`https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent("내 주변 " + keyword)}`, '_blank');
+    // ✅ 구글맵 Fallback도 표준 URL로 변경
     else if (type === 'GOOGLE') window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("내 주변 " + keyword)}`, '_blank');
     else window.open(`https://m.map.kakao.com/actions/searchView?q=${encodeURIComponent("대전 " + keyword)}`, '_blank');
 }
