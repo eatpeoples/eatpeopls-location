@@ -1,30 +1,17 @@
-/* script.js - GPS 디버깅 & URL 수정 버전 */
-
-// ✅ 사용자 API 키
+/* script.js (최종 수정본) */
 const API_KEY = "2400a3d0d18960973fb137ff6d8eb9be"; 
-
-// GitHub 데이터 URL
 const DB_URL = 'https://raw.githubusercontent.com/eatpeoples/eatpeopls-location/main/menu_db.json'; 
 
 const form = document.getElementById('recommendationForm');
 const resultContainer = document.getElementById('resultContainer');
 
-// 검색어 보정 사전
 const searchFixes = {
-    "해산물 스튜": "양식 맛집",
-    "에그 베네딕트": "브런치 카페",
-    "김밥천국 라면": "분식",
-    "감바스 알 아히요": "감바스",
-    "마카롱 10구": "마카롱",
-    "베이컨 포테이토 피자": "피자",
-    "청년다방": "차돌 떡볶이",
-    "엽기떡볶이": "매운 떡볶이",
-    "신전떡볶이": "떡볶이",
-    "역전우동": "우동",
-    "칸스테이크하우스": "스테이크" 
+    "해산물 스튜": "양식 맛집", "에그 베네딕트": "브런치 카페", "김밥천국 라면": "분식",
+    "감바스 알 아히요": "감바스", "마카롱 10구": "마카롱", "베이컨 포테이토 피자": "피자",
+    "청년다방": "차돌 떡볶이", "엽기떡볶이": "매운 떡볶이", "신전떡볶이": "떡볶이",
+    "역전우동": "우동", "칸스테이크하우스": "스테이크" 
 };
 
-// 예산 체크
 function checkBudget(price, budgetType) {
     const p = Number(price); 
     if (budgetType === 'Low') return p <= 10000;
@@ -33,7 +20,6 @@ function checkBudget(price, budgetType) {
     return false;
 }
 
-// 메뉴명 정리
 function cleanMenuName(name) {
     let cleaned = name.replace(/\(.*\)/gi, '');
     const removeWords = ["세트", "정식", "콤보", "1인", "패밀리", "미니", "반마리", "한마리", "기본", "박스"];
@@ -43,7 +29,6 @@ function cleanMenuName(name) {
     return cleaned.trim();
 }
 
-// 날씨 가져오기
 async function getCurrentWeather(lat, lon) {
     if (!API_KEY) return 'Clear';
     try {
@@ -61,21 +46,14 @@ async function getCurrentWeather(lat, lon) {
              return 'Cloudy';
         }
         return 'Clear';
-    } catch (error) {
-        return 'Clear';
-    }
+    } catch (error) { return 'Clear'; }
 }
 
-// 가중치 랜덤 선택
 function weightedRandomSelect(menuList, weatherCondition) {
     let pool = [];
     menuList.forEach(item => {
         pool.push(item);
-        if (item.Weather_Tag === weatherCondition) {
-            pool.push(item);
-            pool.push(item);
-            pool.push(item);
-        }
+        if (item.Weather_Tag === weatherCondition) { pool.push(item); pool.push(item); pool.push(item); }
     });
     return pool[Math.floor(Math.random() * pool.length)];
 }
@@ -91,18 +69,15 @@ form.addEventListener('submit', async (e) => {
         let weatherCondition = 'Clear';
         let weatherText = "";
         
-        // 날씨용 GPS 호출 (조용히 시도)
         if (navigator.geolocation) {
             try {
                 const position = await new Promise((resolve, reject) => {
-                    navigator.geolocation.getCurrentPosition(resolve, reject, { timeout: 3000 }); // 3초 타임아웃
+                    navigator.geolocation.getCurrentPosition(resolve, reject, { timeout: 3000 });
                 });
                 weatherCondition = await getCurrentWeather(position.coords.latitude, position.coords.longitude);
                 const wLabel = { "Clear": "☀️ 맑음", "Rain": "☔ 비", "Hot": "🔥 무더위", "Cold": "❄️ 추위", "Cloudy": "☁️ 흐림" };
                 weatherText = wLabel[weatherCondition] ? `(현재 날씨: ${wLabel[weatherCondition]})` : "";
-            } catch (err) {
-                console.log("날씨 로딩 중 GPS 실패 (기본값 사용)");
-            }
+            } catch (err) { console.log("GPS Timeout or Error"); }
         }
 
         const response = await fetch(DB_URL);
@@ -121,7 +96,7 @@ form.addEventListener('submit', async (e) => {
             const displayWeather = weatherMap[randomPick.Weather_Tag] || randomPick.Weather_Tag;
             const healthMap = { "Balanced": "🥗 균형잡힌", "High-Protein": "💪 고단백", "Diet": "light 다이어트", "Heavy": "🍖 든든한", "Sweet": "🍭 달달한" };
             const displayHealth = healthMap[randomPick.Health_Tag] || randomPick.Health_Tag;
-
+            
             const cleanName = cleanMenuName(randomPick.Menu_Name);
             let baseKeyword = searchFixes[cleanName] || (cleanName + " 맛집");
             const searchKeyword = baseKeyword; 
@@ -171,57 +146,37 @@ form.addEventListener('submit', async (e) => {
     }
 });
 
-// ✅ [핵심 수정] 지도 버튼 클릭 시 실행되는 함수
+// ✅ [핵심] 알림창 뜨는 지도 함수
 function openMapWithGPS(type, keyword) {
-    // 1. 카카오맵은 GPS 없이 바로 실행
     if (type === 'KAKAO') {
         window.open(`https://m.map.kakao.com/actions/searchView?q=${encodeURIComponent("대전 " + keyword)}`, '_blank');
         return; 
     }
-
-    // 2. 브라우저 GPS 지원 여부 확인
     if (!navigator.geolocation) {
         alert("이 브라우저는 위치 정보를 지원하지 않습니다.");
         fallbackMap(type, keyword);
         return;
     }
-
-    // 3. 사용자에게 진행 상황 알림 (먹통 방지용)
+    // 🔥 여기가 핵심! 알림창 띄우기
     alert("📡 내 위치를 찾는 중입니다...\n(잠시만 기다려주세요)");
 
-    // 4. GPS 요청 (옵션 추가: 정확도 높임, 5초 타임아웃)
     navigator.geolocation.getCurrentPosition(
         (position) => {
             const lat = position.coords.latitude;
             const lng = position.coords.longitude;
             
-            // ✅ 성공 시 알림 (디버깅용) -> 나중에 삭제 가능
-            // alert("위치 찾기 성공! 지도를 엽니다."); 
-
             if (type === 'NAVER') {
-                const url = `https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent(keyword)}&c=${lng},${lat},15`;
-                window.open(url, '_blank');
+                window.open(`https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent(keyword)}&c=${lng},${lat},15`, '_blank');
             } else if (type === 'GOOGLE') {
-                // ✅ [수정] 구글맵 URL HTTPS 표준으로 변경
-                const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(keyword)}&center=${lat},${lng}`;
-                window.open(url, '_blank');
+                // HTTPS로 수정됨!
+                window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(keyword)}&center=${lat},${lng}`, '_blank');
             }
         },
         (error) => {
-            // 🚨 실패 시 원인 알려주기
-            let msg = "위치 확인 실패";
-            if (error.code === 1) msg = "위치 정보 허용이 차단되었습니다.\n설정에서 허용해주세요.";
-            else if (error.code === 2) msg = "위치를 감지할 수 없습니다. (GPS 신호 약함)";
-            else if (error.code === 3) msg = "시간이 초과되었습니다.";
-            
-            alert(`⚠️ ${msg}\n대신 키워드로 검색합니다.`);
+            alert(`⚠️ 위치 확인 실패! 대신 검색으로 이동합니다.`);
             fallbackMap(type, keyword);
         },
-        {
-            enableHighAccuracy: true, // 정확도 우선
-            timeout: 5000,            // 5초 안에 못 찾으면 포기
-            maximumAge: 0             // 캐시된 위치 쓰지 않음
-        }
+        { enableHighAccuracy: true, timeout: 5000, maximumAge: 0 }
     );
 }
 
@@ -234,5 +189,5 @@ function fallbackMap(type, keyword) {
 function shareResult(menuName, comment, price) {
     const text = `[밥줘 AI]\n🍽️ 추천: ${menuName}\n💰 ${price}원\n🗣️ "${comment}"\n\n추천받기 👇`;
     const url = window.location.href;
-    navigator.clipboard.writeText(`${text}\n${url}`).then(() => alert("복사 완료! 카톡에 붙여넣으세요.")).catch(() => alert("복사 실패"));
+    navigator.clipboard.writeText(`${text}\n${url}`).then(() => alert("복사 완료!")).catch(() => alert("복사 실패"));
 }
