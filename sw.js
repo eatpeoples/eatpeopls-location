@@ -1,5 +1,5 @@
 /* sw.js */
-const CACHE_NAME = 'bob-jwo-ai-v3';
+const CACHE_NAME = 'bob-jwo-ai-v4';
 const ASSETS_TO_CACHE = [
     './',
     './index.html',
