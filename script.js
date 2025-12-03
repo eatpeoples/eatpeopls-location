@@ -1,4 +1,4 @@
-/* script.js (차차 로딩 + GPS 원본 유지 버전) */
+/* script.js (로딩 텍스트 강화 + GPS 원본 유지 버전) */
 const API_KEY = "2400a3d0d18960973fb137ff6d8eb9be"; 
 const DB_URL = 'https://raw.githubusercontent.com/eatpeoples/eatpeopls-location/main/menu_db.json'; 
 
@@ -12,14 +12,17 @@ const searchFixes = {
     "역전우동": "우동", "칸스테이크하우스": "스테이크" 
 };
 
-// [기능 1] 차차(Chacha) 로딩 애니메이션 시작 함수
+// [기능 1] 로딩 애니메이션 (AI 분석 느낌 강화)
 function startLoadingAnimation() {
     resultContainer.innerHTML = `
         <div class="loading-container">
             <div class="chacha-loading"></div>
             <div class="loading-text">
-                <span style="color:#0072BC">차차</span>가 맛집을 찾고 있어요!<br>
-                <span style="font-size:13px; font-weight:normal; color:#888; margin-top:5px; display:block;">(잠시만 기다려주세요 🦄)</span>
+                <span style="color:#0072BC">차차</span>가 맛집을 찾고 있어요!
+            </div>
+            <div class="loading-subtext">
+                📡 실시간 날씨 데이터(API) 연동 중...<br>
+                📋 선택하신 취향 및 예산 분석 중...
             </div>
         </div>`;
 }
@@ -73,10 +76,10 @@ function weightedRandomSelect(menuList, weatherCondition) {
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
     
-    // 1. 차차 로딩 시작
+    // 1. 차차 로딩 시작 (날씨/취향 분석 멘트 포함)
     startLoadingAnimation();
 
-    // 2초 대기 (애니메이션 보여주기용)
+    // 2초 대기 (사용자가 멘트를 읽을 시간을 줌)
     const minLoadingTime = new Promise(resolve => setTimeout(resolve, 2000));
 
     const selectedCategory = document.getElementById('category').value;
@@ -110,7 +113,7 @@ form.addEventListener('submit', async (e) => {
             return item.Category === selectedCategory && item.Recommended_Age === selectedAge && checkBudget(item.Price, selectedBudget);
         });
 
-        // 2초 대기 완료 대기
+        // 2초 대기 완료
         await minLoadingTime;
 
         if (filteredMenu.length > 0) {
@@ -230,14 +233,8 @@ function fallbackMap(type, keyword) {
     }
 }
 
-/* script.js 맨 마지막 함수 수정 */
-
 function shareResult(menuName, comment, price) {
-    // [수정] 밥줘 AI -> 🦄 CNU EATS 로 변경
     const text = `[🦄 CNU EATS]\n충남대생을 위한 맛집 추천!\n\n🍽️ 추천: ${menuName}\n💰 ${price}원\n🗣️ "${comment}"\n\n나도 추천받기 👇`;
-    
     const url = window.location.href;
-    navigator.clipboard.writeText(`${text}\n${url}`)
-        .then(() => alert("공유 텍스트가 복사되었습니다!\n카톡에 붙여넣기 하세요 💌"))
-        .catch(() => alert("복사 실패"));
+    navigator.clipboard.writeText(`${text}\n${url}`).then(() => alert("복사 완료!")).catch(() => alert("복사 실패"));
 }
