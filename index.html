@@ -3,27 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>밥줘 AI - 충남대 맛집</title>
+    <title>CNU EATS - 충남대 맛집</title>
     <link rel="stylesheet" href="style.css">
     
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#007bff">
-    
+    <meta name="theme-color" content="#003E7E">
     <link rel="icon" type="image/png" href="icon.png">
     <link rel="apple-touch-icon" href="icon.png">
     
     <style>
-        /* 안내 문구 등 추가 스타일은 style.css로 옮겨도 되지만, 일단 유지 */
-        .recommend-text { font-size: 12px; color: #666; margin-top: 12px; margin-bottom: 5px; background-color: #f1f3f5; padding: 10px; border-radius: 8px; line-height: 1.6; word-break: keep-all; text-align: left; }
+        /* 추가적인 안내 문구 스타일 (style.css에 없는 경우 대비용) */
+        .recommend-text { font-size: 12px; color: #5F6C7B; margin-top: 15px; margin-bottom: 5px; background-color: #F8FAFC; padding: 12px; border-radius: 10px; line-height: 1.6; word-break: keep-all; text-align: left; border: 1px solid #E2E8F0; }
         .tip-row { display: block; margin-bottom: 4px; }
-        .tip-label { font-weight: bold; margin-right: 5px; }
+        .tip-label { font-weight: bold; margin-right: 5px; color: #2C3E50; }
         .btn-google { background: #4285F4 !important; color: white !important; }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>🍽️ 밥줘 AI 맞춤 메뉴 추천</h1>
+        <h1>🍽️ CNU EATS</h1>
+        <div class="subtitle">충남대생을 위한 맞춤형 메뉴 추천 AI</div>
+
         <form id="recommendationForm">
             <label for="category">원하는 메뉴 카테고리:</label>
             <select id="category" name="category" required>
@@ -60,6 +61,7 @@
     </div>
 
     <script>
+        // PWA 서비스 워커 등록 (앱 설치 기능)
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('sw.js')
@@ -68,6 +70,6 @@
             });
         }
     </script>
-    <script src="script.js?v=4"></script>
+    <script src="script.js?v=4.1"></script>
 </body>
 </html>
