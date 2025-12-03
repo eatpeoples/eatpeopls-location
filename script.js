@@ -1,14 +1,14 @@
-/* script.js (GPS 유효성 검사 + 구글맵 링크 수정 버전) */
+/* script.js (최종: 대전/궁동 이원화 + GPS 로직 완성) */
 const API_KEY = "2400a3d0d18960973fb137ff6d8eb9be"; 
 const DB_URL = 'https://raw.githubusercontent.com/eatpeoples/eatpeopls-location/main/menu_db.json'; 
 
 const form = document.getElementById('recommendationForm');
 const resultContainer = document.getElementById('resultContainer');
 
-// 1. GPS 유효성 검사를 위한 '대전(충남대)' 좌표 범위 설정 (Geofencing)
+// GPS 유효성 검사를 위한 '대전(충남대)' 좌표 범위 (Geofencing)
 const CNU_BOUNDS = {
-    minLat: 36.20, maxLat: 36.45, // 위도 (Latitude) 범위
-    minLng: 127.20, maxLng: 127.50 // 경도 (Longitude) 범위
+    minLat: 36.20, maxLat: 36.45, 
+    minLng: 127.20, maxLng: 127.50 
 };
 
 const searchFixes = {
@@ -18,7 +18,6 @@ const searchFixes = {
     "역전우동": "우동", "칸스테이크하우스": "스테이크" 
 };
 
-// [기능 1] 로딩 애니메이션 (AI 분석 느낌 강화)
 function startLoadingAnimation() {
     resultContainer.innerHTML = `
         <div class="loading-container">
@@ -81,11 +80,7 @@ function weightedRandomSelect(menuList, weatherCondition) {
 
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    
-    // 1. 차차 로딩 시작
     startLoadingAnimation();
-
-    // 2초 대기
     const minLoadingTime = new Promise(resolve => setTimeout(resolve, 2000));
 
     const selectedCategory = document.getElementById('category').value;
@@ -95,15 +90,13 @@ form.addEventListener('submit', async (e) => {
     try {
         let weatherCondition = 'Clear';
         let weatherText = "";
-        
-        // 날씨 로직용 GPS (여기는 날씨만 체크하므로 기존 로직 유지해도 무방)
         const isKakao = /KAKAOTALK/i.test(navigator.userAgent);
 
         if (navigator.geolocation && !isKakao) {
             try {
                 const position = await new Promise((resolve, reject) => {
                     navigator.geolocation.getCurrentPosition(resolve, reject, { 
-                        timeout: 5000, // 날씨는 5초만 기다림
+                        timeout: 5000, 
                         maximumAge: 0,
                         enableHighAccuracy: true
                     });
@@ -120,7 +113,6 @@ form.addEventListener('submit', async (e) => {
             return item.Category === selectedCategory && item.Recommended_Age === selectedAge && checkBudget(item.Price, selectedBudget);
         });
 
-        // 2초 대기 완료
         await minLoadingTime;
 
         if (filteredMenu.length > 0) {
@@ -136,7 +128,12 @@ form.addEventListener('submit', async (e) => {
             
             const cleanName = cleanMenuName(randomPick.Menu_Name);
             let baseKeyword = searchFixes[cleanName] || (cleanName + " 맛집");
+            
+            // 💡 [수정 포인트] 
+            // 1. 일반 지도(N,K,G)용 검색어: 기본 메뉴명 (나중에 함수 안에서 '대전' 붙임)
             const searchKeyword = baseKeyword; 
+            
+            // 2. 학교 전용 버튼 URL: '궁동'을 강제로 붙여서 학교 앞 맛집 보장
             const schoolMapUrl = `https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent('궁동 ' + searchKeyword)}`;
 
             let spiceDisplay = "";
@@ -197,12 +194,10 @@ form.addEventListener('submit', async (e) => {
     }
 });
 
-// ✅ [지도 함수 - 개선된 버전]
-// GPS를 시도하되, 좌표가 대전(학교 근처)이 아니면 스마트하게 검색어로 전환합니다.
+// ✅ [지도 함수]
 function openMapWithGPS(type, keyword) {
     const isKakao = /KAKAOTALK/i.test(navigator.userAgent);
 
-    // 1. 카카오톡이거나 GPS가 없는 브라우저는 바로 검색어로 이동 (기존 유지)
     if (type === 'KAKAO' || isKakao || !navigator.geolocation) {
         if(isKakao && type !== 'KAKAO') alert("카카오톡 환경에서는\n정확도 향상을 위해 검색어로 이동합니다.");
         fallbackMap(type, keyword);
@@ -216,56 +211,47 @@ function openMapWithGPS(type, keyword) {
             const lat = position.coords.latitude;
             const lng = position.coords.longitude;
             
-            console.log(`획득 좌표: ${lat}, ${lng}`); // 디버깅용 로그
+            console.log(`획득 좌표: ${lat}, ${lng}`);
 
-            // 2. [핵심] 좌표 유효성 검사 (Geofencing)
-            // 받아온 좌표가 우리가 설정한 대전 범위 안에 있는지 확인
+            // [핵심] 좌표 유효성 검사 (Geofencing)
             const isValidLocation = (
                 lat >= CNU_BOUNDS.minLat && lat <= CNU_BOUNDS.maxLat &&
                 lng >= CNU_BOUNDS.minLng && lng <= CNU_BOUNDS.maxLng
             );
 
             if (isValidLocation) {
-                // ✅ Case A: 진짜 GPS (대전 내부) -> 좌표로 지도 열기 (원래 의도한 기능 성공!)
+                // ✅ Case A: 진짜 GPS (대전 내부) -> 좌표로 이동
                 if (type === 'NAVER') {
-                    // 네이버 모바일 웹은 쿼리와 좌표를 같이 주는게 안정적
                     window.open(`https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent(keyword)}&c=${lng},${lat},16`, '_blank');
                 } else if (type === 'GOOGLE') {
-                    // [수정됨] 구글 맵 오타 수정 완료
                     window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(keyword)}&center=${lat},${lng}`, '_blank');
                 }
             } else {
-                // ❌ Case B: 가짜 GPS (서울/전국 등 IP 오류) -> 경고 후 키워드 검색으로 전환 (안전장치)
-                alert("⚠️ 현재 GPS 신호가 불안정하여(타지역 잡힘)\n정확도를 위해 '충남대 + 메뉴명'으로 검색합니다.");
+                // ❌ Case B: 가짜 GPS (서울/전국) -> 안전하게 대전 검색으로 전환
+                alert("⚠️ 현재 GPS 신호가 불안정하여(타지역 잡힘)\n정확도를 위해 '대전 + 메뉴명'으로 검색합니다.");
                 fallbackMap(type, keyword);
             }
         },
         (error) => {
-            // 위치 권한 거부 또는 시간 초과 시
             alert(`⚠️ 위치 정보를 가져올 수 없습니다.\n검색으로 이동합니다.`);
             fallbackMap(type, keyword);
         },
-        { 
-            enableHighAccuracy: true, // 배터리를 더 쓰더라도 정확도 우선
-            timeout: 7000,            // 7초 안에 못 잡으면 포기 (10초는 너무 길어서 줄임)
-            maximumAge: 0             // 캐시된 옛날 위치 쓰지 않음
-        }
+        { enableHighAccuracy: true, timeout: 7000, maximumAge: 0 }
     );
 }
 
-// ✅ [Fallback 함수 - 개선된 버전]
-// GPS 실패 시 '내 주변' 대신 '충남대'를 붙여서 정확도 100% 보장
+// ✅ [Fallback 함수 - 수정됨]
+// GPS 실패 시 무조건 '대전'을 붙여서 검색 결과 0건 방지
 function fallbackMap(type, keyword) {
-    const safeKeyword = "충남대 " + keyword;
+    // 💡 충남대 대신 '대전'을 붙여서 범위 확장 & 결과 보장
+    const safeKeyword = "대전 " + keyword; 
     
     if (type === 'NAVER') {
         window.open(`https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent(safeKeyword)}`, '_blank');
     } else if (type === 'GOOGLE') {
-        // [수정됨] 구글 맵 오타 수정 완료
         window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(safeKeyword)}`, '_blank');
     } else {
-        // 카카오는 이미 '대전' 키워드 로직이 있으므로 유지
-        window.open(`https://m.map.kakao.com/actions/searchView?q=${encodeURIComponent("대전 " + keyword)}`, '_blank');
+        window.open(`https://m.map.kakao.com/actions/searchView?q=${encodeURIComponent(safeKeyword)}`, '_blank');
     }
 }
 
