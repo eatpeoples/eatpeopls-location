@@ -1,4 +1,4 @@
-/* script.js (UI/UX 강화 & GPS 로직 원본 유지 버전) */
+/* script.js (로딩 시간 2초 보장 & UI/UX 강화 버전) */
 const API_KEY = "2400a3d0d18960973fb137ff6d8eb9be"; 
 const DB_URL = 'https://raw.githubusercontent.com/eatpeoples/eatpeopls-location/main/menu_db.json'; 
 
@@ -83,8 +83,12 @@ function weightedRandomSelect(menuList, weatherCondition) {
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
     
-    // 로딩 시작
+    // 1. 로딩 시작
     startLoadingAnimation();
+
+    // ✨ [핵심 수정] 최소 2초(2000ms) 대기 시간을 강제로 부여
+    // 데이터가 0.1초 만에 와도, 이 코드가 2초를 채워줍니다.
+    const minLoadingTime = new Promise(resolve => setTimeout(resolve, 2000));
 
     const selectedCategory = document.getElementById('category').value;
     const selectedAge = document.getElementById('age').value;
@@ -96,7 +100,7 @@ form.addEventListener('submit', async (e) => {
         
         const isKakao = /KAKAOTALK/i.test(navigator.userAgent);
 
-        // 카톡이 아닐 때만 GPS 시도 (Timeout 10초로 안정성 확보)
+        // 카톡이 아닐 때만 GPS 시도 (비동기 병렬 처리를 위해 로직 유지)
         if (navigator.geolocation && !isKakao) {
             try {
                 const position = await new Promise((resolve, reject) => {
@@ -118,7 +122,10 @@ form.addEventListener('submit', async (e) => {
             return item.Category === selectedCategory && item.Recommended_Age === selectedAge && checkBudget(item.Price, selectedBudget);
         });
 
-        // 로딩 종료
+        // ✨ [핵심 수정] 데이터 준비가 다 되었어도, 2초가 지날 때까지 여기서 대기합니다.
+        await minLoadingTime;
+
+        // 2. 로딩 종료 (2초 후 실행됨)
         clearInterval(rouletteInterval);
 
         if (filteredMenu.length > 0) {
@@ -231,16 +238,13 @@ function openMapWithGPS(type, keyword) {
     );
 }
 
-// ✅ [Fallback 함수] 팀장님 원본 로직 100% 복구 완료
+// ✅ [Fallback 함수] 팀장님 원본 로직 유지
 function fallbackMap(type, keyword) {
     if (type === 'NAVER') {
-        // 원본: 내 주변 + 키워드
         window.open(`https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent("내 주변 " + keyword)}`, '_blank');
     } else if (type === 'GOOGLE') {
-        // 원본: 내 주변 + 키워드 (URL 문법만 작동하게 수정)
         window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("내 주변 " + keyword)}`, '_blank');
     } else {
-        // 원본: 대전 + 키워드
         window.open(`https://m.map.kakao.com/actions/searchView?q=${encodeURIComponent("대전 " + keyword)}`, '_blank');
     }
 }
