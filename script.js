@@ -1,9 +1,12 @@
-/* script.js (카톡 우회 & 구글맵 수정 버전) */
+/* script.js (UI/UX 강화 & GPS 로직 원본 유지 버전) */
 const API_KEY = "2400a3d0d18960973fb137ff6d8eb9be"; 
 const DB_URL = 'https://raw.githubusercontent.com/eatpeoples/eatpeopls-location/main/menu_db.json'; 
 
 const form = document.getElementById('recommendationForm');
 const resultContainer = document.getElementById('resultContainer');
+
+// 로딩 룰렛 제어용 변수
+let rouletteInterval;
 
 const searchFixes = {
     "해산물 스튜": "양식 맛집", "에그 베네딕트": "브런치 카페", "김밥천국 라면": "분식",
@@ -11,6 +14,25 @@ const searchFixes = {
     "청년다방": "차돌 떡볶이", "엽기떡볶이": "매운 떡볶이", "신전떡볶이": "떡볶이",
     "역전우동": "우동", "칸스테이크하우스": "스테이크" 
 };
+
+// [기능 1] 로딩 애니메이션 (룰렛 효과)
+function startLoadingAnimation() {
+    const emojis = ["🍚", "🍜", "🍣", "🍕", "🍔", "🍖", "🥘", "🥪", "🍲", "🍛"];
+    let index = 0;
+    resultContainer.innerHTML = `
+        <div class="loading-container">
+            <div id="rouletteIcon" class="roulette-emoji">🍚</div>
+            <div class="loading-text">☁️ 날씨와 😋 입맛을 분석 중...</div>
+        </div>`;
+    
+    rouletteInterval = setInterval(() => {
+        const icon = document.getElementById('rouletteIcon');
+        if(icon) {
+            index = (index + 1) % emojis.length;
+            icon.innerText = emojis[index];
+        }
+    }, 100);
+}
 
 function checkBudget(price, budgetType) {
     const p = Number(price); 
@@ -36,15 +58,15 @@ async function getCurrentWeather(lat, lon) {
         const res = await fetch(url);
         const data = await res.json();
         const id = data.weather[0].id;
-        if (id >= 200 && id <= 531) return 'Rain';   
-        if (id >= 600 && id <= 622) return 'Cold';   
+        if (id >= 200 && id <= 531) return 'Rain';    
+        if (id >= 600 && id <= 622) return 'Cold';    
         if (id >= 800) {
              const temp = data.main.temp;
              if (temp >= 28) return 'Hot'; 
              if (temp <= 5) return 'Cold'; 
              if (id === 800) return 'Clear';
              return 'Cloudy';
-        }
+         }
         return 'Clear';
     } catch (error) { return 'Clear'; }
 }
@@ -60,7 +82,10 @@ function weightedRandomSelect(menuList, weatherCondition) {
 
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    resultContainer.innerHTML = `<div class="result"><div class="loading">⛅ 하늘의 기운과 맛집 데이터를 모으는 중...</div></div>`;
+    
+    // 로딩 시작
+    startLoadingAnimation();
+
     const selectedCategory = document.getElementById('category').value;
     const selectedAge = document.getElementById('age').value;
     const selectedBudget = document.getElementById('budget').value;
@@ -69,19 +94,22 @@ form.addEventListener('submit', async (e) => {
         let weatherCondition = 'Clear';
         let weatherText = "";
         
-        // 카카오톡 브라우저인지 확인
         const isKakao = /KAKAOTALK/i.test(navigator.userAgent);
 
-        // 카톡이 아닐 때만 GPS 시도
+        // 카톡이 아닐 때만 GPS 시도 (Timeout 10초로 안정성 확보)
         if (navigator.geolocation && !isKakao) {
             try {
                 const position = await new Promise((resolve, reject) => {
-                    navigator.geolocation.getCurrentPosition(resolve, reject, { timeout: 3000 });
+                    navigator.geolocation.getCurrentPosition(resolve, reject, { 
+                        timeout: 10000, 
+                        maximumAge: 0,
+                        enableHighAccuracy: true
+                    });
                 });
                 weatherCondition = await getCurrentWeather(position.coords.latitude, position.coords.longitude);
                 const wLabel = { "Clear": "☀️ 맑음", "Rain": "☔ 비", "Hot": "🔥 무더위", "Cold": "❄️ 추위", "Cloudy": "☁️ 흐림" };
                 weatherText = wLabel[weatherCondition] ? `(현재 날씨: ${wLabel[weatherCondition]})` : "";
-            } catch (err) { console.log("GPS Skip"); }
+            } catch (err) { console.log("GPS Skip/Fail"); }
         }
 
         const response = await fetch(DB_URL);
@@ -89,6 +117,9 @@ form.addEventListener('submit', async (e) => {
         const filteredMenu = allMenu.filter(item => {
             return item.Category === selectedCategory && item.Recommended_Age === selectedAge && checkBudget(item.Price, selectedBudget);
         });
+
+        // 로딩 종료
+        clearInterval(rouletteInterval);
 
         if (filteredMenu.length > 0) {
             const randomPick = weightedRandomSelect(filteredMenu, weatherCondition);
@@ -106,19 +137,34 @@ form.addEventListener('submit', async (e) => {
             const searchKeyword = baseKeyword; 
             const schoolMapUrl = `https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent('궁동 ' + searchKeyword)}`;
 
+            // [기능 2] 매운맛 지표 로직
+            let spiceDisplay = "";
+            const spiceLevel = randomPick.Spiciness || 0; 
+            if (spiceLevel > 0) {
+                const peppers = "🌶️".repeat(spiceLevel);
+                spiceDisplay = `<div class="spiciness-badge">${peppers} (맵기 ${spiceLevel}단계)</div>`;
+            } else {
+                spiceDisplay = `<div class="spiciness-badge" style="background:#f0fff4; color:#2f855a; border-color:#c6f6d5;">🥬 순한맛 (0단계)</div>`;
+            }
+
             resultContainer.innerHTML = `
                 <div class="result">
                     <div style="font-size: 13px; color: #666; margin-bottom: 5px;">${weatherText}</div>
                     <div style="font-size: 48px; margin-bottom: 10px;">${randomPick.Emoji}</div>
                     <h2>오늘의 추천: <span class="highlight">${randomPick.Menu_Name}</span></h2>
+                    
+                    ${spiceDisplay}
+
                     <div class="ai-comment-box">"${randomPick.AI_Comment}"</div>
                     <p>🏷️ 카테고리: ${randomPick.Category}</p>
                     <p>💰 가격: <strong>${formattedPrice}원</strong></p>
+                    
                     <div style="margin-top: 15px; margin-bottom: 15px;">
                         <span class="tag-badge">#${displayAge}픽</span>
                         <span class="tag-badge">#${displayHealth}</span>
                         <span class="tag-badge">#${displayWeather}추천</span>
                     </div>
+                    
                     <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
                     <p style="font-size:14px; font-weight:bold; margin-bottom:5px;">📍 내 주변 식당 찾기</p>
                     <div class="map-btn-group">
@@ -127,7 +173,7 @@ form.addEventListener('submit', async (e) => {
                         <button onclick="openMapWithGPS('GOOGLE', '${searchKeyword}')" class="map-btn btn-google">G</button>
                     </div>
                     <div class="recommend-text">
-                        <span class="tip-row">🟡 <span class="tip-label">Kakao:</span> '대전' 지역 검색</span>
+                        <span class="tip-row">🟡 <span class="tip-label">Kakao:</span> 대전 지역 검색</span>
                         <span class="tip-row">🔵 <span class="tip-label">Google:</span> 찐맛집/리스트</span>
                         <span class="tip-row">💚 <span class="tip-label">Naver:</span> 내 위치 정확</span>
                     </div>
@@ -142,30 +188,24 @@ form.addEventListener('submit', async (e) => {
                 </div>
             `;
         } else {
+            clearInterval(rouletteInterval);
             resultContainer.innerHTML = `<div class="result"><h3>🥲 조건에 맞는 메뉴가 없어요.</h3></div>`;
         }
     } catch (error) {
+        clearInterval(rouletteInterval);
         console.error('Error:', error);
         resultContainer.innerHTML = `<div class="result"><p>🚨 데이터 로딩 실패!</p></div>`;
     }
 });
 
-// ✅ [최종 수정] 지도 함수
+// ✅ [최종 수정] 지도 함수: 원본 로직 유지 (GPS 성공 시 좌표 이동)
 function openMapWithGPS(type, keyword) {
-    // 1. 카카오톡 브라우저 감지
     const isKakao = /KAKAOTALK/i.test(navigator.userAgent);
 
-    // 2. 카카오맵 or 카톡 브라우저라면 -> 무조건 키워드 검색 (GPS X)
-    if (type === 'KAKAO' || isKakao) {
+    if (type === 'KAKAO' || isKakao || !navigator.geolocation) {
         if(isKakao && type !== 'KAKAO') alert("카카오톡에서는 위치 기능이 제한되어\n검색어로 식당을 찾습니다.");
         fallbackMap(type, keyword);
         return; 
-    }
-
-    if (!navigator.geolocation) {
-        alert("이 브라우저는 위치 정보를 지원하지 않습니다.");
-        fallbackMap(type, keyword);
-        return;
     }
 
     alert("📡 내 위치를 찾는 중입니다...\n(잠시만 기다려주세요)");
@@ -178,26 +218,31 @@ function openMapWithGPS(type, keyword) {
             if (type === 'NAVER') {
                 window.open(`https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent(keyword)}&c=${lng},${lat},15`, '_blank');
             } else if (type === 'GOOGLE') {
-                // ✅ 구글맵 표준 URL로 변경 (서울 고정 해결)
-                // 현재 위치(lat,lng)를 쿼리에 넣어서 '내 주변' 검색 효과를 냄
-                const googleQuery = keyword;
-                const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(googleQuery)}&center=${lat},${lng}`;
+                // 구글맵 표준 URL (좌표 중심)
+                const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(keyword)}&center=${lat},${lng}`;
                 window.open(url, '_blank');
             }
         },
         (error) => {
-            alert(`⚠️ 위치 확인 실패! 대신 검색으로 이동합니다.`);
+            alert(`⚠️ 위치 확인 실패! 검색으로 이동합니다.`);
             fallbackMap(type, keyword);
         },
-        { enableHighAccuracy: true, timeout: 5000, maximumAge: 0 }
+        { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
     );
 }
 
+// ✅ [Fallback 함수] 팀장님 원본 로직 100% 복구 완료
 function fallbackMap(type, keyword) {
-    if (type === 'NAVER') window.open(`https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent("내 주변 " + keyword)}`, '_blank');
-    // ✅ 구글맵 Fallback도 표준 URL로 변경
-    else if (type === 'GOOGLE') window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("내 주변 " + keyword)}`, '_blank');
-    else window.open(`https://m.map.kakao.com/actions/searchView?q=${encodeURIComponent("대전 " + keyword)}`, '_blank');
+    if (type === 'NAVER') {
+        // 원본: 내 주변 + 키워드
+        window.open(`https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent("내 주변 " + keyword)}`, '_blank');
+    } else if (type === 'GOOGLE') {
+        // 원본: 내 주변 + 키워드 (URL 문법만 작동하게 수정)
+        window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("내 주변 " + keyword)}`, '_blank');
+    } else {
+        // 원본: 대전 + 키워드
+        window.open(`https://m.map.kakao.com/actions/searchView?q=${encodeURIComponent("대전 " + keyword)}`, '_blank');
+    }
 }
 
 function shareResult(menuName, comment, price) {
