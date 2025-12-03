@@ -230,8 +230,14 @@ function fallbackMap(type, keyword) {
     }
 }
 
+/* script.js 맨 마지막 함수 수정 */
+
 function shareResult(menuName, comment, price) {
-    const text = `[밥줘 AI]\n🍽️ 추천: ${menuName}\n💰 ${price}원\n🗣️ "${comment}"\n\n추천받기 👇`;
+    // [수정] 밥줘 AI -> 🦄 CNU EATS 로 변경
+    const text = `[🦄 CNU EATS]\n충남대생을 위한 맛집 추천!\n\n🍽️ 추천: ${menuName}\n💰 ${price}원\n🗣️ "${comment}"\n\n나도 추천받기 👇`;
+    
     const url = window.location.href;
-    navigator.clipboard.writeText(`${text}\n${url}`).then(() => alert("복사 완료!")).catch(() => alert("복사 실패"));
+    navigator.clipboard.writeText(`${text}\n${url}`)
+        .then(() => alert("공유 텍스트가 복사되었습니다!\n카톡에 붙여넣기 하세요 💌"))
+        .catch(() => alert("복사 실패"));
 }
