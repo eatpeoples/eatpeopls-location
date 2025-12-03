@@ -1,12 +1,9 @@
-/* script.js (로딩 시간 2초 보장 & UI/UX 강화 버전) */
+/* script.js (차차 로딩 + GPS 원본 유지 버전) */
 const API_KEY = "2400a3d0d18960973fb137ff6d8eb9be"; 
 const DB_URL = 'https://raw.githubusercontent.com/eatpeoples/eatpeopls-location/main/menu_db.json'; 
 
 const form = document.getElementById('recommendationForm');
 const resultContainer = document.getElementById('resultContainer');
-
-// 로딩 룰렛 제어용 변수
-let rouletteInterval;
 
 const searchFixes = {
     "해산물 스튜": "양식 맛집", "에그 베네딕트": "브런치 카페", "김밥천국 라면": "분식",
@@ -15,23 +12,16 @@ const searchFixes = {
     "역전우동": "우동", "칸스테이크하우스": "스테이크" 
 };
 
-// [기능 1] 로딩 애니메이션 (룰렛 효과)
+// [기능 1] 차차(Chacha) 로딩 애니메이션 시작 함수
 function startLoadingAnimation() {
-    const emojis = ["🍚", "🍜", "🍣", "🍕", "🍔", "🍖", "🥘", "🥪", "🍲", "🍛"];
-    let index = 0;
     resultContainer.innerHTML = `
         <div class="loading-container">
-            <div id="rouletteIcon" class="roulette-emoji">🍚</div>
-            <div class="loading-text">☁️ 날씨와 😋 입맛을 분석 중...</div>
+            <div class="chacha-loading"></div>
+            <div class="loading-text">
+                <span style="color:#0072BC">차차</span>가 맛집을 찾고 있어요!<br>
+                <span style="font-size:13px; font-weight:normal; color:#888; margin-top:5px; display:block;">(잠시만 기다려주세요 🦄)</span>
+            </div>
         </div>`;
-    
-    rouletteInterval = setInterval(() => {
-        const icon = document.getElementById('rouletteIcon');
-        if(icon) {
-            index = (index + 1) % emojis.length;
-            icon.innerText = emojis[index];
-        }
-    }, 100);
 }
 
 function checkBudget(price, budgetType) {
@@ -83,11 +73,10 @@ function weightedRandomSelect(menuList, weatherCondition) {
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
     
-    // 1. 로딩 시작
+    // 1. 차차 로딩 시작
     startLoadingAnimation();
 
-    // ✨ [핵심 수정] 최소 2초(2000ms) 대기 시간을 강제로 부여
-    // 데이터가 0.1초 만에 와도, 이 코드가 2초를 채워줍니다.
+    // 2초 대기 (애니메이션 보여주기용)
     const minLoadingTime = new Promise(resolve => setTimeout(resolve, 2000));
 
     const selectedCategory = document.getElementById('category').value;
@@ -100,7 +89,6 @@ form.addEventListener('submit', async (e) => {
         
         const isKakao = /KAKAOTALK/i.test(navigator.userAgent);
 
-        // 카톡이 아닐 때만 GPS 시도 (비동기 병렬 처리를 위해 로직 유지)
         if (navigator.geolocation && !isKakao) {
             try {
                 const position = await new Promise((resolve, reject) => {
@@ -122,11 +110,8 @@ form.addEventListener('submit', async (e) => {
             return item.Category === selectedCategory && item.Recommended_Age === selectedAge && checkBudget(item.Price, selectedBudget);
         });
 
-        // ✨ [핵심 수정] 데이터 준비가 다 되었어도, 2초가 지날 때까지 여기서 대기합니다.
+        // 2초 대기 완료 대기
         await minLoadingTime;
-
-        // 2. 로딩 종료 (2초 후 실행됨)
-        clearInterval(rouletteInterval);
 
         if (filteredMenu.length > 0) {
             const randomPick = weightedRandomSelect(filteredMenu, weatherCondition);
@@ -144,7 +129,6 @@ form.addEventListener('submit', async (e) => {
             const searchKeyword = baseKeyword; 
             const schoolMapUrl = `https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent('궁동 ' + searchKeyword)}`;
 
-            // [기능 2] 매운맛 지표 로직
             let spiceDisplay = "";
             const spiceLevel = randomPick.Spiciness || 0; 
             if (spiceLevel > 0) {
@@ -195,17 +179,15 @@ form.addEventListener('submit', async (e) => {
                 </div>
             `;
         } else {
-            clearInterval(rouletteInterval);
             resultContainer.innerHTML = `<div class="result"><h3>🥲 조건에 맞는 메뉴가 없어요.</h3></div>`;
         }
     } catch (error) {
-        clearInterval(rouletteInterval);
         console.error('Error:', error);
         resultContainer.innerHTML = `<div class="result"><p>🚨 데이터 로딩 실패!</p></div>`;
     }
 });
 
-// ✅ [최종 수정] 지도 함수: 원본 로직 유지 (GPS 성공 시 좌표 이동)
+// ✅ [지도 함수] 원본 유지
 function openMapWithGPS(type, keyword) {
     const isKakao = /KAKAOTALK/i.test(navigator.userAgent);
 
@@ -225,7 +207,6 @@ function openMapWithGPS(type, keyword) {
             if (type === 'NAVER') {
                 window.open(`https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent(keyword)}&c=${lng},${lat},15`, '_blank');
             } else if (type === 'GOOGLE') {
-                // 구글맵 표준 URL (좌표 중심)
                 const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(keyword)}&center=${lat},${lng}`;
                 window.open(url, '_blank');
             }
@@ -238,7 +219,7 @@ function openMapWithGPS(type, keyword) {
     );
 }
 
-// ✅ [Fallback 함수] 팀장님 원본 로직 유지
+// ✅ [Fallback 함수] 원본 유지 (네이버/구글: '내 주변', 카카오: '대전')
 function fallbackMap(type, keyword) {
     if (type === 'NAVER') {
         window.open(`https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent("내 주변 " + keyword)}`, '_blank');
