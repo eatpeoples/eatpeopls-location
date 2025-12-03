@@ -1,25 +1,20 @@
-/* style.css - CNU Official Identity Version */
+/* style.css - CNU Identity Full Version */
 
-/* 1. 충남대 공식 색상 변수 선언 */
 :root {
-    /* [공식] Main Colors */
-    --cnu-dark-blue: #002884;  /* 팬톤 655C (메인, 신뢰) */
-    --cnu-sky-blue: #0072BC;   /* 팬톤 2194C (하늘색, 진취) */
-    --cnu-light-blue: #00A0E9; /* 팬톤 2935C (밝은파랑, 소통) */
+    --cnu-dark-blue: #002884;  
+    --cnu-sky-blue: #0072BC;   
+    --cnu-light-blue: #00A0E9; 
+    --cnu-yellow: #FDCA00;     
+    --cnu-orange: #F7941D;     
     
-    /* [공식] Point Colors */
-    --cnu-yellow: #FDCA00;     /* 팬톤 116C (지성) */
-    --cnu-orange: #F7941D;     /* 팬톤 144C (역동성) */
-    
-    /* UI Colors */
-    --bg-color: #EEF2F6;       /* 차분한 쿨톤 배경 */
-    --card-bg: #FFFFFF;        /* 카드 배경 */
-    --text-main: #111111;      /* 가독성 높은 진한 검정 */
-    --text-sub: #555555;       /* 서브 텍스트 */
-    --shadow: 0 12px 40px rgba(0, 40, 132, 0.12); /* CNU Blue 틴트 그림자 */
+    --bg-color: #EEF2F6;       
+    --card-bg: #FFFFFF;        
+    --text-main: #111111;      
+    --text-sub: #555555;       
+    --shadow: 0 12px 40px rgba(0, 40, 132, 0.12); 
 }
 
-/* 전체 폰트 및 배경 */
+/* [수정] 전체 배경에 '커뮤니케이션 마크' 패턴 적용 */
 body {
     font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
     background-color: var(--bg-color);
@@ -30,27 +25,34 @@ body {
     min-height: 100vh;
     margin: 0;
     padding: 20px;
+    
+    /* 배경 패턴 추가 */
+    background-image: url('./bg-pattern.png');
+    background-size: 100px; /* 패턴 크기 */
+    background-repeat: repeat;
+    background-blend-mode: soft-light; /* 배경색과 자연스럽게 섞임 */
 }
 
-/* 메인 컨테이너 (카드) */
+/* 메인 컨테이너 */
 .container {
     background: var(--card-bg);
-    padding: 40px 30px; /* 좌우 여백 조정 */
+    padding: 40px 30px;
     border-radius: 24px;
     box-shadow: var(--shadow);
     width: 100%;
-    max-width: 400px; /* 모바일 최적화 너비 */
+    max-width: 400px;
     transition: transform 0.3s ease;
-    border-top: 6px solid var(--cnu-dark-blue); /* 상단에 충남대 컬러 띠 포인트 */
+    border-top: 6px solid var(--cnu-dark-blue);
+    position: relative;
+    z-index: 10;
 }
 
-/* 제목 스타일 */
 h1 {
     color: var(--cnu-dark-blue);
     text-align: center;
     margin-bottom: 8px;
     font-size: 26px;
-    font-weight: 900; /* 더 굵게 */
+    font-weight: 900;
     letter-spacing: -0.5px;
     display: flex;
     align-items: center;
@@ -58,7 +60,6 @@ h1 {
     gap: 8px;
 }
 
-/* 부제목 */
 .subtitle {
     text-align: center;
     color: var(--text-sub);
@@ -67,17 +68,15 @@ h1 {
     font-weight: 500;
 }
 
-/* 입력 라벨 */
 label {
     display: block;
     margin-top: 20px;
     margin-bottom: 8px;
     font-weight: 700;
-    color: var(--cnu-dark-blue); /* 라벨도 충대색으로 */
+    color: var(--cnu-dark-blue);
     font-size: 15px;
 }
 
-/* 드롭다운 박스 */
 select {
     width: 100%;
     padding: 14px 15px;
@@ -88,7 +87,6 @@ select {
     background-color: #fff;
     transition: all 0.2s;
     appearance: none;
-    /* 화살표 색상도 충대 블루로 변경 */
     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23002884' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
     background-repeat: no-repeat;
     background-position: right 1rem center;
@@ -101,12 +99,10 @@ select:focus {
     box-shadow: 0 0 0 4px rgba(0, 114, 188, 0.1);
 }
 
-/* [핵심] 버튼 스타일 (충남대 Dark Blue) */
 button {
     width: 100%;
     padding: 16px;
     margin-top: 40px;
-    /* 공식 색상 그라데이션: Dark Blue -> Sky Blue */
     background: linear-gradient(135deg, var(--cnu-dark-blue), var(--cnu-sky-blue));
     color: white;
     border: none;
@@ -127,16 +123,39 @@ button:active {
     transform: translateY(0);
 }
 
-/* 결과창 스타일 */
+/* [수정] 결과창 스타일 (엠블럼 워터마크 추가) */
 .result {
     margin-top: 35px;
     padding: 30px 20px;
     background-color: #FFFFFF;
     border-radius: 20px;
-    /* 충남대 Yellow/Orange를 활용한 미세한 테두리 포인트 */
     border: 2px solid var(--bg-color); 
     text-align: center;
     animation: fadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    position: relative; /* 워터마크 위치 기준 */
+    overflow: hidden;   /* 워터마크가 튀어나가지 않게 */
+}
+
+/* 엠블럼 워터마크 (가상 요소로 처리) */
+.result::before {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 150px;
+    height: 150px;
+    background-image: url('./emblem.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.1; /* 아주 연하게 */
+    z-index: 0;
+    transform: rotate(-15deg);
+}
+
+/* 결과 내용들이 워터마크 위로 오게 */
+.result > * {
+    position: relative;
+    z-index: 1;
 }
 
 .result h2 {
@@ -147,7 +166,6 @@ button:active {
     font-weight: 600;
 }
 
-/* 메뉴명 강조 (충남대 Sky Blue) */
 .highlight {
     color: var(--cnu-sky-blue);
     font-weight: 900;
@@ -164,7 +182,6 @@ button:active {
     font-size: 15px;
 }
 
-/* AI 코멘트 (말풍선) */
 .ai-comment-box {
     background-color: #F8FAFC;
     color: var(--cnu-dark-blue);
@@ -175,23 +192,20 @@ button:active {
     font-size: 15px;
     line-height: 1.5;
     border: 1px solid #E2E8F0;
-    position: relative;
 }
 
-/* 태그 뱃지 (Orange/Yellow 활용) */
 .tag-badge {
     display: inline-block;
-    background: #FFF9E6; /* 아주 연한 노랑 배경 */
+    background: #FFF9E6;
     padding: 6px 12px;
     border-radius: 20px;
     font-size: 13px;
-    color: #D97706; /* 진한 오렌지 텍스트 */
+    color: #D97706;
     margin: 4px 2px;
     font-weight: 700;
     border: 1px solid var(--cnu-yellow);
 }
 
-/* 매운맛 뱃지 */
 .spiciness-badge {
     display: inline-flex;
     align-items: center;
@@ -205,22 +219,29 @@ button:active {
     border: 1px solid #FECACA;
 }
 
-/* 로딩 애니메이션 */
+/* [수정] 차차 로딩 애니메이션 */
 .loading-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 220px;
+    height: 250px; /* 차차 이미지를 위해 높이 확보 */
 }
 
-.roulette-emoji {
-    font-size: 70px;
+/* 차차 이미지 클래스 */
+.chacha-loading {
+    width: 140px;
+    height: 140px;
+    background-image: url('./chacha.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     animation: bounce 0.6s infinite alternate;
+    margin-bottom: 10px;
 }
 
 .loading-text {
-    margin-top: 25px;
+    margin-top: 15px;
     font-size: 18px;
     font-weight: 800;
     color: var(--cnu-dark-blue);
@@ -236,7 +257,6 @@ button:active {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* 지도 버튼 그룹 */
 .map-btn-group {
     display: flex;
     gap: 8px;
@@ -254,7 +274,6 @@ button:active {
 
 .btn-google { background: #4285F4 !important; color: white !important; }
 
-/* 하단 안내 문구 */
 .recommend-text { 
     font-size: 12px; 
     color: var(--text-sub); 
