@@ -1,6 +1,6 @@
 {
-  "name": "밥줘 AI - 충남대 맛집",
-  "short_name": "밥줘AI",
+  "name": "CNU EATS - 충남대 맛집",
+  "short_name": "CNU EATS",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#f0f2f5",
