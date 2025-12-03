@@ -14,7 +14,7 @@
     --shadow: 0 12px 40px rgba(0, 40, 132, 0.12); 
 }
 
-/* [수정] 전체 배경에 '커뮤니케이션 마크' 패턴 적용 */
+/* 전체 배경에 '커뮤니케이션 마크' 패턴 적용 */
 body {
     font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
     background-color: var(--bg-color);
@@ -26,11 +26,10 @@ body {
     margin: 0;
     padding: 20px;
     
-    /* 배경 패턴 추가 */
     background-image: url('./bg-pattern.png');
-    background-size: 100px; /* 패턴 크기 */
+    background-size: 100px;
     background-repeat: repeat;
-    background-blend-mode: soft-light; /* 배경색과 자연스럽게 섞임 */
+    background-blend-mode: soft-light;
 }
 
 /* 메인 컨테이너 */
@@ -123,7 +122,7 @@ button:active {
     transform: translateY(0);
 }
 
-/* [수정] 결과창 스타일 (엠블럼 워터마크 추가) */
+/* 결과창 스타일 */
 .result {
     margin-top: 35px;
     padding: 30px 20px;
@@ -132,11 +131,10 @@ button:active {
     border: 2px solid var(--bg-color); 
     text-align: center;
     animation: fadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-    position: relative; /* 워터마크 위치 기준 */
-    overflow: hidden;   /* 워터마크가 튀어나가지 않게 */
+    position: relative;
+    overflow: hidden;
 }
 
-/* 엠블럼 워터마크 (가상 요소로 처리) */
 .result::before {
     content: "";
     position: absolute;
@@ -147,12 +145,11 @@ button:active {
     background-image: url('./emblem.png');
     background-size: contain;
     background-repeat: no-repeat;
-    opacity: 0.1; /* 아주 연하게 */
+    opacity: 0.1;
     z-index: 0;
     transform: rotate(-15deg);
 }
 
-/* 결과 내용들이 워터마크 위로 오게 */
 .result > * {
     position: relative;
     z-index: 1;
@@ -219,16 +216,15 @@ button:active {
     border: 1px solid #FECACA;
 }
 
-/* [수정] 차차 로딩 애니메이션 */
+/* 차차 로딩 애니메이션 */
 .loading-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 250px; /* 차차 이미지를 위해 높이 확보 */
+    height: 250px;
 }
 
-/* 차차 이미지 클래스 */
 .chacha-loading {
     width: 140px;
     height: 140px;
@@ -245,6 +241,16 @@ button:active {
     font-size: 18px;
     font-weight: 800;
     color: var(--cnu-dark-blue);
+}
+
+/* [NEW] 로딩 서브 텍스트 (날씨 연동 문구용) */
+.loading-subtext {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #888; /* 연한 회색 */
+    line-height: 1.6;
+    font-weight: 500;
+    text-align: center;
 }
 
 @keyframes bounce {
