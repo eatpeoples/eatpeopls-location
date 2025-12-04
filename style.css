@@ -228,10 +228,8 @@ button:active {
 .chacha-loading {
     width: 140px;
     height: 140px;
-    background-image: url('./chacha.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+    /* background-image 관련 속성 3줄 삭제 */
+    object-fit: contain; /* 이미지 비율 유지 */
     animation: bounce 0.6s infinite alternate;
     margin-bottom: 10px;
 }
