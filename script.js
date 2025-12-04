@@ -1,4 +1,4 @@
-/* script.js (최종: 대전/궁동 이원화 + GPS 로직 완성) */
+/* script.js (최종 완결판: 대전/궁동 키워드 강화 + GPS 유효성 검사) */
 const API_KEY = "2400a3d0d18960973fb137ff6d8eb9be"; 
 const DB_URL = 'https://raw.githubusercontent.com/eatpeoples/eatpeopls-location/main/menu_db.json'; 
 
@@ -128,13 +128,10 @@ form.addEventListener('submit', async (e) => {
             
             const cleanName = cleanMenuName(randomPick.Menu_Name);
             let baseKeyword = searchFixes[cleanName] || (cleanName + " 맛집");
-            
-            // 💡 [수정 포인트] 
-            // 1. 일반 지도(N,K,G)용 검색어: 기본 메뉴명 (나중에 함수 안에서 '대전' 붙임)
             const searchKeyword = baseKeyword; 
             
-            // 2. 학교 전용 버튼 URL: '궁동'을 강제로 붙여서 학교 앞 맛집 보장
-            const schoolMapUrl = `https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent('궁동 ' + searchKeyword)}`;
+            // 💡 [수정 1] 학교 앞 찾기: '궁동' -> '대전 궁동'으로 변경하여 서울 구로구 방지
+            const schoolMapUrl = `https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent('대전 궁동 ' + searchKeyword)}`;
 
             let spiceDisplay = "";
             const spiceLevel = randomPick.Spiciness || 0; 
@@ -222,8 +219,10 @@ function openMapWithGPS(type, keyword) {
             if (isValidLocation) {
                 // ✅ Case A: 진짜 GPS (대전 내부) -> 좌표로 이동
                 if (type === 'NAVER') {
-                    window.open(`https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent(keyword)}&c=${lng},${lat},16`, '_blank');
+                    // 💡 [수정 2] 네이버는 좌표가 무시될 수 있으므로, 검색어에 '대전'을 붙여 안전장치 마련
+                    window.open(`https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent("대전 " + keyword)}&c=${lng},${lat},16`, '_blank');
                 } else if (type === 'GOOGLE') {
+                    // 구글 표준 URL 적용
                     window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(keyword)}&center=${lat},${lng}`, '_blank');
                 }
             } else {
