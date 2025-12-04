@@ -21,7 +21,7 @@ const searchFixes = {
 function startLoadingAnimation() {
     resultContainer.innerHTML = `
         <div class="loading-container">
-            <div class="chacha-loading"></div>
+            <img src="./chacha.png" class="chacha-loading" alt="로딩중">
             <div class="loading-text">
                 <span style="color:#0072BC">차차</span>가 맛집을 찾고 있어요!
             </div>
