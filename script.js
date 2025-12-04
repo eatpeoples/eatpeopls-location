@@ -1,11 +1,10 @@
-/* script.js (최종 완결판: 대전/궁동 키워드 강화 + GPS 유효성 검사) */
+/* script.js (네이버 GPS 성공 시 순수 키워드 사용 버전) */
 const API_KEY = "2400a3d0d18960973fb137ff6d8eb9be"; 
 const DB_URL = 'https://raw.githubusercontent.com/eatpeoples/eatpeopls-location/main/menu_db.json'; 
 
 const form = document.getElementById('recommendationForm');
 const resultContainer = document.getElementById('resultContainer');
 
-// GPS 유효성 검사를 위한 '대전(충남대)' 좌표 범위 (Geofencing)
 const CNU_BOUNDS = {
     minLat: 36.20, maxLat: 36.45, 
     minLng: 127.20, maxLng: 127.50 
@@ -130,7 +129,7 @@ form.addEventListener('submit', async (e) => {
             let baseKeyword = searchFixes[cleanName] || (cleanName + " 맛집");
             const searchKeyword = baseKeyword; 
             
-            // 💡 [수정 1] 학교 앞 찾기: '궁동' -> '대전 궁동'으로 변경하여 서울 구로구 방지
+            // 학교 전용 버튼 URL: '궁동'을 강제로 붙여서 학교 앞 맛집 보장 (유지)
             const schoolMapUrl = `https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent('대전 궁동 ' + searchKeyword)}`;
 
             let spiceDisplay = "";
@@ -219,10 +218,9 @@ function openMapWithGPS(type, keyword) {
             if (isValidLocation) {
                 // ✅ Case A: 진짜 GPS (대전 내부) -> 좌표로 이동
                 if (type === 'NAVER') {
-                    // 💡 [수정 2] 네이버는 좌표가 무시될 수 있으므로, 검색어에 '대전'을 붙여 안전장치 마련
-                    window.open(`https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent("대전 " + keyword)}&c=${lng},${lat},16`, '_blank');
+                    // 💡 [수정됨] GPS가 대전 내부라면, '대전' 키워드 없이 순수 좌표로만 이동 시도
+                    window.open(`https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent(keyword)}&c=${lng},${lat},16`, '_blank');
                 } else if (type === 'GOOGLE') {
-                    // 구글 표준 URL 적용
                     window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(keyword)}&center=${lat},${lng}`, '_blank');
                 }
             } else {
@@ -239,10 +237,9 @@ function openMapWithGPS(type, keyword) {
     );
 }
 
-// ✅ [Fallback 함수 - 수정됨]
+// ✅ [Fallback 함수]
 // GPS 실패 시 무조건 '대전'을 붙여서 검색 결과 0건 방지
 function fallbackMap(type, keyword) {
-    // 💡 충남대 대신 '대전'을 붙여서 범위 확장 & 결과 보장
     const safeKeyword = "대전 " + keyword; 
     
     if (type === 'NAVER') {
