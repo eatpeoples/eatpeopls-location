@@ -1,10 +1,11 @@
-/* script.js (네이버 GPS 성공 시 순수 키워드 사용 버전) */
+/* script.js (최종 완결판: 네이버 안전장치 강화 + 모바일 최적화) */
 const API_KEY = "2400a3d0d18960973fb137ff6d8eb9be"; 
 const DB_URL = 'https://raw.githubusercontent.com/eatpeoples/eatpeopls-location/main/menu_db.json'; 
 
 const form = document.getElementById('recommendationForm');
 const resultContainer = document.getElementById('resultContainer');
 
+// GPS 유효성 검사를 위한 '대전(충남대)' 좌표 범위 (Geofencing)
 const CNU_BOUNDS = {
     minLat: 36.20, maxLat: 36.45, 
     minLng: 127.20, maxLng: 127.50 
@@ -129,7 +130,7 @@ form.addEventListener('submit', async (e) => {
             let baseKeyword = searchFixes[cleanName] || (cleanName + " 맛집");
             const searchKeyword = baseKeyword; 
             
-            // 학교 전용 버튼 URL: '궁동'을 강제로 붙여서 학교 앞 맛집 보장 (유지)
+            // 학교 전용 버튼 URL: '궁동'을 강제로 붙여서 학교 앞 맛집 보장
             const schoolMapUrl = `https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent('대전 궁동 ' + searchKeyword)}`;
 
             let spiceDisplay = "";
@@ -216,10 +217,10 @@ function openMapWithGPS(type, keyword) {
             );
 
             if (isValidLocation) {
-                // ✅ Case A: 진짜 GPS (대전 내부) -> 좌표로 이동
+                // ✅ Case A: 진짜 GPS (대전 내부)
                 if (type === 'NAVER') {
-                    // 💡 [수정됨] GPS가 대전 내부라면, '대전' 키워드 없이 순수 좌표로만 이동 시도
-                    window.open(`https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent(keyword)}&c=${lng},${lat},16`, '_blank');
+                    // 💡 [Rollback] 네이버는 GPS가 성공해도 좌표 무시 가능성이 높으므로 '대전' 고정! (가장 안전한 선택)
+                    window.open(`https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent("대전 " + keyword)}&c=${lng},${lat},16`, '_blank');
                 } else if (type === 'GOOGLE') {
                     window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(keyword)}&center=${lat},${lng}`, '_blank');
                 }
