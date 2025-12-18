@@ -1,4 +1,4 @@
-/* script.js (최종 완결판: 네이버 안전장치 강화 + 모바일 최적화) */
+/* script.js (최종 완결판: 네이버/구글 지도 URL 수정 완료) */
 const API_KEY = "2400a3d0d18960973fb137ff6d8eb9be"; 
 const DB_URL = 'https://raw.githubusercontent.com/eatpeoples/eatpeopls-location/main/menu_db.json'; 
 
@@ -219,10 +219,11 @@ function openMapWithGPS(type, keyword) {
             if (isValidLocation) {
                 // ✅ Case A: 진짜 GPS (대전 내부)
                 if (type === 'NAVER') {
-                    // 💡 [Rollback] 네이버는 GPS가 성공해도 좌표 무시 가능성이 높으므로 '대전' 고정! (가장 안전한 선택)
+                    // 💡 네이버: GPS 좌표 + 검색어
                     window.open(`https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent("대전 " + keyword)}&c=${lng},${lat},16`, '_blank');
                 } else if (type === 'GOOGLE') {
-                    window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(keyword)}&center=${lat},${lng}`, '_blank');
+                    // 💡 [수정됨] 구글: 표준 검색 URL 적용 (오타 수정완료)
+                    window.open(`https://www.google.com/maps/search/${encodeURIComponent(keyword)}/@${lat},${lng},15z`, '_blank');
                 }
             } else {
                 // ❌ Case B: 가짜 GPS (서울/전국) -> 안전하게 대전 검색으로 전환
@@ -246,7 +247,8 @@ function fallbackMap(type, keyword) {
     if (type === 'NAVER') {
         window.open(`https://m.map.naver.com/search2/search.naver?query=${encodeURIComponent(safeKeyword)}`, '_blank');
     } else if (type === 'GOOGLE') {
-        window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(safeKeyword)}`, '_blank');
+        // 💡 [수정됨] 구글: 표준 검색 URL 적용
+        window.open(`https://www.google.com/maps/search/${encodeURIComponent(safeKeyword)}`, '_blank');
     } else {
         window.open(`https://m.map.kakao.com/actions/searchView?q=${encodeURIComponent(safeKeyword)}`, '_blank');
     }
