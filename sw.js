@@ -1,6 +1,6 @@
 /* sw.js */
 // ⬇️ 여기 이름을 바꾸는 게 핵심입니다!
-const CACHE_NAME = 'cnu-eats-v2'; 
+const CACHE_NAME = 'cnu-eats-final'; 
 
 const ASSETS_TO_CACHE = [
     './',
